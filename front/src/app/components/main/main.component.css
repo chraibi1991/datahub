@@ -1,0 +1,86 @@
+
+  .span0 {
+    text-indent: 50px;
+    letter-spacing: 3px;
+    font-size: xx-large;
+    
+  }
+  
+  
+  .span1{
+    color: gray; 
+    text-indent: 50px;
+    letter-spacing: 3px;
+    font-size: xx-large;
+  }
+
+    
+  .span2{
+    color: gray; 
+    text-indent: 50px;
+    letter-spacing: 3px;
+    font-size: large;
+  }
+
+  .map{
+    height: 100%; 
+    width: 100%;
+    background: white;
+
+  }
+
+
+  .map-cont{
+    height: 700px; 
+    width: 40%;
+    background: white;
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  h3{
+    margin-left: 80%;
+  }
+
+  .info{
+    width: 80%; 
+    margin-left: 5%; 
+  }
+
+  #infoLK{
+    margin-left: 50px;
+    border-radius: 20px;
+    height: 500px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding: 0;
+    border: 1px solid green; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.212); 
+   
+  }
+  
+
+  #logoLK{
+   height: 40%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   margin: 0;
+     width: 100%;
+    background-color: #e9F1e2;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+
+  }
+
+  #infoOneLK{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }

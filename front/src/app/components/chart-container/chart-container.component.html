@@ -1,0 +1,71 @@
+<div  [hidden]="!chart" class="container">
+
+    <div style="margin: 5%">
+
+
+        <div class="title" *ngIf="chart">
+            <h1> {{ chart.chartMeta.Name + " " + chart.chartMeta.unit }}</h1>
+            <h3> {{ chart.chartMeta.Beschreibung.substring(0,120) }}</h3>
+
+
+        </div>
+
+        <div class="selection">
+            <button class="btn3" [style.background-color]="rootChartObject.chartIndex === 0 ? 'lightgray' : 'white'"
+                (click)="changeChart(0)" > Allgemein </button>
+            <button class="btn3" [style.background-color]="rootChartObject.chartIndex  === 1 ? 'lightgray' : 'white'"
+                (click)="changeChart(1)"> Jährliche Veränderungsrate </button>
+
+            <button class="btn3" [style.background-color]="rootChartObject.chartIndex === 2 ? 'lightgray' : 'white'"
+                (click)="changeChart(2)"> Änderungsrate zwischen Zeitpunkten </button>
+            <button class="btn3" [style.background-color]="rootChartObject.chartIndex  === 3 ? 'lightgray' : 'white'"
+                (click)="changeChart(3)"> Vergleich </button>
+
+
+        </div>
+
+
+        <div class="chart-container">
+
+
+            <div class="generalChart">
+
+                <div *ngIf="rootChartObject.chartIndex != 3">
+                <span class="span2"> Filter: </span>
+                Wertefilter: <mat-slider min="{{ minValue }}" max="{{ maxValue }}" step="0.001" showTickMarks discrete
+                [displayWith]="formatLabel">
+
+      
+                <input matSliderStartThumb  value="{{ minValue }}"(change)="filter($event, 'valMin', chart)">
+                <input matSliderEndThumb value="{{ maxValue }}"  (change)="filter($event, 'valMax', chart)">
+            </mat-slider>
+                Zeitstrahl:
+                <mat-slider  min="{{ minYear }}" max="{{ maxYear }}" step="1" showTickMarks discrete
+                    [displayWith]="formatLabel">
+                    <input matSliderStartThumb value="{{ minYear }}" (change)="filter($event, 'timeMin', chart)">
+                    <input matSliderEndThumb value="{{ maxYear }}" (change)="filter($event, 'timeMax', chart)">
+                </mat-slider>
+
+            </div>
+
+              
+                <div style="display: flex; flex-direction: row; justify-content: space-between; ">
+                <div style="width: 90%; height: 50% ">
+                    <canvas id="canvas0">{{chart}}</canvas>
+                </div>
+
+                
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+
+    </div>
+
+</div>

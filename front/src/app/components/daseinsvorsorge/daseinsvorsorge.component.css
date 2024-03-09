@@ -1,0 +1,80 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    height: 80vh; 
+
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+
+ 
+}
+.textdiv{
+  color: black; 
+  text-indent: 20px;
+  letter-spacing: 2px;
+  font-size: medium;
+  cursor: pointer;
+  width: 50vw; 
+  margin: 2vh; 
+}
+
+.map{
+    height: 60vh; 
+    width: 50vw;
+    border: 3px solid grey; 
+    border-radius: 15px;
+    margin-left: 3vw;
+  }
+  #dialog3{position:fixed;top:75px; right:0}
+
+  .chart{
+    height: 60vh; 
+    width: 40vw;
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+    flex-direction: column;
+ 
+    border: 3px solid grey; 
+    border-radius: 15px;
+    margin-right: 3vw;
+  }
+
+  #canvas0{
+    margin-left: 1vw;
+    margin-right: 1vw;
+  }
+
+  .btn{
+    padding: 10px; 
+    margin: 3px; 
+    letter-spacing: 3px;
+    border: 3px solid grey; 
+  border-radius: 15px;
+
+  background-color: #10684E;
+   color:white
+  
+  }
+
+  .button-container{
+    background-color: green;
+    z-index: 10;
+    position: absolute;
+  top: 50vh;
+  left: 0;
+  }
+
+  .btn:hover{
+    background-color: lightgray;
+  
+  }
+  
+  .btn:focus{
+    background-color: lightgray;
+  }

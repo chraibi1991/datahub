@@ -1,0 +1,53 @@
+    
+  .span2{
+    color: black; 
+    text-indent: 50px;
+    letter-spacing: 3px;
+    font-size: x-large;
+  }
+
+  .span0 {
+    text-indent: 50px;
+    letter-spacing: 3px;
+    font-size: xx-large;
+  }
+
+  .btn{
+    padding: 10px; 
+    margin: 3px; 
+    letter-spacing: 3px;
+    border: 3px solid grey; 
+  border-radius: 15px;
+  background-color: white;
+  
+  }
+  
+  .btn:hover{
+    background-color: lightgray;
+  
+  }
+  
+  .btn:focus{
+    background-color: gray;
+  }
+
+
+  .btn3{
+    padding: 10px; 
+    margin: 3px; 
+    letter-spacing: 3px;
+    border: 3px solid grey; 
+  border-radius: 15px;
+  background-color: white;
+  
+  }
+  
+  .btn3:hover{
+    background-color: lightgray;
+  
+  }
+  
+  .btn3:focus{
+    background-color: gray;
+  }
+

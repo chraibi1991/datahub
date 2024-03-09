@@ -1,0 +1,78 @@
+
+
+<div class="main-container" *ngIf="mode == 0">
+
+    <div class="row">
+
+        <div>
+            <br>
+            <br>
+            <span class="span0 "> DATAHUB </span>
+        </div>
+
+        <div style="width: 90%">
+            <br>
+            <br>
+
+            <mat-expansion-panel >
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <span class="span2"> Der Datahub eröffnet Möglichkeiten zur regionalen Analyse und Prognose, die eine datengesteuerte Entwicklung fördern. </span>
+                      </mat-panel-title>
+          
+                </mat-expansion-panel-header>
+                <span class="span2" >  Nutzer können auf vielfältige Daten zugreifen, um fundierte Entscheidungen zu treffen und regionale Trends besser zu verstehen. Darüber hinaus bietet der Datahub die Möglichkeit, lokale Bevölkerungsprognosen auf Basis einer synthetischen Population zu erstellen. Mit Hilfe der synthetischen Population im Datahub können lokale Bevölkerungsprognosen erstellt werden, indem verschiedene demografische Faktoren berücksichtigt werden. Dies bietet Planern und Entwicklern eine wertvolle Grundlage, um strategische Entscheidungen zu treffen und Ressourcen effizient zu verteilen. </span>
+
+              </mat-expansion-panel>
+        </div>
+
+    </div>
+
+
+
+
+    <div class="row2">
+
+
+
+        <div  style="z-index: 10;" class="datahub-tile2" (click)="clickTile(2)" >
+            <div style="display: flex; justify-content: center; align-items: center;flex-direction: column;">
+                <span class="span2" style="text-indent: 0;"> Regionalindikatoren </span> <br>
+                <span class="span2" style="text-indent: 0;">nach Gebietseinheiten. </span>
+            </div>
+        </div>
+
+        
+            <div class="bottomTri">
+                <div class="datahub-tile2" (click)="clickTile(1)">
+                    <div>
+                        <span class="span2"> Synthetische Population. </span>
+                    </div>
+                </div>
+
+                <div class="datahub-tile2" (click)="clickTile(3)">
+                    <div>
+                        <span class="span2"> Infrastruktur</span>
+                    </div>
+                </div>
+            </div>
+
+
+    </div>
+<!-- 
+    <div class="row">
+
+        <app-my-carousel> </app-my-carousel>
+
+
+
+
+    </div> -->
+
+
+
+
+</div>
+
+<app-data-synth *ngIf="mode == 1"> </app-data-synth>
+<app-data-regio *ngIf="mode == 2"> </app-data-regio>

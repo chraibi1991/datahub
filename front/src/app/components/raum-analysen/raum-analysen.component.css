@@ -1,0 +1,53 @@
+
+.row2{
+  margin-top: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.span2{
+  color: black; 
+  text-indent: 50px;
+  letter-spacing: 3px;
+  cursor: pointer;
+ 
+}
+
+.span0 {
+  text-indent: 50px;
+  letter-spacing: 3px;
+  font-size: xx-large;
+}
+
+
+.result-container{
+  background-color: green;
+}
+
+.span1{
+  color: gray; 
+  font-size: xx-large;
+}
+
+.datahub-tile2{
+  border: 3px solid #D4E5C6; 
+  border-radius: 15px;
+  height: 350px;
+  width: 350px; 
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  margin-left: 50px; 
+  cursor: pointer;
+
+}
+.datahub-tile2:hover{
+-webkit-transform: scale(1.2);
+-ms-transform: scale(1.2);
+transform: scale(1.2);
+transition: 1s ease;
+background-color: #D4E5C6;
+border: 3px solid #09491A ; 
+}

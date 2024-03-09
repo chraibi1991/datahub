@@ -1,0 +1,52 @@
+<div class="layout">
+
+    <div class="img-container" >
+
+        <div *ngIf = "selectedObject && !selectedObject.Logo_URL && !routeCheck">
+            <button mat-raised-button style="background-color: #D4E5C6; color: black" (click) ="click('/start')"
+            *ngIf="selectedObject"> Landkreis festlegen </button>
+
+
+        </div>
+
+    <div (click)="click('')" *ngIf = "selectedObject">
+        <img src =  "{{ selectedObject.Logo_URL }}"  width="50px"/>
+    </div>
+
+    <div *ngIf = "selectedObject" class="landkreis" (mouseenter) ="mouseEnter() "  (mouseleave) ="mouseLeave()">  
+        {{ selectedObject.Object_Name}}
+
+        <button *ngIf = "iconVisible" mat-mini-fab color="warn" aria-label="Example icon button with a filter list icon" (click)="changeLandkreis()">
+            <mat-icon>edit</mat-icon>
+          </button>
+    </div>
+
+   
+</div>
+
+    <div>
+
+        <div class="d-flex flex-nowrap myrow" >
+            <a (click)="click('datahub2')" class="btn" [class.activebtn]="router.url.startsWith('/datahub2')" rel="datahub2"  > Datahub
+            </a>
+            <a (click)="click('prognosen')" class="btn" [class.activebtn]="router.url.startsWith('/prognosen')" rel="prognosen">  Prognosen
+            </a>
+            <a (click)="click('analysen')" class="btn" [class.activebtn]="router.url.startsWith( '/analysen')" rel="analysen"> Analysen
+            </a>
+
+            <a (click)="click('simulation-section')" class="btn" [class.activebtn]="router.url.startsWith( '/simulation-section')" rel="simulation-section"> Simulation 
+            </a>
+          </div>
+         
+       
+        
+       
+    </div>
+
+
+    <div>
+       
+            <img   (click)="backLogin()" id="fixSA" src =  "https://upload.wikimedia.org/wikipedia/commons/5/53/Wappen_Sachsen-Anhalt.svg" width="50px"/>
+        
+    </div>
+</div>

@@ -1,0 +1,94 @@
+.span0 {
+  text-indent: 50px;
+  letter-spacing: 3px;
+  font-size: xx-large;
+}
+
+
+.span1{
+  color: gray; 
+  text-indent: 50px;
+  letter-spacing: 3px;
+  font-size: xx-large;
+}
+
+.span2{
+  color: gray; 
+  text-indent: 50px;
+  letter-spacing: 3px;
+ 
+}
+
+
+
+
+  .action-items{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .datahub-tile{
+    border: 3px solid grey; 
+    border-radius: 15px;
+    width: 400px;
+    height: 400px; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin-left: 50px; 
+  }
+
+  .bilder-tile{
+    border: 3px solid grey; 
+    border-radius: 15px;
+    width: 250px;
+    height: 600px; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin-left: 10px; 
+
+  }
+
+  .text-tile{
+    border: 3px solid grey; 
+    border-radius: 15px;
+    width: 800px;
+    height: 100px; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin-left: 50px; 
+
+  }
+
+  .datahub-tile2{
+    border: 3px solid grey; 
+    border-radius: 15px;
+    height: 200px;
+    width: 200px; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin-left: 20px; 
+
+  }
+
+  .datahub-items{
+    margin-left: 20px;
+    height: 400px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .datahub-row{
+    display: flex;
+    margin-top: 50px;
+    flex-direction: row;
+  
+    justify-content: flex-start;
+
+  }

@@ -1,0 +1,225 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    padding-left: 100px;
+    padding-right: 100px;
+
+}
+
+.datahub-tile2{
+    border: 3px solid #D4E5C6; 
+    border-radius: 15px;
+    height: 100px;
+    width: 250px; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin: 50px; 
+    cursor: pointer;
+  
+  }
+  .datahub-tile2:hover{
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+  transition: 1s ease;
+  background-color: #D4E5C6;
+  border: 3px solid #09491A ;
+  
+  }
+
+  .row2{
+    margin-top: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    position: relative;
+    
+    /* flex-wrap: wrap;
+    width: 90vw;
+    height: calc(100vh - 80px);
+    overflow-y: scroll; */
+   
+  }
+
+  /* width */
+::-webkit-scrollbar {
+    width: 6px;
+    margin-right: 8px;
+    }
+    
+    /* Track */
+    ::-webkit-scrollbar-track {
+    }
+    
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+    background: gray;
+    border-radius: 10px;
+    }
+    
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+    background: #c7c5c5;
+    }
+
+
+    .yerasRender{
+        margin: 20px;
+        border: 1px dashed green ;
+        font-size: 25px;
+        padding: 15px;
+        border-radius: 8px;
+    }
+
+    
+    .monthsRender{
+        margin: 20px;
+        border: 1px dashed green ;
+        font-size: 22px;
+        padding: 15px;
+        border-radius: 8px;
+
+    }
+
+    .row3{
+        margin-top: 2%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 90vw;
+        height: 200px;
+        overflow-y: scroll; 
+        border: 1px solid #ccc;
+        border-radius: 15px;
+       position: relative;
+      }
+
+    .Parameter{
+        margin-top: 10px;
+        
+        height: calc(100vh - 300px);
+        border-radius: 15px;
+        width: 90vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .category1{
+        border: 1px solid green;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        height: calc(100vh - 300px);
+        width: 30vw;
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: large;
+        flex-direction: column;
+
+    }
+
+    .category2{
+        border: 1px solid green;
+        height: calc(100vh - 300px);
+        width: 30vw;
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: large;
+        flex-direction: column;
+
+    }
+
+    .category3{
+        border: 1px solid green;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        height: calc(100vh - 300px);
+        width: 30vw;
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: large;
+        flex-direction: column;
+    }
+
+
+    .span0 {
+        text-indent: 50px;
+        letter-spacing: 3px;
+        font-size: xx-large;
+    }
+
+      .boxTitle{
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-weight: bold;
+      }
+
+      .yesNo{
+        margin-top: 30px;
+        margin-bottom: 30px;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+      
+      }
+
+      .yesNoOption{
+        color:white;
+        background-color: #0f684e;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid  #0f684e;
+
+      }
+
+      /* .yesNoOption:hover {
+        color:#0f684e;
+        background-color: white;
+        border: 1px solid #0f684e;
+        padding: 9px;
+      } */
+
+      .rules{
+        border-top: 1px solid #ccc;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .rulesI{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        padding-top: 20px;
+
+      }
+
+      .sli{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .example-full-width {
+        width: 200px;
+      }

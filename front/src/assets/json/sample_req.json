@@ -1,0 +1,110 @@
+{
+    "meta": 
+      {
+        "from_year": "2023",
+        "to_year": "2030",
+        "pop_name": "testtesttest",
+        "description": "sdfsdf"
+      }
+    ,
+    "fertility": {
+      "fertility_rates": [
+        {
+          "fertil_rate": 1.678,
+          "from_year": "2023"
+        },
+        {
+          "fertil_rate": 1.609,
+          "from_year": "2024"
+        }
+      
+      ]
+    },
+    "migration": [
+      {
+        "from_year": "2023",
+        "data": [
+          {
+            "age_classes": "0-53",
+            "sex": "male",
+            "change": 20
+          },
+          {
+            "age_classes": "54-55",
+            "sex": "female",
+            "change": 10
+          },
+          {
+            "age_classes": "55-100",
+            "sex": "male",
+            "change": 9
+          },
+          {
+            "age_classes": "0-53",
+            "sex": "female",
+            "change": 21
+          },
+          {
+            "age_classes": "54-55",
+            "sex": "male",
+            "change": 29
+          },
+          {
+            "age_classes": "55-100",
+            "sex": "female",
+            "change": -7
+          }
+        ]
+      },
+      {
+        "from_year": "2027",
+        "data": [
+          {
+            "age_classes": "0-53",
+            "sex": "male",
+            "change": 20
+          },
+          {
+            "age_classes": "54-55",
+            "sex": "female",
+            "change": 10
+          },
+          {
+            "age_classes": "55-100",
+            "sex": "male",
+            "change": 9
+          },
+          {
+            "age_classes": "0-53",
+            "sex": "female",
+            "change": 21
+          },
+          {
+            "age_classes": "54-55",
+            "sex": "male",
+            "change": 29
+          },
+          {
+            "age_classes": "55-100",
+            "sex": "female",
+            "change": 10000
+          }
+        ]
+      }
+    ],
+    "death": [
+      {
+        "age_class": "61-70",
+        "change": -0.1
+      },
+      {
+        "age_class": "71-80",
+        "change": -0.2
+      },
+      {
+        "age_class": "81-100",
+        "change": -0.1
+      }
+    ]
+  }
+  

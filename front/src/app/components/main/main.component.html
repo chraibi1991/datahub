@@ -1,0 +1,78 @@
+<!--<div id="cesium"></div>-->
+
+<div >
+    <div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; justify-content: center;">
+
+        <div class="info">
+            <span class="span0"> Digitaler Zwilling. </span> <span class="span1"> Wähle deinen Landkreis. </span>
+            <br>
+            <br>
+        </div>
+
+
+        <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; width: 95vw;">
+            <div class="map-cont">
+                <div class="map" leaflet [leafletOptions]="options" [leafletLayers]="layers"
+                    (leafletMapReady)="onMapReady($event)"></div>
+                <div style="display: flex; align-items: center;">
+                    <h3 style="margin-left: 48%"> Sachsen-Anhalt </h3>
+                </div>
+            </div>
+
+
+            <div  *ngIf="selectedObject" id="infoLK" style="width: 30%">
+
+   
+
+                <div *ngIf="selectedObject"  style=" height: 80%; width: 100%;">
+
+                    <div id="logoLK" style="display: flex; align-items: center; margin-bottom: 8%;" > 
+
+                        
+                    <img *ngIf="selectedObject.Logo_URL" src="{{ selectedObject.Logo_URL }}" width="50px" />
+
+               
+                <div style="margin-left: 5%;"> 
+                    <span class="span0"> {{ selectedObject.Object_Name}}</span> <br>
+                </div>
+                    
+
+                </div>
+
+                    <div id="infoOneLK">
+
+
+
+                           
+
+                            <span class="span2">  Bevölkerung: {{ selectedObject["Bevoelkerung gesamt"]}} Einwohner </span> <br>
+                                <span class="span2"> Bodenfläche: {{ selectedObject["Bodenflaeche gesamt qkm"]}} km²</span> <br>
+                                    <span class="span2"> Durchschnittsalter: {{ selectedObject["Durchschnittsalter der Bevoelkerung"]}} Jahre</span> <br>
+
+
+
+                    </div>
+
+                </div>
+
+
+
+                <br>
+                <br>
+
+
+                <button mat-raised-button style="background-color: #D4E5C6; color: black" (click)="test()"
+                    *ngIf="selectedObject"> Landkreis festlegen </button>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+<br>

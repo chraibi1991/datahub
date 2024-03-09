@@ -1,0 +1,651 @@
+<div *ngIf="needDialog" id="errorDialog">
+
+  <div id="dialogMessage">
+    <div id="dialogTileMsg">
+      Anfrageergebnis 
+    </div>
+    <div>Ihre gewählte Eingabekombination hat leider keine Ergebnisse erbracht. Wir empfehlen, eine alternative Eingabe zu versuchen.</div>
+    <div id="iconDialog">!</div>
+    <button id="confirmDialog" (click)="closeDialog();needDialog=false;">OK</button>
+   <img  id="imgDialog" src =  "https://upload.wikimedia.org/wikipedia/commons/5/53/Wappen_Sachsen-Anhalt.svg" width="30px">
+  </div>
+  
+  
+
+</div>
+
+
+<button style="margin-left:97%; background-color: #10684E; color: white" mat-mini-fab
+  aria-label="Example icon button with a home icon" (click)="closeDialog()">
+  <mat-icon>close </mat-icon>
+</button>
+<div *ngIf="step == 0">
+  <span class="span0"> ERREICHBARKEITSANALYSE </span> <span class="span1"> EINSTELLUNGEN </span>
+  <br>
+  <br>
+  <br>
+  <span class="span0"> Wählen Sie die Art Ihrer Analyse </span>
+  <br>
+  <br>
+
+
+  <div style="display: flex; justify-content: center; flex-direction: column;">
+    <button class="btn2" (click)="selectedMode = 0; step = 1"> Umkreisanalyse </button>
+    <br>
+    <br>
+
+    <div style="display: flex; justify-content: center; flex-direction: row; ">
+      <div>
+        <span class="span0">oder </span>
+      </div>
+    </div>
+    <br>
+    <br>
+    <button class="btn2" (click)="selectedMode = 1; step = 1"> Rasteranalyse </button>
+
+  </div>
+
+
+  <div style="display: flex; justify-content: flex-end;">
+
+
+  </div>
+
+
+</div>
+
+
+<div *ngIf="step == 1">
+  <span class="span0" *ngIf="selectedMode == 0"> UMKREISANALYSE </span> <span class="span1" *ngIf="selectedMode == 0"> EINSTELLUNGEN </span>
+  <span class="span0" *ngIf="selectedMode == 1"> RASTERANALYSE </span> <span class="span1" *ngIf="selectedMode == 1"> EINSTELLUNGEN </span>
+  <br>
+  <br>
+  <br>
+
+  <b> 1. Einrichtungstypen </b>
+  <br>
+  <br>
+  <b *ngIf="selectedMode == 0"> Wählen Sie beliebig viele Einrichtungstypen aus:</b>
+
+  <b *ngIf="selectedMode == 1"> Wählen Sie einen Einrichtungstypen aus, für den Sie eine Rasteranalyse starten möchten
+  </b>
+
+
+
+
+  <mat-selection-list [(ngModel)]="selectedEinrichtungen" [multiple]="selectedMode == 0">
+    <div *ngFor="let metaobj of meta">
+      <mat-list-option [value]="item.Typ" *ngFor="let item of metaobj.Typen" style="border-bottom: 2px solid grey;">
+        <img src='{{ "../../../../assets/icon/" + item.Icon  }}' width="20px">
+        <b> {{item.Typ}} </b>
+      </mat-list-option>
+    </div>
+  </mat-selection-list>
+
+  <div style="display: flex; justify-content: space-between;">
+
+    <button mat-mini-fab aria-label="Example icon button with a home icon" style="background-color: #10684E; color: white"
+      (click)="step =  0">
+      <mat-icon>arrow_backward_ios </mat-icon>
+    </button>
+
+
+    <span style="margin-right: 0; " class="span2"> Nächster Schritt
+      <button *ngIf="selectedMode == 0" mat-mini-fab aria-label="Example icon button with a home icon"
+        style="background-color: #10684E; color: white" (click)="step = 2">
+        <mat-icon>arrow_forward_ios </mat-icon>
+      </button>
+
+      <button *ngIf="selectedMode == 1" mat-mini-fab aria-label="Example icon button with a home icon"
+        style="background-color: #10684E; color: white" (click)="step = 3">
+        <mat-icon>arrow_forward_ios </mat-icon>
+      </button>
+    </span>
+  </div>
+
+    <div class="progress-bar" *ngIf="selectedMode == 1" >
+      <div class="progress-point" style="background-color: rgb(58, 102, 223);">1</div>
+      <div class="progress-point" style="background-color: gainsboro;">2</div>
+      <div class="progress-point" style="background-color: gainsboro;">3</div>
+      <div class="progress-point" style="background-color: gainsboro;">4</div>
+      <div class="progress-point" style="background-color: gainsboro;">5</div>
+      <div class="progress-point" style="background-color: gainsboro;">6</div>
+      <div class="progress-bar-fill" [ngStyle]="{'width.%': 0.165* 100}" style="background: linear-gradient(90deg, yellowgreen 0%, yellowgreen 50%, rgb(58, 102, 223) 100%);"> </div>
+    </div>
+
+    <div class="progress-bar" *ngIf="selectedMode == 0" >
+      <div class="progress-pointU" style="background-color: rgb(58, 102, 223);">1</div>
+      <div class="progress-pointU" style="background-color: gainsboro;">2</div>
+      <div class="progress-pointU" style="background-color: gainsboro;">3</div>
+      <div class="progress-pointU" style="background-color: gainsboro;">4</div>
+      <div class="progress-pointU" style="background-color: gainsboro;">5</div>
+      <div class="progress-bar-fill" [ngStyle]="{'width.%': 0.2* 100}" style="background: linear-gradient(90deg, yellowgreen 0%, yellowgreen 50%, rgb(58, 102, 223) 100%);"> </div>
+    </div>
+  
+</div>
+
+
+
+
+<div *ngIf="(step == 2) && (selectedMode == 0) ">
+
+  <span class="span0"> UMKREISANALYSE </span> <span class="span1"> EINSTELLUNGEN </span>
+
+  <br>
+  <br>
+  <br>
+  <b> 2. Standort </b>
+  <br>
+  <br>
+
+
+  <b style="margin-left: 3%"> Geben Sie eine beliebige Adresse ein </b>
+
+  <div id="container">
+    <div id="inPutContainer">
+      <div>
+        <input
+          id="adress"
+          name="adress"
+          [(ngModel)]="selectedAddress"
+          
+          placeholder="Adresse..."
+          (keyup)="completeDrop()"
+          (click)="getCoordinates()"
+        />
+      </div>
+       <div *ngIf="showDropdown" style="max-height: 150px; overflow-y: scroll; border-bottom-right-radius: 15px; border-bottom-left-radius: 15px; border: 1px solid #10684E; padding-left: 8px;border-top: none; ">
+        <div *ngFor="let address of filteredAdressList" (click)="selectedAddress=address; getCoordinates()" class="dropAd">{{ address }}</div>
+      </div> 
+    </div>
+  </div>
+
+  <div style="display: flex; justify-content: center; flex-direction: row; " id="oder">
+    <div>
+      <b> oder </b>
+    </div>
+  </div>
+
+  <br>
+
+
+  <b style="margin-left: 3%">Wählen Sie einen Punkt auf der Karte aus </b> <br>
+
+
+
+  <div style="display: flex; justify-content: center; flex-direction: row; ">
+    <div>
+      <br>
+      <b>Punkt wählen </b>
+
+
+
+      <button mat-mini-fab aria-label="Example icon button with a home icon" style="background-color: #10684E; color: white"
+        (click)="chooseLocation(); selectedAddress=undefined" >
+        <mat-icon>my_location </mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <div style="display: flex; justify-content: center; flex-direction: row; ">
+    <div>
+      <br>
+
+      <br>
+
+
+
+
+      <div style=" display: flex; align-items: center; justify-content: center;">
+        <div style="width:50%">
+
+          <img *ngIf="storageService.imagePath != ''" id="image" [src]="storageService.imagePath" width="100%"
+            alt="Place image title" (load)="checkSteetName()">
+        </div>
+      </div>
+      <br>
+
+      <br>
+    </div>
+  </div>
+
+  <div style="display: flex; justify-content: space-between;">
+
+    <button mat-mini-fab aria-label="Example icon button with a home icon" style="background-color: #10684E; color: white"
+      (click)="step = 1">
+      <mat-icon>arrow_backward_ios </mat-icon>
+    </button>
+
+
+    <span *ngIf="storageService.imagePath != ''" style="margin-right: 0; " class="span2"> Nächster Schritt
+      <button mat-mini-fab aria-label="Example icon button with a home icon" style="background-color: #10684E; color: white"
+        (click)="step = 3">
+        <mat-icon>arrow_forward_ios </mat-icon>
+      </button>
+    </span>
+  </div>
+  <div class="progress-bar">
+    <div class="progress-pointU">✔</div>
+    <div class="progress-pointU" style="background-color: rgb(58, 102, 223);">2</div>
+    <div class="progress-pointU" style="background-color: gainsboro">3</div>
+    <div class="progress-pointU" style="background-color: gainsboro;">4</div>
+    <div class="progress-pointU" style="background-color: gainsboro;">5</div>
+    <div class="progress-bar-fill" [ngStyle]="{'width.%': 0.4* 100}" style="background: linear-gradient(90deg, yellowgreen 0%, yellowgreen 75%, rgb(58, 102, 223) 100%);"></div>
+  </div>
+</div>
+
+<div *ngIf="(step == 3) && (selectedMode == 0)">
+  <br>
+  <br>
+  <br>
+  <span class="span0"> 3. Umkreis</span> <br>
+  <span class="span0"> Wählen Sie ihren Radius aus: </span>
+
+  <div style="display: flex; justify-content: center; flex-direction: column;">
+    <button class="btn2" (click)="umkreisMode = 0; radiusObj.radius = 0"> Via Radius </button>
+    <br>
+    <div *ngIf="umkreisMode == 0">
+
+      <div style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
+        <div> <span class="span0"> {{ radiusObj.radius }} Kilometer </span> </div>
+        <mat-slider style="width: 90%;" min="0" max="30" step="0.1" [(ngModel)]="radiusObj.radius " discrete>
+          <input matSliderThumb (change)="setValue($event, 'radius')">
+        </mat-slider>
+      </div>
+
+
+    </div>
+
+    <br>
+    <button class="btn2" (click)="umkreisMode = 1; radiusObj.radius = 0"> Via Zeit </button>
+
+
+    <div *ngIf="umkreisMode == 1">
+
+      <div style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
+        <div> <span class="span0"> {{ radiusObj.radius }} Minuten </span> </div>
+        <mat-slider style="width: 90%;" min="0" max="60" step="1" [(ngModel)]="radiusObj.radius " discrete>
+          <input matSliderThumb (change)="setValue($event, 'time')">
+        </mat-slider>
+      </div>
+
+
+    </div>
+
+    
+
+  </div>
+
+  <div style="display: flex; justify-content: space-between;">
+
+    <button mat-mini-fab aria-label="Example icon button with a home icon" style="background-color: #10684E; color: white"
+      (click)="step = 2">
+      <mat-icon>arrow_backward_ios </mat-icon>
+    </button>
+
+
+    <span *ngIf="!radiusObj.isDistance" style="margin-right: 0; " class="span2"> Nächster Schritt
+      <button mat-mini-fab aria-label="Example icon button with a home icon" style="background-color: #10684E; color: white"
+        (click)="step = 3.5">
+        <mat-icon>arrow_forward_ios </mat-icon>
+      </button>
+    </span>
+
+    <span *ngIf="radiusObj.isDistance" style="margin-right: 0; " class="span2"> Nächster Schritt
+      <button mat-mini-fab aria-label="Example icon button with a home icon" style="background-color: #10684E; color: white"
+        (click)="step = 4">
+        <mat-icon>arrow_forward_ios </mat-icon>
+      </button>
+    </span>
+  </div>
+
+  <div class="progress-bar">
+    <div class="progress-pointU">✔</div>
+    <div class="progress-pointU">✔</div>
+    <div class="progress-pointU" style="background-color: rgb(58, 102, 223);">3</div>
+    <div class="progress-pointU" style="background-color: gainsboro;">4</div>
+    <div class="progress-pointU" style="background-color: gainsboro;">5</div>
+    <div class="progress-bar-fill" [ngStyle]="{'width.%': 0.6* 100}" style="background: linear-gradient(90deg, yellowgreen 0%, yellowgreen 83%, rgb(58, 102, 223) 100%);"></div>
+  </div>
+ 
+</div>
+
+
+<div *ngIf="((step == 3) && (selectedMode == 1)) || ((step == 3.5) && (selectedMode == 0) && !radiusObj.isDistance)">
+  <br>
+  <br>
+  <br>
+  <span class="span0" *ngIf="selectedMode == 1"> 2. Transportmittel</span>
+  <span class="span0" *ngIf="selectedMode == 0"> 4. Transportmittel</span>
+  <br>
+  <span class="span0"> Wählen Sie ihr Transportmittel aus: </span>
+
+  <div *ngIf="selectedMode == 0"  style="display: flex; justify-content: space-around; flex-direction: column; ;">
+    <button class="btn2" (click)="transportMode =  'CAR'; step = 4"> Auto </button>
+    <button class="btn2" (click)="transportMode =  'TRANSIT'; step = 4"> Öffentliche Verkehrsmittel </button>
+    <button class="btn2" (click)="transportMode =  'BICYCLE'; step = 4"> Fahrrad </button>
+    <button class="btn2" (click)="transportMode =  'WALK'; step = 4"> Zu Fuß </button>
+  </div>
+
+  <div *ngIf="selectedMode == 1"  style="display: flex; justify-content: space-around; flex-direction: column; ;">
+    <button class="btn2" (click)="transportMode =  'CAR'; step = 4"> Auto </button>
+    <button class="btn2" (click)="transportMode =  'TRANSIT'; step = 4"> Öffentliche Verkehrsmittel </button>
+  </div>
+
+
+  <div style="display: flex; justify-content: space-between;">
+
+    <button *ngIf="(selectedMode == 1)" mat-mini-fab aria-label="Example icon button with a home icon"
+      style="background-color: #10684E; color: white" (click)="step = 1">
+      <mat-icon>arrow_backward_ios </mat-icon>
+    </button>
+
+    <button *ngIf="(selectedMode == 0)" mat-mini-fab aria-label="Example icon button with a home icon"
+      style="background-color: #10684E; color: white" (click)="step = 3">
+      <mat-icon>arrow_backward_ios </mat-icon>
+    </button>
+
+
+    <!--<span  style="margin-right: 0; " class="span2"> Nächster Schritt
+        <button mat-mini-fab aria-label="Example icon button with a home icon" style="background-color: #10684E; color: white"(click)="step = 4" >
+          <mat-icon>arrow_forward_ios </mat-icon>
+        </button>
+      </span> -->
+  </div>
+
+  <div class="progress-bar" *ngIf="selectedMode == 0">
+    <div class="progress-pointU">✔</div>
+    <div class="progress-pointU">✔</div>
+    <div class="progress-pointU">✔</div>
+    <div class="progress-pointU" style="background-color: rgb(58, 102, 223);">4</div>
+    <div class="progress-pointU" style="background-color: gainsboro;">5</div>
+    <div class="progress-bar-fill" [ngStyle]="{'width.%': 0.8* 100}" style="background: linear-gradient(90deg, yellowgreen 0%, yellowgreen 87%, rgb(58, 102, 223) 100%);"></div>
+  </div>
+
+  <div class="progress-bar" *ngIf="selectedMode == 1" >
+    <div class="progress-point">✔</div>
+    <div class="progress-point" style="background-color: rgb(58, 102, 223);">2</div>
+    <div class="progress-point" style="background-color: gainsboro;">3</div>
+    <div class="progress-point" style="background-color: gainsboro;">4</div>
+    <div class="progress-point" style="background-color: gainsboro;">5</div>
+    <div class="progress-point" style="background-color: gainsboro;">6</div>
+    <div class="progress-bar-fill" [ngStyle]="{'width.%': 0.33 * 100}" style="background: linear-gradient(90deg, yellowgreen 0%, yellowgreen 75%, rgb(58, 102, 223) 100%);"></div>
+
+  </div>
+</div>
+
+
+<div *ngIf="(step == 4)">
+  <br>
+  <br>
+  <br>
+  <span class="span0"*ngIf="selectedMode == 0"> 5. Gebiet</span>
+  <span class="span0"*ngIf="selectedMode == 1"> 3. Gebiet</span>
+  <br>
+  <span class="span0"> Sollen Einrichtungen ausserhalb des Landkreises angezeigt werden?</span>
+
+  <div style="display: flex; justify-content: center; flex-direction: column;">
+    <button class="btn2" (click)="auswahlInLandkreis(false);"> Ja </button>
+    <br>
+    <br>
+    <button class="btn2" (click)="auswahlInLandkreis(true)"> Nein </button>
+
+  </div>
+
+  <div *ngIf="spin" style="display: flex; justify-content: center;">
+
+    <mat-spinner></mat-spinner>
+  </div>
+
+  <div style="display: flex; justify-content: space-between;">
+
+
+    <button *ngIf="selectedMode == 0 &&  radiusObj.isDistance" mat-mini-fab
+      aria-label="Example icon button with a home icon" style="background-color: #10684E; color: white" (click)="step = 3">
+      <mat-icon>arrow_backward_ios </mat-icon>
+    </button>
+
+    <button *ngIf="selectedMode == 0 &&  !radiusObj.isDistance" mat-mini-fab
+      aria-label="Example icon button with a home icon" style="background-color: #10684E; color: white" (click)="step = 3.5">
+      <mat-icon>arrow_backward_ios </mat-icon>
+    </button>
+
+
+    <button *ngIf="selectedMode == 1" mat-mini-fab aria-label="Example icon button with a home icon"
+      style="background-color: #10684E; color: white" (click)="step = 3">
+      <mat-icon>arrow_backward_ios </mat-icon>
+    </button>
+
+
+    <span *ngIf="selectedMode == 0 && within_flg != undefined" style="margin-right: 0; " class="span2"> Umkreisanalyse
+      starten
+      <button mat-mini-fab aria-label="Example icon button with a home icon" style="background-color: #10684E; color: white"
+        (click)="endDialog()">
+        <mat-icon>arrow_forward_ios </mat-icon>
+      </button>
+    </span>
+
+    <span *ngIf="selectedMode == 1 && within_flg != undefined" style="margin-right: 0; " class="span2"> Nächster Schritt
+      <button mat-mini-fab aria-label="Example icon button with a home icon" style="background-color: #10684E; color: white"
+        (click)="step = 5">
+        <mat-icon>arrow_forward_ios </mat-icon>
+      </button>
+    </span>
+  </div>
+  <div class="progress-bar" *ngIf="selectedMode == 0">
+    <div class="progress-pointU">✔</div>
+    <div class="progress-pointU">✔</div>
+    <div class="progress-pointU">✔</div>
+    <div class="progress-pointU">✔</div>
+    <div class="progress-pointU" style="background-color: rgb(58, 102, 223);">5</div>
+    <div class="progress-bar-fill" [ngStyle]="{'width.%': 1* 100}" style="background: linear-gradient(90deg, yellowgreen 0%, yellowgreen 90%, rgb(58, 102, 223) 100%);"></div>
+  </div>
+
+  <div class="progress-bar" *ngIf="selectedMode == 1" >
+    <div class="progress-point">✔</div>
+    <div class="progress-point">✔</div>
+    <div class="progress-point" style="background-color: rgb(58, 102, 223);">3</div>
+    <div class="progress-point" style="background-color: gainsboro;">4</div>
+    <div class="progress-point" style="background-color: gainsboro;">5</div>
+    <div class="progress-point" style="background-color: gainsboro;">6</div>
+    <div class="progress-bar-fill" [ngStyle]="{'width.%': 0.495* 100}" style="background: linear-gradient(90deg, yellowgreen 0%, yellowgreen 75%, rgb(58, 102, 223) 100%);"></div>
+  </div>
+</div>
+
+
+
+<div *ngIf="(step == 5)"  >
+  <br>
+  <br>
+  <br>
+  <span class="span0"> 4. Analysebene</span>
+  <span class="span0"> Auswahl der synthetischen Bevölkerung </span>
+
+
+  <div class="row2">
+    <div *ngFor="let p of popOptions" class="datahub-tile2" (click)="setPop(p.pop_name)">
+        <div>
+            <span class="span2" >   {{ p.pop_name }} </span> 
+        </div>
+  </div>
+
+   <!--<div class="datahub-tile2" >
+        
+        <div>
+            <span class="span2">  Entwicklungsprognose starten</span>
+        </div>
+    </div>-->
+
+</div>
+
+
+
+  <div style="display: flex; justify-content: space-between;">
+
+    <button mat-mini-fab aria-label="Example icon button with a home icon" style="background-color: #10684E; color: white"
+      (click)="step = 4">
+      <mat-icon>arrow_backward_ios </mat-icon>
+    </button>
+
+  </div>
+  <div class="progress-bar">
+    <div class="progress-point">✔</div>
+    <div class="progress-point">✔</div>
+    <div class="progress-point">✔</div>
+    <div class="progress-point" style="background-color: rgb(58, 102, 223);">4</div>
+    <div class="progress-point" style="background-color: gainsboro;">5</div>
+    <div class="progress-point" style="background-color: gainsboro;">6</div>
+    <div class="progress-bar-fill" [ngStyle]="{'width.%': 0.66* 100}" style="background: linear-gradient(90deg, yellowgreen 0%, yellowgreen 87%, rgb(58, 102, 223) 100%);"></div>
+  </div>
+
+</div>
+
+<div *ngIf="(step == 6)">
+  <br>
+  <br>
+  <br>
+  <span class="span0"> 5. Bevölkerungscharakteristiken</span>
+  <br>
+
+
+  <span class="span3"> von {{ minAge }} bis {{ maxAge }} Jahren</span>
+
+
+  <div style="display: flex; justify-content: space-evenly; flex-direction: row;">
+
+
+    <mat-slider style="width: 90%;" min="0" max="100" step="1" discrete>
+      <input matSliderStartThumb (change)="setValue($event, 'min')">
+      <input matSliderEndThumb (change)="setValue($event, 'max')">
+    </mat-slider>
+
+
+
+
+  </div>
+
+  <br>
+
+  <div style="margin-left: 5%; ">
+
+    <mat-radio-group aria-label="Select an option">
+    
+    <mat-radio-button class="example-margin">
+      Herzerkrankung
+    </mat-radio-button>
+  
+    <mat-radio-button class="example-margin">
+      Lungenerkrankung
+    </mat-radio-button>
+  
+    <mat-radio-button class="example-margin">
+      Lebererkrankung
+    </mat-radio-button>
+  
+    <mat-radio-button class="example-margin">
+      Gesamte Bevölkerung
+    </mat-radio-button>
+
+  </mat-radio-group>
+
+
+  </div>
+
+
+
+
+
+
+
+  <br>
+
+
+
+
+
+
+  <div style="display: flex; justify-content: space-between;">
+
+    <button mat-mini-fab aria-label="Example icon button with a home icon" style="background-color: #10684E; color: white"
+      (click)="step = 5">
+      <mat-icon>arrow_backward_ios </mat-icon>
+    </button>
+
+
+    <span style="margin-right: 0; " class="span2"> Nächster Schritt
+      <button mat-mini-fab aria-label="Example icon button with a home icon" style="background-color: #10684E; color: white"
+        (click)="step = 7">
+        <mat-icon>arrow_forward_ios </mat-icon>
+      </button>
+    </span>
+  </div>
+
+  <div class="progress-bar">
+    <div class="progress-point">✔</div>
+    <div class="progress-point">✔</div>
+    <div class="progress-point">✔</div>
+    <div class="progress-point">✔</div>
+    <div class="progress-point" style="background-color: rgb(58, 102, 223);">5</div>
+    <div class="progress-point" style="background-color: gainsboro;">6</div>
+    <div class="progress-bar-fill" [ngStyle]="{'width.%': 0.825* 100}" style="background: linear-gradient(90deg, yellowgreen 0%, yellowgreen 90%, rgb(58, 102, 223) 100%);"></div>
+  </div>
+
+</div>
+
+<div *ngIf="(step == 7)">
+  <br>
+  <br>
+  <br>
+  <span class="span0"> 6. Jahr der Bevölkerung</span> <br>
+  <span class="span0"> Welches Jahr der Bevölkerung? </span>
+  <span class="span0"> {{ popYear }}
+  </span>
+
+  <br>
+  <br>
+  <br>
+
+  <div class="slidecontainer">
+    <mat-slider style="width: 90%;" [min]="rangeMin" [max]="rangeMax" step="1" discrete>
+      <input matSliderThumb (change)="setValue($event, 'popYear')">
+
+    </mat-slider>
+
+  </div>
+
+
+  <div *ngIf="spin" style="display: flex; justify-content: center;">
+
+    <mat-spinner></mat-spinner>
+  </div>
+
+
+
+
+  <div style="display: flex; justify-content: space-between;">
+
+    <button mat-mini-fab aria-label="Example icon button with a home icon" style="background-color: #10684E; color: white"
+      (click)="step = 6">
+      <mat-icon>arrow_backward_ios </mat-icon>
+    </button>
+
+
+    <span style="margin-right: 0; " class="span2"> Rasteranalyse starten
+      <button mat-mini-fab aria-label="Example icon button with a home icon" style="background-color: #10684E; color: white"
+        (click)="endDialog()">
+        <mat-icon>arrow_forward_ios </mat-icon>
+      </button>
+    </span>
+  </div>
+
+
+  <div class="progress-bar">
+    <div class="progress-point">✔</div>
+    <div class="progress-point">✔</div>
+    <div class="progress-point">✔</div>
+    <div class="progress-point">✔</div>
+    <div class="progress-point">✔</div>
+    <div class="progress-point" style="background-color: rgb(58, 102, 223);">6</div>
+    <div class="progress-bar-fill" [ngStyle]="{'width.%': 1* 100}" style="background: linear-gradient(90deg, yellowgreen 0%, yellowgreen 90%, rgb(58, 102, 223) 100%);"></div>
+  </div>
+</div>

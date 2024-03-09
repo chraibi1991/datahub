@@ -1,0 +1,101 @@
+
+<div>
+    <span class="span0">  {{ data.Name }}  </span> 
+    <span class="span0">  {{ data.unit }}  </span> <br>
+    <br>
+    <br>
+
+
+    <span class="span2">  Diagrammtyp:  </span>      
+    <button class="btn3" [style.background-color]="selChart  === 0 ? 'lightgray' : 'white'"  (click)="changeChart(0)" (focus)="true"> Allgemein </button> 
+    <button class="btn3" [style.background-color]="selChart  === 1 ? 'lightgray' : 'white'"(click)="changeChart(1)"> Jährliche Veränderungsrate </button> 
+    <br> 
+    <button class="btn3" [style.background-color]="selChart  === 2 ? 'lightgray' : 'white'"(click)="changeChart(2)"> Änderungsrate zwischen Zeitpunkten </button>
+    <button class="btn3" [style.background-color]="selChart  === 3 ? 'lightgray' : 'white'"(click)="changeChart(3)"> Vergleich </button>
+    <br>
+
+
+
+    <div > 
+
+    <div *ngIf="selChart == 0">
+
+    <span class="span2" >  Filter:  </span> 
+    Zeitstrahl:
+    <mat-slider  min="{{ minYear }}" max="{{ maxYear }}" step="1" showTickMarks discrete
+    [displayWith]="formatLabel">
+    <input matSliderStartThumb (change)="filter($event, 'timeMin', chart)">
+    <input matSliderEndThumb (change)="filter($event, 'timeMax', chart)">
+  </mat-slider>
+
+      Wertefilter:  <mat-slider  min="{{ minValue }}" max="{{ maxValue }}" step="0.01" showTickMarks discrete
+      [displayWith]="formatLabel">
+      <input matSliderStartThumb (change)="filter($event, 'valMin', chart)">
+      <input matSliderEndThumb (change)="filter($event, 'valMax', chart)">
+    </mat-slider>
+
+  </div>
+
+  <div *ngIf="selChart == 1">
+
+    <span class="span2" >  Filter:  </span> 
+    Zeitstrahl:
+    <mat-slider  min="{{ minYear1 }}" max="{{ maxYear1 }}" step="1" showTickMarks discrete
+    [displayWith]="formatLabel">
+    <input matSliderStartThumb (change)="filter($event, 'timeMin', chart)">
+    <input matSliderEndThumb (change)="filter($event, 'timeMax', chart)">
+  </mat-slider>
+
+      Wertefilter:  <mat-slider  min="{{ minValue1 }}" max="{{ maxValue1 }}" step="0.01" showTickMarks discrete
+      [displayWith]="formatLabel">
+      <input matSliderStartThumb (change)="filter($event, 'valMin', chart)">
+      <input matSliderEndThumb (change)="filter($event, 'valMax', chart)">
+    </mat-slider>
+
+  </div>
+
+  <div *ngIf="selChart == 2">
+
+    <span class="span2" >  Filter:  </span> 
+    Zeitstrahl:
+    <mat-slider  min="{{ minYear }}" max="{{ maxYear }}" step="1" showTickMarks discrete
+    [displayWith]="formatLabel">
+    <input matSliderStartThumb (change)="filter($event, 'timeMin', chart)">
+    <input matSliderEndThumb (change)="filter($event, 'timeMax', chart)">
+  </mat-slider>
+
+      Wertefilter:  <mat-slider  min="{{ minValue2 }}" max="{{ maxValue2 }}" step="0.01" showTickMarks discrete
+      [displayWith]="formatLabel">
+      <input matSliderStartThumb (change)="filter($event, 'valMin', chart)">
+      <input matSliderEndThumb (change)="filter($event, 'valMax', chart)">
+    </mat-slider>
+
+  </div>
+
+  <div *ngIf="selChart == 3">
+
+    <!--<span class="span2" >  Filter:  </span> 
+  
+
+      Wertefilter:  <mat-slider  min="{{ minValue3 }}" max="{{ maxValue3 }}" step="0.01" showTickMarks discrete
+      [displayWith]="formatLabel">
+      <input matSliderStartThumb (change)="filter($event, 'valMin', chart)">
+      <input matSliderEndThumb (change)="filter($event, 'valMax', chart)">
+    </mat-slider>-->
+
+  </div>
+
+
+
+    <div style="width: 100%; ">
+        <canvas   id="canvas0">{{chart}}</canvas>
+      </div>
+    
+    </div>
+
+</div>
+
+
+
+
+

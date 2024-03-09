@@ -1,0 +1,101 @@
+span {
+    text-indent: 50px;
+    font-size: xx-large;
+    letter-spacing: 3px;
+    font-weight: bold;
+    color: #1c8108
+  }
+  .image{
+    height:100%; background-size:cover; width:auto;
+  background-image:url("../../../assets/background.png");
+    background-position:100% 100%;
+
+    background-color: #D4E5C6;
+  }
+
+
+
+
+
+
+
+
+  .span1{
+    color: #576958
+  }
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+
+}
+
+  .center{
+    padding: 50px; 
+    width: 50%; 
+    display: flex;
+    flex-direction: column;
+   
+    align-items: center;
+  }
+
+  .tile{
+    margin-top: 8%;
+    border: 3px solid grey; 
+    border-radius: 15px;
+    width: 80%; 
+    height: 400px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+  }
+
+  input{
+    padding-left: 20px; 
+    margin: 10px;
+    width: 400px; 
+    height: 30px; 
+    border: 3px solid grey; 
+    border-radius: 15px;
+  }
+
+  #intro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:50px;
+
+}
+
+#SA{
+  width: 50%;
+  height: 50%;
+  transition: transform 0.3s ease-in-out; 
+  
+}
+
+#SA:hover{
+  transform: scale(1.1);
+}
+
+#DG{
+
+  font-size: 64px;
+  letter-spacing: 3px;
+  font-weight: bold;
+  color: black;
+}
+
+#mlUni{
+  width:500px;
+}

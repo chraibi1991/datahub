@@ -1,0 +1,298 @@
+
+<div class="title">
+    <span  class="span0"> Prognosen </span> <span class="span1"> - Nachfrageberechnung medizinische Infrastruktur </span> <br>
+    <br>
+</div>
+
+
+<div class="main" style="height: calc(100vh - 100px); overflow-y: scroll;"> 
+
+
+<div class="firstPage" *ngIf="mode == 0 && (!selectedPop || !selectedInf)">
+
+<div class="row" style="position: relative;">
+   <h3 style="position: absolute; top:0;"> Infrastruktur </h3> 
+
+   <div *ngFor="let inf of infrastructure" > 
+    <div class="tile"(click) = "setInfrastructure(inf)" [style.background-color]="inf  == selectedInf ? 'lightgray' : 'white'" >
+        <div>
+            <span class="span2"> {{ inf.Typ }} </span> 
+        </div>
+    </div>
+
+</div>
+
+
+  <div class="tile">
+  <div>
+    <span class="span2" style='color: grey;'>Pflegeheime</span>
+  </div>
+  </div>
+
+
+  <div class="tile" >
+    
+      <div style="display: flex; justify-content: center; align-items: center;flex-direction: column;">
+        <span class="span2" style="text-indent: 0;color: grey;">Ambulante</span>
+        <span class="span2" style="text-indent: 0;color: grey;">Pflegedienste</span>
+      </div>
+    
+  </div>
+  
+  <div class="tile">
+    <div><span class="span2" style="color: grey;">Fachärzte</span></div>
+
+  </div>
+  <div class="tile">
+    <div><span class="span2" style="color: grey;">Operationen</span> </div>
+  </div>
+
+  
+</div>
+
+
+
+<div class="row" style="position: relative;">
+    <h3 style="position: absolute; top:0;"> Modellierte Bevölkerung </h3> 
+    <div  *ngFor="let p of pop" >
+        <div class="tile2" (click) = "setPop(p)" [style.background-color]="p == selectedPop? 'lightgray' : 'white'"> 
+        <div>
+            <span class="span2"> {{ p.pop_name }} </span> 
+        </div>
+    </div>
+    </div>
+    
+</div>
+
+</div>
+
+
+<div  *ngIf="selectedPop && (selectedInf != undefined) && mode < 1">
+    <div style="display: flex; justify-content: center;">
+        <span class="span2">  {{ charTitle }} </span> 
+    </div>
+
+    <br>
+    <br>
+    
+
+    <div style="display: flex; justify-content: space-around;">
+
+       
+        <div style="width: 30vw;">
+
+
+            <div>
+
+                <div style="display: flex; flex-direction: row;">
+                  <div class="cellHead">
+                    <b> </b>
+                    <b> Altersklasse  </b>
+                  </div>
+      
+                  <div class="cellHead">
+                    <b> </b>
+                    <b> Weiblich  </b>
+                  </div>
+
+                  <div class="cellHead">
+                    <b> </b>
+                    <b> Männlich  </b>
+                  </div>
+                </div>
+      
+                <div class="scroll"> 
+                <div style="display: flex; flex-direction: row;" 
+                  *ngFor="let res of demandTable.chartData.labels; let i = index; ">
+      
+                
+                    <div class="cell" >
+                      <b>
+                        {{ res }}
+                      </b>
+                    </div>
+      
+                    <div class="cell" [ngStyle]="{'color': changedIndizesF.indexOf(i) > - 1   ? '#65ab96' : 'black'}">
+                      <b>
+                        {{  demandTable.chartData.datasets[0].data[i]}}
+      
+                      </b>
+      
+                    </div>
+
+                    <div class="cell" [ngStyle]="{'color': changedIndizesM.indexOf(i) > - 1    ? '#65ab96' : 'black'}">
+                        <b>
+                            {{  demandTable.chartData.datasets[1].data[i]}}
+        
+                        </b>
+        
+                      </div>
+      
+             
+      
+                </div>
+            </div>
+      
+                <button class="btn2" style="width: 18vw;" (click)="reset()">
+                  Zurücksetzen
+                </button>
+      
+              </div>
+        </div>
+
+        <div style="width: 65vw; height: 60vh; margin-top: 5vh; ">
+            <canvas  id="canvasGeneral" >
+                {{ chartGeneral }}
+              </canvas>
+        </div>
+
+
+
+
+
+    </div>
+</div>
+
+
+<div class="thirdContainer" *ngIf = "mode ==  1"> 
+
+    <div>
+        <div class="row1">
+          <div id="map-container">
+            <div class="map" leaflet [leafletOptions]="options" [leafletLayers]="layers"
+              (leafletMapReady)="onMapReady($event)"></div>
+          </div>
+            
+          <div id="chart-container">
+            <div style="display: flex; justify-content: center; align-items: center;"> 
+            <h3> {{ charTitle  }} </h3>
+          </div >
+            <div class="generalChart"> <!-- *ngIf="indi[0]" -->
+
+         
+      
+              <div  style="display: flex; justify-content: center; align-items: center;">
+             
+
+              
+              
+  
+                <!--<ng-container>
+                  <div>
+                    Wertefilter: <mat-slider min="{{ minValue }}" max="{{ maxValue }}" discrete step="0.1"
+                      [displayWith]="formatLabel">
+                      <input matSliderStartThumb value="{{ minValue }}" (change)="filter($event, 'valMin', chart)">
+                      <input matSliderEndThumb value="{{ maxValue }}" (change)="filter($event, 'valMax', chart)">
+                    </mat-slider>
+                  </div>
+                </ng-container>-->
+                <div style="margin-left: 10px; ">
+                  Zeitstrahl:
+                  <mat-slider min="{{ minYear }}" max="{{ maxYear }}" step="1" showTickMarks discrete
+                    [displayWith]="formatLabel">
+                    <input matSliderStartThumb value="{{ minYear }}" (change)="filter($event, 'timeMin', chart)">
+                    <input matSliderEndThumb value="{{ maxYear }}" (change)="filter($event, 'timeMax', chart)">
+                  </mat-slider>
+                </div>
+              </div>
+      
+              <div> 
+      
+              <div style="display: flex;   flex-wrap: wrap; gap: 2px; height: 20px; margin-bottom:10px;">
+      
+                <div style="display: flex;" *ngFor="let l of chartLegend ">
+                  <div [style.background-color]="l.backgroundColor" style="width:10px; height: 20px "> </div>
+      
+                  <div style="margin-left: 5px" (click)="filterRegion(l)">
+      
+                    <s *ngIf="l.disabled"> {{ l.Object_Nam }} </s>
+                    <span *ngIf="!l.disabled"> {{ l.Object_Nam }} </span>
+                  </div>
+                </div>
+      
+                <div style="display: flex;" >
+                  <div  style="width:10px; height: 20px "> </div>
+      
+                  <div style="margin-left: 5px" >
+         
+                    <u (click)="deselectAll(false)" *ngIf="selectMode"> Alle auswählen </u>
+                    <u (click)="deselectAll(true)" *ngIf="!selectMode"> Alle abwählen </u>
+                  </div>
+                </div>
+      
+             
+      
+              </div>
+      
+              <br>
+              <br>
+      
+      
+      
+      <div >
+              <canvas  style="margin-top: 30px; width: 40vw" id="canvasGeneral">
+                {{ chartGeneral }}
+              </canvas>
+            </div>
+          </div>
+            </div>
+        
+      
+      
+      
+      
+            <div  style="display: flex; justify-content: space-around;">
+      
+              <button mat-mini-fab  style="color:white" > <mat-icon>share</mat-icon>
+              </button>
+      
+      
+              <button mat-mini-fab style="margin-left: 10px;color:white"> <mat-icon>save_alt</mat-icon>
+              </button>
+      
+            </div>
+          </div>
+        </div>
+
+
+        <div style="display: flex; margin-top: 2vh; justify-content: center; align-items: center;"> 
+          <div *ngFor="let ind of indicators">
+            <button class="btn3" [style.background-color]="selectedInd  === ind ? 'lightgray' : 'white'"
+            (click)="loadChart(ind)"> {{ ind.name }} </button>
+  
+          </div>
+
+        </div>
+
+
+     
+      
+
+      </div>
+
+
+</div>
+
+<div class="button-container">
+
+    <span *ngIf="mode > 1 ||  (selectedPop && selectedInf)" style="margin-right: 0; " class="span2">
+      <button mat-mini-fab aria-label="Example icon button with a home icon" style="background-color: #10684E;  color:white"
+        (click)="back()">
+        <mat-icon>arrow_backward_ios </mat-icon>
+      </button>
+    </span>
+
+
+    <span *ngIf="mode == 0 &&  (selectedPop && selectedInf)" style="margin-right: 0; " class="span2"> Nächster Schritt
+      <button mat-mini-fab aria-label="Example icon button with a home icon" style="background-color: #10684E;  color:white"
+        (click)="next()">
+        <mat-icon>arrow_forward_ios </mat-icon>
+      </button> </span>
+
+
+  </div>
+
+
+
+
+</div>

@@ -1,0 +1,9 @@
+{
+    "/api/*": {
+      "target": "https://api.cephlabs.de/",
+      "secure": false,
+      "logLevel": "debug",
+      "changeOrigin": true,
+      "pathRewrite": { "^/api": "" }
+    }
+  }

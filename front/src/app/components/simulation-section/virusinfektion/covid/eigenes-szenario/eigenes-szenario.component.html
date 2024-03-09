@@ -1,0 +1,238 @@
+
+<div style="display: flex; justify-content: center; align-items: center;">
+    <br>
+    <br><div>
+    <span class="span0 "> SIMULATION. VIRUSINFEKTION. COVID-19. Eigenes Szenario  </span>
+</div>
+</div>
+
+<div class="container" *ngIf="step == 1 || step== 1.5" >
+    <div class="row2">
+        <div class="boxTitle">
+            Wählen Sie eine Population:
+        </div>
+        <div *ngFor="let p of popOptions" class="datahub-tile2" (click)="setPop(p.pop_name)" [ngStyle]="{'background-color': selectedBackgroundColor == p.pop_name ? 'yellowgreen' : 'white'}">
+            <div>
+                <span class="span2" >   {{ p.pop_name }} </span> 
+            </div>
+      </div>
+    </div>
+    
+    <div *ngIf="years" class="row2">
+        <div class="boxTitle">
+            Wählen Sie ein Jahr:
+        </div>
+        <div *ngFor="let y of years" class="yerasRender"  [ngStyle]="{'background-color': selectedYearBackgroundColor == y ? 'yellowgreen' : 'white'}">
+            <div (click)="month = true;selectYear(y)">
+                <span>{{ y }}</span>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="month" class="row3">
+        <div class="boxTitle">
+            Wählen Sie ein Monat:
+        </div>
+        <div *ngFor="let m of monate" class="monthsRender" [ngStyle]="{'background-color': selectedMonthBackgroundColor === m ? 'yellowgreen' : 'white'}">
+            <div (click)="selectMonth(m);step = 1.5">
+                <span> {{ m }} </span> 
+            </div>
+        </div>
+    </div>
+
+
+
+
+    
+    <div style="display: flex; justify-content: space-between; position: absolute; bottom: 40px; width: 90%;">
+    
+        <button mat-mini-fab aria-label="Example icon button with a home icon" style="background-color: #10684E; color: white"
+          (click)="clickTile()">
+          <mat-icon>arrow_back_ios_new</mat-icon>
+        </button>
+    
+    
+        <span style="margin-right: 0; " class="span2" *ngIf="step== 1.5"> 
+          <button mat-mini-fab aria-label="Example icon button with a home icon" style="background-color: #10684E; color: white"
+            (click)="step = 2">
+            <mat-icon>arrow_forward_ios </mat-icon>
+          </button>
+        </span>
+    </div>
+</div>
+
+
+<div class="container" *ngIf="step == 2" >
+
+    <div class="Parameter">
+
+        <div class="category1">
+            <div style="padding-top: 20px; font-weight: bold;">Maskenpflicht</div>
+
+                    <div class="yesNo">
+                        <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+                            <mat-button-toggle (click)="maskYesNo('Ja')">Ja</mat-button-toggle>
+                            <mat-button-toggle (click)="maskYesNo('Nein')">Nein</mat-button-toggle>
+                          </mat-button-toggle-group>
+                     </div>
+
+                    <div class="rules" *ngIf="yesNoMask == 'Ja'">
+
+                        <div class="Arbeit" style="display: flex; justify-content: center; align-items: center; flex-direction: column ;width: 100%; padding-top: 20px; border-bottom: 1px dashed #cccccc88;">
+
+                            <div style="font-weight: bold;"> Arbeit:</div>
+
+                                <div class="yesNo">
+                                    <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+                                        <mat-button-toggle (click)="workYesNo('Ja')">Ja</mat-button-toggle>
+                                        <mat-button-toggle (click)="workYesNo('Nein')">Nein</mat-button-toggle>
+                                      </mat-button-toggle-group></div>
+    
+                                <mat-form-field *ngIf="yesNoWork=='Ja'">
+                                    <mat-label> Inzidenz bei Arbeit</mat-label>
+                                    <mat-select [(ngModel)]="selectArbeitMask">
+                                    <mat-option *ngFor="let e of [].constructor(7);
+                                    let i = index;" value="{{i*50 }}"> {{ i*50 }}</mat-option>
+                                    </mat-select>
+                              </mat-form-field>
+
+                            
+                        </div>
+
+    
+                        <div class="Bildungseinrichtungen" style="display: flex; justify-content: center; align-items: center; flex-direction: column ;width: 100%; padding-top: 20px;">
+
+                            <div style="font-weight: bold;"> Bildungseinrichtungen:</div>
+
+                            <div class="yesNo">
+                                <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+                                    <mat-button-toggle (click)="bildYesNo('Ja')">Ja</mat-button-toggle>
+                                    <mat-button-toggle (click)="bildYesNo('Nein')">Nein</mat-button-toggle>
+                                  </mat-button-toggle-group></div>
+
+                            <mat-form-field *ngIf="yesNoBild=='Ja'">
+                                <mat-label> Inzidenz bei Bildungseinrichtungen</mat-label>
+                                <mat-select [(ngModel)]="selectBildungMask">
+                                <mat-option *ngFor="let e of [].constructor(7);
+                                let i = index;" value="{{i*50 }}"> {{ i*50 }}</mat-option>
+                                </mat-select>
+                          </mat-form-field>
+                        </div>
+                    </div>
+        </div>
+
+
+
+
+        <div class="category2">
+            <div style="padding-top: 20px; font-weight: bold;">Impfungen</div>
+
+
+            <div class="rulesI">
+                <mat-form-field style="width: 20vw;">
+                    <mat-label>Tag Verfügbarkeit Impfstoff </mat-label>
+                    <input matInput [(ngModel)]="inputimpfTag" placeholder="Ex. 10" style="width: 100%;">
+                  </mat-form-field>
+
+                    <div   class="sli">
+                        <label> initiale  Impfquote:  {{impfquote}} %</label>
+                        <mat-slider min="1" max="20" step="0.1" value="0.5"  style="width: 20vw;">
+                        <input matSliderThumb [(ngModel)]="impfquote">
+                        </mat-slider>
+                    </div>  
+                    
+                    <div  class="sli">
+                        <label> tägliche Veränderungsrate: {{rate}} %</label>
+                        <mat-slider min="0.1" max="1" step="0.1" value="0.5"   style="width: 20vw;">
+                        <input matSliderThumb [(ngModel)]="rate">
+                        </mat-slider>
+                    </div>
+
+                    <button mat-flat-button color="primary"(click)="start()"> 
+                        berechne 
+                    </button>
+
+                    <canvas id="impfungsDiagramm"></canvas>
+
+            </div>
+
+        </div>
+
+        <div class="category3">
+            <div style="padding-top: 20px; font-weight: bold;">Einrichtungsschließung</div>
+            <div class="yesNo">
+                <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+                    <mat-button-toggle (click)="EinrichtYesNo('Ja')">Ja</mat-button-toggle>
+                    <mat-button-toggle (click)="EinrichtYesNo('Nein')">Nein</mat-button-toggle>
+                  </mat-button-toggle-group> </div>
+
+            <div class="rules" *ngIf="yesNoEinricht == 'Ja'">
+
+                <div class="Arbeit" style="display: flex; justify-content: center; align-items: center; flex-direction: column ;width: 100%; padding-top: 20px; border-bottom: 1px dashed #cccccc88;">
+                    <div style="font-weight: bold;"> Arbeit:</div>
+
+                        <div class="yesNo">
+                            <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+                                <mat-button-toggle (click)="facilityYesNo('Ja')">Ja</mat-button-toggle>
+                                <mat-button-toggle (click)="facilityYesNo('Nein')">Nein</mat-button-toggle>
+                              </mat-button-toggle-group>
+                            </div>
+
+                        <mat-form-field *ngIf="yesNoFacility=='Ja'">
+                            <mat-label> Inzidenz bei Arbeit</mat-label>
+                            <mat-select [(ngModel)]="selectArbeitEinricht">
+                            <mat-option *ngFor="let e of [].constructor(7);
+                            let i = index;" value="{{i*50 }}"> {{ i*50 }}</mat-option>
+                            </mat-select>
+                      </mat-form-field>
+
+                    
+                </div>
+
+                <div class="Arbeit" style="display: flex; justify-content: center; align-items: center; flex-direction: column ;width: 100%; padding-top: 20px;">
+                    <div style="font-weight: bold;"> Bildungseinrichtung:</div>
+
+                        <div class="yesNo">
+                            <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+                                <mat-button-toggle (click)="facilityBildYesNo('Ja')">Ja</mat-button-toggle>
+                                <mat-button-toggle (click)="facilityBildYesNo('Nein')">Nein</mat-button-toggle>
+                              </mat-button-toggle-group>
+                        </div>
+
+                        <mat-form-field *ngIf="yesNoBildFacility=='Ja'">
+                            <mat-label> Inzidenz bei Bildungseinrichtung</mat-label>
+                            <mat-select [(ngModel)]="selectBildungEinricht">
+                            <mat-option *ngFor="let e of [].constructor(7);
+                            let i = index;" value="{{i*50 }}"> {{ i*50 }}</mat-option>
+                            </mat-select>
+                      </mat-form-field>
+
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    
+    <div style="display: flex; justify-content: space-between; position: absolute; bottom: 40px; width: 90%;">
+    
+        <button mat-mini-fab aria-label="Example icon button with a home icon" style="background-color: #10684E; color: white"
+          (click)="step = 1.5">
+          <mat-icon>arrow_back_ios_new</mat-icon>
+        </button>
+    
+    
+        <span style="margin-right: 0; " class="span2"> Simulation Starten
+          <button mat-mini-fab aria-label="Example icon button with a home icon" style="background-color: #10684E; color: white"
+            (click)="clickTile2()"> 
+            <mat-icon>arrow_forward_ios </mat-icon>
+          </button>
+        </span>
+    </div>
+</div>
+
+
+

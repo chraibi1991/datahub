@@ -1,0 +1,915 @@
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+/>
+
+
+
+<div class="map-container">
+    <div class="map-frame">
+      <div>
+        <div *ngIf="showSpinnerWhole" style="   position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(1, 135, 245, 0.1);
+                display: flex;
+        justify-content: center;
+        align-items: center;
+         z-index: 1005;">
+
+          <mat-spinner></mat-spinner>
+        </div>
+        <div
+          *ngIf="openStreetSidebar"
+          id="sidebar_street"
+          [ngStyle]="openStreetSidebar ? { width: '30%' } : { width: '0%' }"
+          class="col-md-9"
+        >
+          <div style="display: flex; align-items: center; padding: 10px">
+            <span
+              (click)="closeStreetSidebar()"
+              style="cursor: pointer; padding-right: 10px"
+            >
+              <i
+                class="bi bi-x-circle-fill"
+                style="font-size: 24px; color: blue"
+              ></i>
+            </span>
+            <h1 style="text-align: left; margin: 0">
+              StreetXpert: The Interactive Street Modifier
+            </h1>
+          </div>
+          <form #Formstreet="ngForm">
+            <div class="form-group">
+              <label for="freespeed1">freespeed (m/s)</label>
+              <div class="input-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="freespeed1"
+                  id="freespeed1"
+                  [(ngModel)]="freespeed"
+                  required
+                  pattern="^[0-9]+(\.[0-9]+)?$"
+                  #freespeed1="ngModel"
+                />
+                <button
+                  class="btn btn-outline-success"
+                  (click)="saveFreespeed()"
+                  [disabled]="freespeed1?.invalid"
+                >
+                  Save freespeed
+                </button>
+              </div>
+              <div
+                *ngIf="
+                  !freespeed1?.valid && (freespeed1?.touched || freespeed1?.dirty)
+                "
+                class="alert alert-danger"
+              >
+                <div *ngIf="freespeed1.errors?.['required']">
+                  field is required.
+                </div>
+                <div *ngIf="freespeed1?.errors?.['pattern']">
+                  freespeed must be a number.
+                </div>
+              </div>
+              <label for="capacity">capacity (vehicles/hour)</label>
+              <div class="input-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="capacity"
+                  id="capacity1"
+                  [(ngModel)]="capacity"
+                  #capacity1="ngModel"
+                  required
+                  pattern="^[0-9]+(\.[0-9]+)?$"
+                />
+                <button
+                  class="btn btn-outline-success"
+                  (click)="saveCapacity()"
+                  [disabled]="capacity1?.invalid"
+                >
+                  Save capacity
+                </button>
+              </div>
+              <div
+                *ngIf="
+                  !capacity1?.valid && (capacity1?.touched || capacity1?.dirty)
+                "
+                class="alert alert-danger"
+              >
+                <div *ngIf="capacity1.errors?.['required']">
+                  field is required.
+                </div>
+                <div *ngIf="capacity1?.errors?.['pattern']">
+                  capacity must be a number.
+                </div>
+              </div>
+            </div>
+            <div class="btn-group" style="margin-top: 25px">
+              <button
+                (click)="saveDataStreet()"
+                class="btn btn-outline-primary"
+                [disabled]="freespeed1?.invalid || capacity1.invalid"
+              >
+                <i class="bi bi-save"></i>
+                Save all
+              </button>
+              <button
+                (click)="UpdateNetwork()"
+                class="btn btn-outline-primary"
+                [disabled]="freespeed1?.invalid || capacity1.invalid"
+              >
+                <i class="bi bi-plus-square"></i> Create Network.xml
+              </button>
+              <button class="btn btn-outline-danger" (click)="deleteRedLayer()">
+                <i class="bi bi-trash3-fill"></i>Delete
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div
+        *ngIf="properties != undefined && openLayerSidebar"
+        id="sidebar"
+        [ngStyle]="openLayerSidebar ? { width: '30%' } : { width: '0%' }"
+      >
+        <div style="display: flex; align-items: center; padding: 10px">
+          <span (click)="closeNav()" style="cursor: pointer; padding-right: 10px">
+            <i
+              class="bi bi-x-circle-fill"
+              style="font-size: 24px; color: rgb(41, 41, 138)"
+            ></i>
+          </span>
+          <h1 style="text-align: left; margin: 0">
+            StreetXpert: The Interactive Street Modifier
+          </h1>
+        </div>
+  
+        <form #Form="ngForm">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="id">id</label>
+                <input
+                  [(ngModel)]="properties.id"
+                  #name="ngModel"
+                  name="id"
+                  id="id"
+                  type="text"
+                  class="form-control"
+                  disabled
+                />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="from">from</label>
+                <input
+                  [(ngModel)]="properties.from"
+                  #name="ngModel"
+                  name="from"
+                  id="from"
+                  type="text"
+                  class="form-control"
+                  disabled
+                />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="to">to</label>
+                <input
+                  [(ngModel)]="properties.to"
+                  name="to"
+                  id="to"
+                  type="text"
+                  class="form-control"
+                  disabled
+                />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="length">length</label>
+                <input
+                  [(ngModel)]="properties.length"
+                  name="length"
+                  id="length"
+                  type="text"
+                  class="form-control"
+                  disabled
+                />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="freespeed">freespeed (m/s)</label>
+                <input
+                  [(ngModel)]="properties.freespeed"
+                  name="freespeed"
+                  id="freespeed"
+                  type="text"
+                  class="form-control"
+                  #myName="ngModel"
+                  pattern="^[0-9]+(\.[0-9]+)?$"
+                  required
+                />
+                <div
+                  *ngIf="!myName.valid && (myName.touched || myName.dirty)"
+                  class="alert alert-danger"
+                >
+                  <div *ngIf="myName?.errors?.['required']">
+                    field is required.
+                  </div>
+                  <div *ngIf="myName?.errors?.['pattern']">
+                    freespeed must be a number.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="capacity">capacity (vehicles/hour)</label>
+                <input
+                  [(ngModel)]="properties.capacity"
+                  name="capacity"
+                  id="capacity"
+                  type="text"
+                  class="form-control"
+                  #myC="ngModel"
+                  pattern="^[0-9]+(\.[0-9]+)?$"
+                  required
+                />
+                <div
+                  *ngIf="!myC.valid && (myC.touched || myC.dirty)"
+                  class="alert alert-danger"
+                >
+                  <div *ngIf="myC?.errors?.['required']">field is required.</div>
+                  <div *ngIf="myC?.errors?.['pattern']">
+                    capacity must be a number.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="modes">modes</label>
+                <input
+                  [(ngModel)]="properties.modes"
+                  name="modes"
+                  id="modes"
+                  type="text"
+                  class="form-control"
+                  #myM="ngModel"
+                  pattern="^[a-zA-Z,]+$"
+                  required
+                />
+                <div
+                  *ngIf="!myM.valid && (myM.touched || myM.dirty)"
+                  class="alert alert-danger"
+                >
+                  <div *ngIf="myM?.errors?.['required']">field is required.</div>
+                  <div *ngIf="myM?.errors?.['pattern']">modes must be char.</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="Street">Street</label>
+                <input
+                  [(ngModel)]="properties.Street"
+                  name="Street"
+                  id="Street"
+                  type="text"
+                  class="form-control"
+                  disabled
+                />
+              </div>
+            </div>
+          </div>
+        </form>
+  
+        <div class="btn-section">
+          <div class="btn-group">
+            <button
+            data-bs-toggle="modal"
+            data-bs-target="#staticBackdropSave"
+              class="btn btn-primary"
+              [disabled]="myName?.invalid || myC.invalid || myM.invalid"
+            >
+              <i class="bi bi-save"></i>Save
+            </button>
+            <div
+            class="modal fade"
+            id="staticBackdropSave"
+            data-bs-backdrop="static"
+            data-bs-keyboard="false"
+            tabindex="-1"
+            aria-labelledby="staticBackdropLabelSave"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="staticBackdropLabelSave">
+                    Save Confirmation
+                  </h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <p>Are you sure you want to save the modifications?</p>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    No
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-dismiss="modal"
+                    (click)="saveData()"
+                  >
+                    Yes
+                  </button>
+                </div>
+              </div>
+            </div>
+            </div>
+  
+  
+            <button
+              id="button2"
+              data-bs-toggle="modal"
+              data-bs-target="#staticBackdropNetwork"
+              class="btn btn-primary"
+              [disabled]="myName?.invalid || myC.invalid || myM.invalid"
+            >
+              <i class="bi bi-plus-square"></i>Create Network.xml
+            </button>
+            <div
+            class="modal fade"
+            id="staticBackdropNetwork"
+            data-bs-backdrop="static"
+            data-bs-keyboard="false"
+            tabindex="-1"
+            aria-labelledby="staticBackdropLabelNetwork"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="staticBackdropLabelNetwork">
+                    Network Confirmation
+                  </h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <p>Are you sure you want to create the network.xml?</p>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    No
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-dismiss="modal"
+                    (click)="UpdateNetwork()"
+                  >
+                    Yes
+                  </button>
+                </div>
+              </div>
+            </div>
+            </div>
+  
+  
+            <button
+              class="btn btn-outline-danger"
+              data-bs-toggle="modal"
+              data-bs-target="#staticBackdrop"
+              (click)="delete()"
+            >
+              <i class="bi bi-trash-fill"></i>Delete
+            </button>
+            <div
+              class="modal fade"
+              id="staticBackdrop"
+              data-bs-backdrop="static"
+              data-bs-keyboard="false"
+              tabindex="-1"
+              aria-labelledby="staticBackdropLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">
+                      Delete Confirmation
+                    </h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Are you sure you want to delete?</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      No
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-primary"
+                      data-bs-dismiss="modal"
+                      (click)="delete()"
+                    >
+                      Yes
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <button (click)="zoomIn()" class="btn btn-outline-primary">
+              <i class="bi bi-zoom-in"></i>Zoom in
+            </button>
+            <button (click)="zoomOut()" class="btn btn-outline-primary">
+              <i class="bi bi-zoom-out"></i>Zoom out
+            </button>
+          </div>
+        </div>
+      </div>
+  
+      <div
+        id="map"
+        [ngStyle]="
+          (properties != undefined && openLayerSidebar) || openStreetSidebar
+            ? { width: '70%' }
+            : { width: '100%' }
+        "
+      >
+        <div class="button-container-street-finder">
+          <button (click)="toggleBoxStreetFinder()" class="street-finder-button">
+            <i class="bi bi-signpost-split"></i> Looking for Streets?
+          </button>
+        </div>
+        <div
+          class="transparent-box-street-finder"
+          [ngClass]="{ 'show-box-street-finder': isBoxVisibleStreetFinder }"
+        >
+          <div class="form-group">
+            <i class="bi bi-x minix" (click)="toggleBoxStreetFinder()" style="position: absolute; top: 10px; right: 10px"></i>
+            <label
+              for="street"
+              style="
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: bold;
+                font-size: 220%;
+                color: Black;
+              "
+              >StreetFinder</label
+            >
+            <div>
+              <div>
+                <input
+                  id="street"
+                  name="street"
+                  [(ngModel)]="street"
+                  (keyup.enter)="OnKeyUp()"
+                  type="search"
+                  class="form-control"
+                  [typeahead]="streetOptions"
+                />
+                <div *ngIf="findStreet" [ngSwitch]="numberStreetName">
+                  <div *ngSwitchCase="0" class="alert alert-danger">
+                    No streets matching the given name were found.
+                  </div>
+                  <div *ngSwitchCase="1" class="alert alert-success">
+                    One street matching the given name was found. Please click on
+                    the street to proceed with the modification.
+                  </div>
+                  <div *ngSwitchDefault class="alert alert-success">
+                    A total of {{ numberStreetName }} streets matching the given
+                    name were found. Please click on the desired street to proceed
+                    with the modification.
+                  </div>
+                </div>
+              </div>
+              <span class="input-group-btn">
+                <button
+                  (click)="OnKeyUp()"
+                  class="btn btn-secondary"
+                  style="margin-top: 10px; margin-right: 5px"
+                >
+                  <i class="bi bi-search"></i>Search
+                </button>
+                <button
+                  (click)="reset()"
+                  class="btn btn-secondary"
+                  style="margin-top: 10px"
+                >
+                  <i class="bi bi-arrow-counterclockwise"></i>
+                  Reset StreetFinder
+                </button>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="button-container">
+          <button (click)="toggleBox()" class="filtre-button">
+            <i class="bi bi-funnel-fill"></i> Filter
+          </button>
+        </div>
+  
+        <div class="transparent-box" [ngClass]="{ 'show-box': isBoxVisible }">
+          <i class="bi bi-x minix" (click)="toggleBox()" style="position: absolute; top: 10px; right: 10px"></i>
+          <div class="form-group modes-section">
+            <label for="filteredModes" class="section-label"> Modes:</label>
+            <div class="input-group">
+              <input
+                id="filteredModes"
+                name="filteredModes"
+                [(ngModel)]="filteredModes"
+                type="search"
+                class="form-control"
+                [typeahead]="modeOptions"
+                [disabled]="!filterModesEnabled"
+                #Mod="ngModel"
+              />
+              <span class="input-group-btn">
+                <button
+                  class="btn btn-secondary"
+                  [disabled]="!filterModesEnabled"
+                  (click)="setAllModes()"
+                >
+                  Set All
+                </button>
+              </span>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-check-inline">
+                  <input
+                    type="checkbox"
+                    [(ngModel)]="filterModesEnabled"
+                    id="filterModesCheckbox"
+                    class="form-check-input"
+                  />
+                  <label for="filterCapacityCheckbox" class="form-check-label"
+                    >Enable Filter</label
+                  >
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="btn-Search">
+                  <button
+                    (click)="filtredeModesSearch()"
+                    [disabled]="!filterModesEnabled"
+                    class="btn btn-secondary"
+                  >
+                    <i class="bi bi-search"></i> Search
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="form-group freespeed-section">
+            <div class="row">
+              <div class="col-md-6">
+                <label for="filteredFreespeedMin" class="section-label"
+                  >Freespeed Min:</label
+                >
+                <input
+                  [(ngModel)]="filteredFreespeedMin"
+                  name="filteredFrespeedMin"
+                  id="filteredFrespeedMin"
+                  type="text"
+                  class="form-control"
+                  [disabled]="!filterFreespeedEnabled"
+                />
+              </div>
+  
+              <div class="col-md-6">
+                <label for="filteredFreespeedMax" class="section-label"
+                  >Freespeed Max:</label
+                >
+                <input
+                  [(ngModel)]="filteredFreespeedMax"
+                  name="filteredFrespeedMax"
+                  id="filteredFrespeedMax"
+                  type="text"
+                  class="form-control"
+                  [disabled]="!filterFreespeedEnabled"
+                />
+              </div>
+  
+              <div class="col-md-6">
+                <div class="form-check-inline">
+                  <input
+                    type="checkbox"
+                    [(ngModel)]="filterFreespeedEnabled"
+                    id="filterFreespeedCheckbox"
+                    class="form-check-input"
+                  />
+                  <label for="filterFreespeedCheckbox" class="form-check-label"
+                    >Enable Filter</label
+                  >
+                </div>
+              </div>
+  
+              <div class="col-md-6">
+                <div class="btn-Search">
+                  <button
+                    (click)="filteredFreespeedSearch()"
+                    class="btn btn-secondary"
+                    [disabled]="!filterFreespeedEnabled"
+                  >
+                    <i class="bi bi-search"></i> Search
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="form-group capacity-section">
+            <div class="row">
+              <div class="col-md-6">
+                <label for="filteredCapacityMin" class="section-label"
+                  >Capacity Min:</label
+                >
+                <input
+                  [(ngModel)]="filteredCapacityMin"
+                  name="filteredCapacityMin"
+                  id="filteredCapacityMin"
+                  type="text"
+                  class="form-control"
+                  [disabled]="!filterCapacityEnabled"
+                />
+              </div>
+  
+              <div class="col-md-6">
+                <label for="filteredCapacityMax" class="section-label"
+                  >Capacity Max:</label
+                >
+                <input
+                  [(ngModel)]="filteredCapacityMax"
+                  name="filteredCapacityMax"
+                  id="filteredCapacityMax"
+                  type="text"
+                  class="form-control"
+                  [disabled]="!filterCapacityEnabled"
+                />
+              </div>
+  
+              <div class="col-md-6">
+                <div class="form-check-inline">
+                  <input
+                    type="checkbox"
+                    [(ngModel)]="filterCapacityEnabled"
+                    id="filterCapacityCheckbox"
+                    class="form-check-input"
+                  />
+                  <label for="filterCapacityCheckbox" class="form-check-label"
+                    >Enable Filter</label
+                  >
+                </div>
+              </div>
+  
+              <div class="col-md-6">
+                <div class="btn-Search">
+                  <button
+                    (click)="filteredCapacitySearch()"
+                    class="btn btn-secondary"
+                    [disabled]="!filterCapacityEnabled"
+                  >
+                    <i class="bi bi-search"></i> Search
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="reset-section">
+            <button
+              class="apply-btn btn btn-dark"
+              (click)="toggleModificationBox()"
+            >
+              Modifications
+            </button>
+            <button (click)="resetModes()" class="reset-btn btn btn-dark">
+              <i class="bi bi-arrow-counterclockwise"></i> Reset
+            </button>
+          </div>
+        </div>
+  
+        <div
+          class="modification-box"
+          [ngClass]="{ 'show-box-modifications': isModificationBoxVisible }"
+        >
+  
+          <div class="modification-header">
+            <p>
+              Modification Panel: Conveniently Customize Filtered Elements
+            </p>
+            <i class="bi bi-x minix" (click)="toggleModificationBox()" style="position: absolute; top: 10px; right: 10px"></i>
+          </div>
+          <div class="form-group">
+            <label for="modifiedModes" class="section-label">Modes:</label>
+            <div class="input-group">
+              <input
+                id="modifiedModes"
+                name="modifiedModes"
+                [(ngModel)]="modifiedModes"
+                type="search"
+                class="form-control"
+                #myMod="ngModel"
+                pattern="^[a-zA-Z,]+$"
+                required
+              />
+              <span class="input-group-btn">
+                <button
+                  class="btn btn-secondary"
+                  (click)="applyModifiedModes()"
+                  [disabled]="myMod?.invalid"
+                >
+                  Apply
+                </button>
+              </span>
+            </div>
+            <div
+              *ngIf="!myMod.valid && (myMod.touched || myMod.dirty)"
+              class="alert alert-danger"
+            >
+              <div *ngIf="myMod?.errors?.['required']">field is required.</div>
+              <div *ngIf="myMod?.errors?.['pattern']">modes must be char.</div>
+            </div>
+          </div>
+  
+          <div class="form-group freespeed-section">
+            <label for="modifiedFreespeed" class="section-label"
+              >Freespeed:</label
+            >
+            <div class="input-group">
+              <input
+                [(ngModel)]="modifiedFreespeed"
+                name="modifiedFreespeed"
+                id="modifiedFreespeed"
+                type="text"
+                class="form-control"
+                #myfree="ngModel"
+                pattern="^[0-9]+(\.[0-9]+)?$"
+                required
+              />
+              <span class="input-group-btn">
+                <button
+                  class="btn btn-secondary"
+                  (click)="applyModifiedFreespeed()"
+                  [disabled]="myfree.invalid"
+                >
+                  Apply
+                </button>
+              </span>
+            </div>
+            <div
+              *ngIf="!myfree.valid && (myfree.touched || myfree.dirty)"
+              class="alert alert-danger"
+            >
+              <div *ngIf="myfree?.errors?.['required']">field is required.</div>
+              <div *ngIf="myfree?.errors?.['pattern']">
+                freespeed must be a number.
+              </div>
+            </div>
+          </div>
+  
+          <div class="form-group capacity-section">
+            <label for="modifiedCapacity" class="section-label">Capacity:</label>
+            <div class="input-group">
+              <input
+                [(ngModel)]="modifiedCapacity"
+                name="modifiedCapacity"
+                id="modifiedCapacity"
+                type="text"
+                class="form-control"
+                #myCap="ngModel"
+                pattern="^[0-9]+(\.[0-9]+)?$"
+                required
+              />
+              <span class="input-group-btn">
+                <button
+                  class="btn btn-secondary"
+                  (click)="applyModifiedCapacity()"
+                  [disabled]="myCap.invalid"
+  
+                >
+                  Apply
+                </button>
+              </span>
+            </div>
+            <div
+              *ngIf="!myCap.valid && (myCap.touched || myCap.dirty)"
+              class="alert alert-danger"
+            >
+              <div *ngIf="myCap?.errors?.['required']">field is required.</div>
+              <div *ngIf="myCap?.errors?.['pattern']">
+                capacity must be a number.
+              </div>
+            </div>
+  
+            <div class="apply-modifications-section">
+              <button
+                (click)="applyModifications()"
+                class="apply-btn btn btn-dark"
+                [disabled]="myMod.invalid || myCap.invalid || myfree.invalid"
+              >
+                Apply Modifications
+              </button>
+  
+              <button  class="apply-btn btn btn-danger" data-bs-toggle="modal"
+              data-bs-target="#staticBackdropDeleteAll">
+                Delete All
+              </button>
+  
+              <div
+            class="modal fade"
+            id="staticBackdropDeleteAll"
+            data-bs-backdrop="static"
+            data-bs-keyboard="false"
+            tabindex="-1"
+            aria-labelledby="staticBackdropLabelDeleteAll"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="staticBackdropLabelDeleteAll">
+                    Save Confirmation
+                  </h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <p>Are you sure you want to save the modifications?</p>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    No
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-dismiss="modal"
+                    (click)="deleteFiltred()"
+                  >
+                    Yes
+                  </button>
+                </div>
+              </div>
+            </div>
+            </div>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ 

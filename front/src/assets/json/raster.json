@@ -1,0 +1,8604 @@
+{
+    "Plot_params": [
+      {
+        "type": "Plot parameter",
+        "class_plot": [
+          "0-5 min",
+          "5-10 min",
+          "10-15 min",
+          "15-20 min",
+          "20-30 min",
+          "30-60 min",
+          "60-120 min",
+          "<120 min"
+        ],
+        "share_class": [
+          0.1752,
+          0.3327,
+          0.1028,
+          0.122,
+          0.0506,
+          0.0825,
+          0.0019,
+          0
+        ]
+      }
+    ],
+    "Raster params": [
+      {
+        "raster_id": 9144,
+        "shortest_travel_time": 35.5333,
+        "nearest_einrichtung": "5",
+        "class_map": "(33.3,46.7]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0003,
+        "color_map": "#26A63A",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.0965,
+                51.1016
+              ],
+              [
+                12.1003,
+                51.1016
+              ],
+              [
+                12.1003,
+                51.0978
+              ],
+              [
+                12.0965,
+                51.0978
+              ],
+              [
+                12.0965,
+                51.1016
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 9285,
+        "shortest_travel_time": 12.4,
+        "nearest_einrichtung": "10",
+        "class_map": "(11.2,21.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.001,
+        "color_map": "#9BB306",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.0739,
+                51.0978
+              ],
+              [
+                12.0777,
+                51.0978
+              ],
+              [
+                12.0777,
+                51.094
+              ],
+              [
+                12.0739,
+                51.094
+              ],
+              [
+                12.0739,
+                51.0978
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 9296,
+        "shortest_travel_time": 30.15,
+        "nearest_einrichtung": "109",
+        "class_map": "(21.4,33.3]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0024,
+        "color_map": "#E1BB4E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1154,
+                51.0978
+              ],
+              [
+                12.1191,
+                51.0978
+              ],
+              [
+                12.1191,
+                51.094
+              ],
+              [
+                12.1154,
+                51.094
+              ],
+              [
+                12.1154,
+                51.0978
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 9297,
+        "shortest_travel_time": 33.2667,
+        "nearest_einrichtung": "109",
+        "class_map": "(21.4,33.3]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0001,
+        "color_map": "#E1BB4E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1191,
+                51.0978
+              ],
+              [
+                12.1229,
+                51.0978
+              ],
+              [
+                12.1229,
+                51.094
+              ],
+              [
+                12.1191,
+                51.094
+              ],
+              [
+                12.1191,
+                51.0978
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 9298,
+        "shortest_travel_time": 34.8333,
+        "nearest_einrichtung": "109",
+        "class_map": "(33.3,46.7]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0016,
+        "color_map": "#26A63A",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1229,
+                51.0978
+              ],
+              [
+                12.1267,
+                51.0978
+              ],
+              [
+                12.1267,
+                51.094
+              ],
+              [
+                12.1229,
+                51.094
+              ],
+              [
+                12.1229,
+                51.0978
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 9299,
+        "shortest_travel_time": 35.45,
+        "nearest_einrichtung": "109",
+        "class_map": "(33.3,46.7]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.001,
+        "color_map": "#26A63A",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1267,
+                51.0978
+              ],
+              [
+                12.1305,
+                51.0978
+              ],
+              [
+                12.1305,
+                51.094
+              ],
+              [
+                12.1267,
+                51.094
+              ],
+              [
+                12.1267,
+                51.0978
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 9435,
+        "shortest_travel_time": 11.9,
+        "nearest_einrichtung": "10",
+        "class_map": "(11.2,21.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0001,
+        "color_map": "#9BB306",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.0588,
+                51.094
+              ],
+              [
+                12.0626,
+                51.094
+              ],
+              [
+                12.0626,
+                51.0903
+              ],
+              [
+                12.0588,
+                51.0903
+              ],
+              [
+                12.0588,
+                51.094
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 9439,
+        "shortest_travel_time": 16.7333,
+        "nearest_einrichtung": "10",
+        "class_map": "(11.2,21.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0004,
+        "color_map": "#9BB306",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.0739,
+                51.094
+              ],
+              [
+                12.0777,
+                51.094
+              ],
+              [
+                12.0777,
+                51.0903
+              ],
+              [
+                12.0739,
+                51.0903
+              ],
+              [
+                12.0739,
+                51.094
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 9440,
+        "shortest_travel_time": 17.95,
+        "nearest_einrichtung": "10",
+        "class_map": "(11.2,21.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0004,
+        "color_map": "#9BB306",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.0777,
+                51.094
+              ],
+              [
+                12.0814,
+                51.094
+              ],
+              [
+                12.0814,
+                51.0903
+              ],
+              [
+                12.0777,
+                51.0903
+              ],
+              [
+                12.0777,
+                51.094
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 9446,
+        "shortest_travel_time": 14.6833,
+        "nearest_einrichtung": "109",
+        "class_map": "(11.2,21.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0001,
+        "color_map": "#9BB306",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1003,
+                51.094
+              ],
+              [
+                12.1041,
+                51.094
+              ],
+              [
+                12.1041,
+                51.0903
+              ],
+              [
+                12.1003,
+                51.0903
+              ],
+              [
+                12.1003,
+                51.094
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 9447,
+        "shortest_travel_time": 18.5167,
+        "nearest_einrichtung": "109",
+        "class_map": "(11.2,21.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0029,
+        "color_map": "#9BB306",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1041,
+                51.094
+              ],
+              [
+                12.1078,
+                51.094
+              ],
+              [
+                12.1078,
+                51.0903
+              ],
+              [
+                12.1041,
+                51.0903
+              ],
+              [
+                12.1041,
+                51.094
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 9448,
+        "shortest_travel_time": 20.1833,
+        "nearest_einrichtung": "109",
+        "class_map": "(11.2,21.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0011,
+        "color_map": "#9BB306",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1078,
+                51.094
+              ],
+              [
+                12.1116,
+                51.094
+              ],
+              [
+                12.1116,
+                51.0903
+              ],
+              [
+                12.1078,
+                51.0903
+              ],
+              [
+                12.1078,
+                51.094
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 9449,
+        "shortest_travel_time": 26.2,
+        "nearest_einrichtung": "109",
+        "class_map": "(21.4,33.3]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0001,
+        "color_map": "#E1BB4E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1116,
+                51.094
+              ],
+              [
+                12.1154,
+                51.094
+              ],
+              [
+                12.1154,
+                51.0903
+              ],
+              [
+                12.1116,
+                51.0903
+              ],
+              [
+                12.1116,
+                51.094
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 9450,
+        "shortest_travel_time": 24.2667,
+        "nearest_einrichtung": "109",
+        "class_map": "(21.4,33.3]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0006,
+        "color_map": "#E1BB4E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1154,
+                51.094
+              ],
+              [
+                12.1191,
+                51.094
+              ],
+              [
+                12.1191,
+                51.0903
+              ],
+              [
+                12.1154,
+                51.0903
+              ],
+              [
+                12.1154,
+                51.094
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 9451,
+        "shortest_travel_time": 25.7667,
+        "nearest_einrichtung": "109",
+        "class_map": "(21.4,33.3]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0019,
+        "color_map": "#E1BB4E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1191,
+                51.094
+              ],
+              [
+                12.1229,
+                51.094
+              ],
+              [
+                12.1229,
+                51.0903
+              ],
+              [
+                12.1191,
+                51.0903
+              ],
+              [
+                12.1191,
+                51.094
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 9452,
+        "shortest_travel_time": 28.85,
+        "nearest_einrichtung": "109",
+        "class_map": "(21.4,33.3]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0063,
+        "color_map": "#E1BB4E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1229,
+                51.094
+              ],
+              [
+                12.1267,
+                51.094
+              ],
+              [
+                12.1267,
+                51.0903
+              ],
+              [
+                12.1229,
+                51.0903
+              ],
+              [
+                12.1229,
+                51.094
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 9453,
+        "shortest_travel_time": 31.7833,
+        "nearest_einrichtung": "109",
+        "class_map": "(21.4,33.3]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0001,
+        "color_map": "#E1BB4E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1267,
+                51.094
+              ],
+              [
+                12.1305,
+                51.094
+              ],
+              [
+                12.1305,
+                51.0903
+              ],
+              [
+                12.1267,
+                51.0903
+              ],
+              [
+                12.1267,
+                51.094
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 9593,
+        "shortest_travel_time": 15.0667,
+        "nearest_einrichtung": "108",
+        "class_map": "(11.2,21.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0004,
+        "color_map": "#9BB306",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.0701,
+                51.0903
+              ],
+              [
+                12.0739,
+                51.0903
+              ],
+              [
+                12.0739,
+                51.0865
+              ],
+              [
+                12.0701,
+                51.0865
+              ],
+              [
+                12.0701,
+                51.0903
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 9594,
+        "shortest_travel_time": 11.9667,
+        "nearest_einrichtung": "108",
+        "class_map": "(11.2,21.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0004,
+        "color_map": "#9BB306",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.0739,
+                51.0903
+              ],
+              [
+                12.0777,
+                51.0903
+              ],
+              [
+                12.0777,
+                51.0865
+              ],
+              [
+                12.0739,
+                51.0865
+              ],
+              [
+                12.0739,
+                51.0903
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 9595,
+        "shortest_travel_time": 9.6333,
+        "nearest_einrichtung": "108",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0004,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.0777,
+                51.0903
+              ],
+              [
+                12.0814,
+                51.0903
+              ],
+              [
+                12.0814,
+                51.0865
+              ],
+              [
+                12.0777,
+                51.0865
+              ],
+              [
+                12.0777,
+                51.0903
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 9596,
+        "shortest_travel_time": 10.9167,
+        "nearest_einrichtung": "108",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.001,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.0814,
+                51.0903
+              ],
+              [
+                12.0852,
+                51.0903
+              ],
+              [
+                12.0852,
+                51.0865
+              ],
+              [
+                12.0814,
+                51.0865
+              ],
+              [
+                12.0814,
+                51.0903
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 9597,
+        "shortest_travel_time": 8.1,
+        "nearest_einrichtung": "108",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0005,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.0852,
+                51.0903
+              ],
+              [
+                12.089,
+                51.0903
+              ],
+              [
+                12.089,
+                51.0865
+              ],
+              [
+                12.0852,
+                51.0865
+              ],
+              [
+                12.0852,
+                51.0903
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 9600,
+        "shortest_travel_time": 5.4,
+        "nearest_einrichtung": "109",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0004,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.0965,
+                51.0903
+              ],
+              [
+                12.1003,
+                51.0903
+              ],
+              [
+                12.1003,
+                51.0865
+              ],
+              [
+                12.0965,
+                51.0865
+              ],
+              [
+                12.0965,
+                51.0903
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 9601,
+        "shortest_travel_time": 8.2167,
+        "nearest_einrichtung": "109",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0029,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1003,
+                51.0903
+              ],
+              [
+                12.1041,
+                51.0903
+              ],
+              [
+                12.1041,
+                51.0865
+              ],
+              [
+                12.1003,
+                51.0865
+              ],
+              [
+                12.1003,
+                51.0903
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 9602,
+        "shortest_travel_time": 12.2,
+        "nearest_einrichtung": "109",
+        "class_map": "(11.2,21.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0105,
+        "color_map": "#9BB306",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1041,
+                51.0903
+              ],
+              [
+                12.1078,
+                51.0903
+              ],
+              [
+                12.1078,
+                51.0865
+              ],
+              [
+                12.1041,
+                51.0865
+              ],
+              [
+                12.1041,
+                51.0903
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 9603,
+        "shortest_travel_time": 12.7667,
+        "nearest_einrichtung": "109",
+        "class_map": "(11.2,21.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0041,
+        "color_map": "#9BB306",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1078,
+                51.0903
+              ],
+              [
+                12.1116,
+                51.0903
+              ],
+              [
+                12.1116,
+                51.0865
+              ],
+              [
+                12.1078,
+                51.0865
+              ],
+              [
+                12.1078,
+                51.0903
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 9606,
+        "shortest_travel_time": 26.2,
+        "nearest_einrichtung": "109",
+        "class_map": "(21.4,33.3]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0004,
+        "color_map": "#E1BB4E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1191,
+                51.0903
+              ],
+              [
+                12.1229,
+                51.0903
+              ],
+              [
+                12.1229,
+                51.0865
+              ],
+              [
+                12.1191,
+                51.0865
+              ],
+              [
+                12.1191,
+                51.0903
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 9607,
+        "shortest_travel_time": 30.0333,
+        "nearest_einrichtung": "109",
+        "class_map": "(21.4,33.3]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0014,
+        "color_map": "#E1BB4E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1229,
+                51.0903
+              ],
+              [
+                12.1267,
+                51.0903
+              ],
+              [
+                12.1267,
+                51.0865
+              ],
+              [
+                12.1229,
+                51.0865
+              ],
+              [
+                12.1229,
+                51.0903
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 9610,
+        "shortest_travel_time": 44.3833,
+        "nearest_einrichtung": "109",
+        "class_map": "(33.3,46.7]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0019,
+        "color_map": "#26A63A",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1342,
+                51.0903
+              ],
+              [
+                12.138,
+                51.0903
+              ],
+              [
+                12.138,
+                51.0865
+              ],
+              [
+                12.1342,
+                51.0865
+              ],
+              [
+                12.1342,
+                51.0903
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 9611,
+        "shortest_travel_time": 40.95,
+        "nearest_einrichtung": "23",
+        "class_map": "(33.3,46.7]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0015,
+        "color_map": "#26A63A",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.138,
+                51.0903
+              ],
+              [
+                12.1418,
+                51.0903
+              ],
+              [
+                12.1418,
+                51.0865
+              ],
+              [
+                12.138,
+                51.0865
+              ],
+              [
+                12.138,
+                51.0903
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 9612,
+        "shortest_travel_time": 40.55,
+        "nearest_einrichtung": "23",
+        "class_map": "(33.3,46.7]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0005,
+        "color_map": "#26A63A",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1418,
+                51.0903
+              ],
+              [
+                12.1455,
+                51.0903
+              ],
+              [
+                12.1455,
+                51.0865
+              ],
+              [
+                12.1418,
+                51.0865
+              ],
+              [
+                12.1418,
+                51.0903
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 9750,
+        "shortest_travel_time": 6.3833,
+        "nearest_einrichtung": "108",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0006,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.0777,
+                51.0865
+              ],
+              [
+                12.0814,
+                51.0865
+              ],
+              [
+                12.0814,
+                51.0827
+              ],
+              [
+                12.0777,
+                51.0827
+              ],
+              [
+                12.0777,
+                51.0865
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 9751,
+        "shortest_travel_time": 2.3333,
+        "nearest_einrichtung": "108",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0039,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.0814,
+                51.0865
+              ],
+              [
+                12.0852,
+                51.0865
+              ],
+              [
+                12.0852,
+                51.0827
+              ],
+              [
+                12.0814,
+                51.0827
+              ],
+              [
+                12.0814,
+                51.0865
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 9752,
+        "shortest_travel_time": 4.4667,
+        "nearest_einrichtung": "108",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0044,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.0852,
+                51.0865
+              ],
+              [
+                12.089,
+                51.0865
+              ],
+              [
+                12.089,
+                51.0827
+              ],
+              [
+                12.0852,
+                51.0827
+              ],
+              [
+                12.0852,
+                51.0865
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 9755,
+        "shortest_travel_time": 1.8,
+        "nearest_einrichtung": "109",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0052,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.0965,
+                51.0865
+              ],
+              [
+                12.1003,
+                51.0865
+              ],
+              [
+                12.1003,
+                51.0827
+              ],
+              [
+                12.0965,
+                51.0827
+              ],
+              [
+                12.0965,
+                51.0865
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 9756,
+        "shortest_travel_time": 3,
+        "nearest_einrichtung": "109",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0039,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1003,
+                51.0865
+              ],
+              [
+                12.1041,
+                51.0865
+              ],
+              [
+                12.1041,
+                51.0827
+              ],
+              [
+                12.1003,
+                51.0827
+              ],
+              [
+                12.1003,
+                51.0865
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 9757,
+        "shortest_travel_time": 8.0667,
+        "nearest_einrichtung": "109",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0079,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1041,
+                51.0865
+              ],
+              [
+                12.1078,
+                51.0865
+              ],
+              [
+                12.1078,
+                51.0827
+              ],
+              [
+                12.1041,
+                51.0827
+              ],
+              [
+                12.1041,
+                51.0865
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 9758,
+        "shortest_travel_time": 13.7833,
+        "nearest_einrichtung": "109",
+        "class_map": "(11.2,21.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0073,
+        "color_map": "#9BB306",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1078,
+                51.0865
+              ],
+              [
+                12.1116,
+                51.0865
+              ],
+              [
+                12.1116,
+                51.0827
+              ],
+              [
+                12.1078,
+                51.0827
+              ],
+              [
+                12.1078,
+                51.0865
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 9765,
+        "shortest_travel_time": 46.7333,
+        "nearest_einrichtung": "23",
+        "class_map": "(33.3,46.7]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0011,
+        "color_map": "#26A63A",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1342,
+                51.0865
+              ],
+              [
+                12.138,
+                51.0865
+              ],
+              [
+                12.138,
+                51.0827
+              ],
+              [
+                12.1342,
+                51.0827
+              ],
+              [
+                12.1342,
+                51.0865
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 9905,
+        "shortest_travel_time": 7.4,
+        "nearest_einrichtung": "108",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0012,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.0814,
+                51.0827
+              ],
+              [
+                12.0852,
+                51.0827
+              ],
+              [
+                12.0852,
+                51.079
+              ],
+              [
+                12.0814,
+                51.079
+              ],
+              [
+                12.0814,
+                51.0827
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 9906,
+        "shortest_travel_time": 6.2,
+        "nearest_einrichtung": "108",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0009,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.0852,
+                51.0827
+              ],
+              [
+                12.089,
+                51.0827
+              ],
+              [
+                12.089,
+                51.079
+              ],
+              [
+                12.0852,
+                51.079
+              ],
+              [
+                12.0852,
+                51.0827
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 9907,
+        "shortest_travel_time": 8.75,
+        "nearest_einrichtung": "108",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0001,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.089,
+                51.0827
+              ],
+              [
+                12.0927,
+                51.0827
+              ],
+              [
+                12.0927,
+                51.079
+              ],
+              [
+                12.089,
+                51.079
+              ],
+              [
+                12.089,
+                51.0827
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 9910,
+        "shortest_travel_time": 7.7333,
+        "nearest_einrichtung": "109",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0013,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1003,
+                51.0827
+              ],
+              [
+                12.1041,
+                51.0827
+              ],
+              [
+                12.1041,
+                51.079
+              ],
+              [
+                12.1003,
+                51.079
+              ],
+              [
+                12.1003,
+                51.0827
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 9911,
+        "shortest_travel_time": 12.0833,
+        "nearest_einrichtung": "109",
+        "class_map": "(11.2,21.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0049,
+        "color_map": "#9BB306",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1041,
+                51.0827
+              ],
+              [
+                12.1078,
+                51.0827
+              ],
+              [
+                12.1078,
+                51.079
+              ],
+              [
+                12.1041,
+                51.079
+              ],
+              [
+                12.1041,
+                51.0827
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 9912,
+        "shortest_travel_time": 15.2667,
+        "nearest_einrichtung": "109",
+        "class_map": "(11.2,21.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0032,
+        "color_map": "#9BB306",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1078,
+                51.0827
+              ],
+              [
+                12.1116,
+                51.0827
+              ],
+              [
+                12.1116,
+                51.079
+              ],
+              [
+                12.1078,
+                51.079
+              ],
+              [
+                12.1078,
+                51.0827
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 10064,
+        "shortest_travel_time": 14.0333,
+        "nearest_einrichtung": "109",
+        "class_map": "(11.2,21.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0044,
+        "color_map": "#9BB306",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1041,
+                51.079
+              ],
+              [
+                12.1078,
+                51.079
+              ],
+              [
+                12.1078,
+                51.0752
+              ],
+              [
+                12.1041,
+                51.0752
+              ],
+              [
+                12.1041,
+                51.079
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 10065,
+        "shortest_travel_time": 17.4167,
+        "nearest_einrichtung": "109",
+        "class_map": "(11.2,21.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0021,
+        "color_map": "#9BB306",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1078,
+                51.079
+              ],
+              [
+                12.1116,
+                51.079
+              ],
+              [
+                12.1116,
+                51.0752
+              ],
+              [
+                12.1078,
+                51.0752
+              ],
+              [
+                12.1078,
+                51.079
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 10073,
+        "shortest_travel_time": 39,
+        "nearest_einrichtung": "105",
+        "class_map": "(33.3,46.7]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0004,
+        "color_map": "#26A63A",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.138,
+                51.079
+              ],
+              [
+                12.1418,
+                51.079
+              ],
+              [
+                12.1418,
+                51.0752
+              ],
+              [
+                12.138,
+                51.0752
+              ],
+              [
+                12.138,
+                51.079
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 10074,
+        "shortest_travel_time": 36.2333,
+        "nearest_einrichtung": "23",
+        "class_map": "(33.3,46.7]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0003,
+        "color_map": "#26A63A",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1418,
+                51.079
+              ],
+              [
+                12.1455,
+                51.079
+              ],
+              [
+                12.1455,
+                51.0752
+              ],
+              [
+                12.1418,
+                51.0752
+              ],
+              [
+                12.1418,
+                51.079
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 10078,
+        "shortest_travel_time": 27.7833,
+        "nearest_einrichtung": "23",
+        "class_map": "(21.4,33.3]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0001,
+        "color_map": "#E1BB4E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1568,
+                51.079
+              ],
+              [
+                12.1606,
+                51.079
+              ],
+              [
+                12.1606,
+                51.0752
+              ],
+              [
+                12.1568,
+                51.0752
+              ],
+              [
+                12.1568,
+                51.079
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 10222,
+        "shortest_travel_time": 29.9,
+        "nearest_einrichtung": "105",
+        "class_map": "(21.4,33.3]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0006,
+        "color_map": "#E1BB4E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1305,
+                51.0752
+              ],
+              [
+                12.1342,
+                51.0752
+              ],
+              [
+                12.1342,
+                51.0714
+              ],
+              [
+                12.1305,
+                51.0714
+              ],
+              [
+                12.1305,
+                51.0752
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 10223,
+        "shortest_travel_time": 30.05,
+        "nearest_einrichtung": "105",
+        "class_map": "(21.4,33.3]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0003,
+        "color_map": "#E1BB4E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1342,
+                51.0752
+              ],
+              [
+                12.138,
+                51.0752
+              ],
+              [
+                12.138,
+                51.0714
+              ],
+              [
+                12.1342,
+                51.0714
+              ],
+              [
+                12.1342,
+                51.0752
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 10224,
+        "shortest_travel_time": 28.8167,
+        "nearest_einrichtung": "105",
+        "class_map": "(21.4,33.3]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0001,
+        "color_map": "#E1BB4E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.138,
+                51.0752
+              ],
+              [
+                12.1418,
+                51.0752
+              ],
+              [
+                12.1418,
+                51.0714
+              ],
+              [
+                12.138,
+                51.0714
+              ],
+              [
+                12.138,
+                51.0752
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 10227,
+        "shortest_travel_time": 38.2167,
+        "nearest_einrichtung": "23",
+        "class_map": "(33.3,46.7]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0019,
+        "color_map": "#26A63A",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1493,
+                51.0752
+              ],
+              [
+                12.1531,
+                51.0752
+              ],
+              [
+                12.1531,
+                51.0714
+              ],
+              [
+                12.1493,
+                51.0714
+              ],
+              [
+                12.1493,
+                51.0752
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 10228,
+        "shortest_travel_time": 34.3167,
+        "nearest_einrichtung": "23",
+        "class_map": "(33.3,46.7]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0041,
+        "color_map": "#26A63A",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1531,
+                51.0752
+              ],
+              [
+                12.1568,
+                51.0752
+              ],
+              [
+                12.1568,
+                51.0714
+              ],
+              [
+                12.1531,
+                51.0714
+              ],
+              [
+                12.1531,
+                51.0752
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 10229,
+        "shortest_travel_time": 32.8667,
+        "nearest_einrichtung": "23",
+        "class_map": "(21.4,33.3]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0007,
+        "color_map": "#E1BB4E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1568,
+                51.0752
+              ],
+              [
+                12.1606,
+                51.0752
+              ],
+              [
+                12.1606,
+                51.0714
+              ],
+              [
+                12.1568,
+                51.0714
+              ],
+              [
+                12.1568,
+                51.0752
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 10367,
+        "shortest_travel_time": 21.0167,
+        "nearest_einrichtung": "105",
+        "class_map": "(11.2,21.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0008,
+        "color_map": "#9BB306",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1191,
+                51.0714
+              ],
+              [
+                12.1229,
+                51.0714
+              ],
+              [
+                12.1229,
+                51.0676
+              ],
+              [
+                12.1191,
+                51.0676
+              ],
+              [
+                12.1191,
+                51.0714
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 10368,
+        "shortest_travel_time": 21.2333,
+        "nearest_einrichtung": "105",
+        "class_map": "(11.2,21.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0057,
+        "color_map": "#9BB306",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1229,
+                51.0714
+              ],
+              [
+                12.1267,
+                51.0714
+              ],
+              [
+                12.1267,
+                51.0676
+              ],
+              [
+                12.1229,
+                51.0676
+              ],
+              [
+                12.1229,
+                51.0714
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 10369,
+        "shortest_travel_time": 23.25,
+        "nearest_einrichtung": "105",
+        "class_map": "(21.4,33.3]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0014,
+        "color_map": "#E1BB4E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1267,
+                51.0714
+              ],
+              [
+                12.1305,
+                51.0714
+              ],
+              [
+                12.1305,
+                51.0676
+              ],
+              [
+                12.1267,
+                51.0676
+              ],
+              [
+                12.1267,
+                51.0714
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 10371,
+        "shortest_travel_time": 23.6,
+        "nearest_einrichtung": "105",
+        "class_map": "(21.4,33.3]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0035,
+        "color_map": "#E1BB4E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1342,
+                51.0714
+              ],
+              [
+                12.138,
+                51.0714
+              ],
+              [
+                12.138,
+                51.0676
+              ],
+              [
+                12.1342,
+                51.0676
+              ],
+              [
+                12.1342,
+                51.0714
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 10372,
+        "shortest_travel_time": 23.35,
+        "nearest_einrichtung": "105",
+        "class_map": "(21.4,33.3]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0014,
+        "color_map": "#E1BB4E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.138,
+                51.0714
+              ],
+              [
+                12.1418,
+                51.0714
+              ],
+              [
+                12.1418,
+                51.0676
+              ],
+              [
+                12.138,
+                51.0676
+              ],
+              [
+                12.138,
+                51.0714
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 10373,
+        "shortest_travel_time": 24.3667,
+        "nearest_einrichtung": "105",
+        "class_map": "(21.4,33.3]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0014,
+        "color_map": "#E1BB4E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1418,
+                51.0714
+              ],
+              [
+                12.1455,
+                51.0714
+              ],
+              [
+                12.1455,
+                51.0676
+              ],
+              [
+                12.1418,
+                51.0676
+              ],
+              [
+                12.1418,
+                51.0714
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 10374,
+        "shortest_travel_time": 25.3833,
+        "nearest_einrichtung": "105",
+        "class_map": "(21.4,33.3]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0005,
+        "color_map": "#E1BB4E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1455,
+                51.0714
+              ],
+              [
+                12.1493,
+                51.0714
+              ],
+              [
+                12.1493,
+                51.0676
+              ],
+              [
+                12.1455,
+                51.0676
+              ],
+              [
+                12.1455,
+                51.0714
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 10375,
+        "shortest_travel_time": 33.1167,
+        "nearest_einrichtung": "105",
+        "class_map": "(21.4,33.3]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0015,
+        "color_map": "#E1BB4E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1493,
+                51.0714
+              ],
+              [
+                12.1531,
+                51.0714
+              ],
+              [
+                12.1531,
+                51.0676
+              ],
+              [
+                12.1493,
+                51.0676
+              ],
+              [
+                12.1493,
+                51.0714
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 10376,
+        "shortest_travel_time": 35.7167,
+        "nearest_einrichtung": "113",
+        "class_map": "(33.3,46.7]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0004,
+        "color_map": "#26A63A",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1531,
+                51.0714
+              ],
+              [
+                12.1568,
+                51.0714
+              ],
+              [
+                12.1568,
+                51.0676
+              ],
+              [
+                12.1531,
+                51.0676
+              ],
+              [
+                12.1531,
+                51.0714
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 10508,
+        "shortest_travel_time": 17.3667,
+        "nearest_einrichtung": "105",
+        "class_map": "(11.2,21.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0049,
+        "color_map": "#9BB306",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1191,
+                51.0676
+              ],
+              [
+                12.1229,
+                51.0676
+              ],
+              [
+                12.1229,
+                51.0639
+              ],
+              [
+                12.1191,
+                51.0639
+              ],
+              [
+                12.1191,
+                51.0676
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 10509,
+        "shortest_travel_time": 15.6167,
+        "nearest_einrichtung": "105",
+        "class_map": "(11.2,21.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0156,
+        "color_map": "#9BB306",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1229,
+                51.0676
+              ],
+              [
+                12.1267,
+                51.0676
+              ],
+              [
+                12.1267,
+                51.0639
+              ],
+              [
+                12.1229,
+                51.0639
+              ],
+              [
+                12.1229,
+                51.0676
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 10510,
+        "shortest_travel_time": 13.5667,
+        "nearest_einrichtung": "105",
+        "class_map": "(11.2,21.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0045,
+        "color_map": "#9BB306",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1267,
+                51.0676
+              ],
+              [
+                12.1305,
+                51.0676
+              ],
+              [
+                12.1305,
+                51.0639
+              ],
+              [
+                12.1267,
+                51.0639
+              ],
+              [
+                12.1267,
+                51.0676
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 10511,
+        "shortest_travel_time": 17.4833,
+        "nearest_einrichtung": "105",
+        "class_map": "(11.2,21.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0059,
+        "color_map": "#9BB306",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1305,
+                51.0676
+              ],
+              [
+                12.1342,
+                51.0676
+              ],
+              [
+                12.1342,
+                51.0639
+              ],
+              [
+                12.1305,
+                51.0639
+              ],
+              [
+                12.1305,
+                51.0676
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 10512,
+        "shortest_travel_time": 16.6667,
+        "nearest_einrichtung": "105",
+        "class_map": "(11.2,21.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0062,
+        "color_map": "#9BB306",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1342,
+                51.0676
+              ],
+              [
+                12.138,
+                51.0676
+              ],
+              [
+                12.138,
+                51.0639
+              ],
+              [
+                12.1342,
+                51.0639
+              ],
+              [
+                12.1342,
+                51.0676
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 10513,
+        "shortest_travel_time": 17.6667,
+        "nearest_einrichtung": "105",
+        "class_map": "(11.2,21.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0125,
+        "color_map": "#9BB306",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.138,
+                51.0676
+              ],
+              [
+                12.1418,
+                51.0676
+              ],
+              [
+                12.1418,
+                51.0639
+              ],
+              [
+                12.138,
+                51.0639
+              ],
+              [
+                12.138,
+                51.0676
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 10514,
+        "shortest_travel_time": 18.9,
+        "nearest_einrichtung": "105",
+        "class_map": "(11.2,21.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0062,
+        "color_map": "#9BB306",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1418,
+                51.0676
+              ],
+              [
+                12.1455,
+                51.0676
+              ],
+              [
+                12.1455,
+                51.0639
+              ],
+              [
+                12.1418,
+                51.0639
+              ],
+              [
+                12.1418,
+                51.0676
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 10645,
+        "shortest_travel_time": 14.1,
+        "nearest_einrichtung": "105",
+        "class_map": "(11.2,21.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0036,
+        "color_map": "#9BB306",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1191,
+                51.0639
+              ],
+              [
+                12.1229,
+                51.0639
+              ],
+              [
+                12.1229,
+                51.0601
+              ],
+              [
+                12.1191,
+                51.0601
+              ],
+              [
+                12.1191,
+                51.0639
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 10646,
+        "shortest_travel_time": 11.1833,
+        "nearest_einrichtung": "105",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0065,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1229,
+                51.0639
+              ],
+              [
+                12.1267,
+                51.0639
+              ],
+              [
+                12.1267,
+                51.0601
+              ],
+              [
+                12.1229,
+                51.0601
+              ],
+              [
+                12.1229,
+                51.0639
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 10647,
+        "shortest_travel_time": 8.0167,
+        "nearest_einrichtung": "105",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0118,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1267,
+                51.0639
+              ],
+              [
+                12.1305,
+                51.0639
+              ],
+              [
+                12.1305,
+                51.0601
+              ],
+              [
+                12.1267,
+                51.0601
+              ],
+              [
+                12.1267,
+                51.0639
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 10648,
+        "shortest_travel_time": 8.3167,
+        "nearest_einrichtung": "105",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0094,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1305,
+                51.0639
+              ],
+              [
+                12.1342,
+                51.0639
+              ],
+              [
+                12.1342,
+                51.0601
+              ],
+              [
+                12.1305,
+                51.0601
+              ],
+              [
+                12.1305,
+                51.0639
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 10649,
+        "shortest_travel_time": 11.4167,
+        "nearest_einrichtung": "105",
+        "class_map": "(11.2,21.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0064,
+        "color_map": "#9BB306",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1342,
+                51.0639
+              ],
+              [
+                12.138,
+                51.0639
+              ],
+              [
+                12.138,
+                51.0601
+              ],
+              [
+                12.1342,
+                51.0601
+              ],
+              [
+                12.1342,
+                51.0639
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 10780,
+        "shortest_travel_time": 6.5833,
+        "nearest_einrichtung": "105",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0022,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1229,
+                51.0601
+              ],
+              [
+                12.1267,
+                51.0601
+              ],
+              [
+                12.1267,
+                51.0563
+              ],
+              [
+                12.1229,
+                51.0563
+              ],
+              [
+                12.1229,
+                51.0601
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 10781,
+        "shortest_travel_time": 2.7833,
+        "nearest_einrichtung": "105",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0094,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1267,
+                51.0601
+              ],
+              [
+                12.1305,
+                51.0601
+              ],
+              [
+                12.1305,
+                51.0563
+              ],
+              [
+                12.1267,
+                51.0563
+              ],
+              [
+                12.1267,
+                51.0601
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 10782,
+        "shortest_travel_time": 3.8167,
+        "nearest_einrichtung": "105",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0064,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1305,
+                51.0601
+              ],
+              [
+                12.1342,
+                51.0601
+              ],
+              [
+                12.1342,
+                51.0563
+              ],
+              [
+                12.1305,
+                51.0563
+              ],
+              [
+                12.1305,
+                51.0601
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 10783,
+        "shortest_travel_time": 6.4333,
+        "nearest_einrichtung": "105",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0029,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1342,
+                51.0601
+              ],
+              [
+                12.138,
+                51.0601
+              ],
+              [
+                12.138,
+                51.0563
+              ],
+              [
+                12.1342,
+                51.0563
+              ],
+              [
+                12.1342,
+                51.0601
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 10784,
+        "shortest_travel_time": 10.0167,
+        "nearest_einrichtung": "105",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0016,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.138,
+                51.0601
+              ],
+              [
+                12.1418,
+                51.0601
+              ],
+              [
+                12.1418,
+                51.0563
+              ],
+              [
+                12.138,
+                51.0563
+              ],
+              [
+                12.138,
+                51.0601
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 10785,
+        "shortest_travel_time": 15.1833,
+        "nearest_einrichtung": "102",
+        "class_map": "(11.2,21.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0016,
+        "color_map": "#9BB306",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1418,
+                51.0601
+              ],
+              [
+                12.1455,
+                51.0601
+              ],
+              [
+                12.1455,
+                51.0563
+              ],
+              [
+                12.1418,
+                51.0563
+              ],
+              [
+                12.1418,
+                51.0601
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 10789,
+        "shortest_travel_time": 18.9667,
+        "nearest_einrichtung": "113",
+        "class_map": "(11.2,21.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0003,
+        "color_map": "#9BB306",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1568,
+                51.0601
+              ],
+              [
+                12.1606,
+                51.0601
+              ],
+              [
+                12.1606,
+                51.0563
+              ],
+              [
+                12.1568,
+                51.0563
+              ],
+              [
+                12.1568,
+                51.0601
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 10909,
+        "shortest_travel_time": 6.35,
+        "nearest_einrichtung": "110",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.006,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1229,
+                51.0563
+              ],
+              [
+                12.1267,
+                51.0563
+              ],
+              [
+                12.1267,
+                51.0526
+              ],
+              [
+                12.1229,
+                51.0526
+              ],
+              [
+                12.1229,
+                51.0563
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 10911,
+        "shortest_travel_time": 3.2,
+        "nearest_einrichtung": "102",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0029,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1305,
+                51.0563
+              ],
+              [
+                12.1342,
+                51.0563
+              ],
+              [
+                12.1342,
+                51.0526
+              ],
+              [
+                12.1305,
+                51.0526
+              ],
+              [
+                12.1305,
+                51.0563
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 10912,
+        "shortest_travel_time": 5.15,
+        "nearest_einrichtung": "102",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0104,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1342,
+                51.0563
+              ],
+              [
+                12.138,
+                51.0563
+              ],
+              [
+                12.138,
+                51.0526
+              ],
+              [
+                12.1342,
+                51.0526
+              ],
+              [
+                12.1342,
+                51.0563
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 10913,
+        "shortest_travel_time": 9.5167,
+        "nearest_einrichtung": "102",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0102,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.138,
+                51.0563
+              ],
+              [
+                12.1418,
+                51.0563
+              ],
+              [
+                12.1418,
+                51.0526
+              ],
+              [
+                12.138,
+                51.0526
+              ],
+              [
+                12.138,
+                51.0563
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 10914,
+        "shortest_travel_time": 9.8167,
+        "nearest_einrichtung": "113",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0117,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1418,
+                51.0563
+              ],
+              [
+                12.1455,
+                51.0563
+              ],
+              [
+                12.1455,
+                51.0526
+              ],
+              [
+                12.1418,
+                51.0526
+              ],
+              [
+                12.1418,
+                51.0563
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 10915,
+        "shortest_travel_time": 6.85,
+        "nearest_einrichtung": "113",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0108,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1455,
+                51.0563
+              ],
+              [
+                12.1493,
+                51.0563
+              ],
+              [
+                12.1493,
+                51.0526
+              ],
+              [
+                12.1455,
+                51.0526
+              ],
+              [
+                12.1455,
+                51.0563
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 10916,
+        "shortest_travel_time": 10.05,
+        "nearest_einrichtung": "113",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0008,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1493,
+                51.0563
+              ],
+              [
+                12.1531,
+                51.0563
+              ],
+              [
+                12.1531,
+                51.0526
+              ],
+              [
+                12.1493,
+                51.0526
+              ],
+              [
+                12.1493,
+                51.0563
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 10917,
+        "shortest_travel_time": 11.1667,
+        "nearest_einrichtung": "113",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0015,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1531,
+                51.0563
+              ],
+              [
+                12.1568,
+                51.0563
+              ],
+              [
+                12.1568,
+                51.0526
+              ],
+              [
+                12.1531,
+                51.0526
+              ],
+              [
+                12.1531,
+                51.0563
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 10918,
+        "shortest_travel_time": 13.2667,
+        "nearest_einrichtung": "113",
+        "class_map": "(11.2,21.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0003,
+        "color_map": "#9BB306",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1568,
+                51.0563
+              ],
+              [
+                12.1606,
+                51.0563
+              ],
+              [
+                12.1606,
+                51.0526
+              ],
+              [
+                12.1568,
+                51.0526
+              ],
+              [
+                12.1568,
+                51.0563
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11018,
+        "shortest_travel_time": 5.0333,
+        "nearest_einrichtung": "110",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0043,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1154,
+                51.0526
+              ],
+              [
+                12.1191,
+                51.0526
+              ],
+              [
+                12.1191,
+                51.0488
+              ],
+              [
+                12.1154,
+                51.0488
+              ],
+              [
+                12.1154,
+                51.0526
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11020,
+        "shortest_travel_time": 4.2667,
+        "nearest_einrichtung": "47",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0063,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1229,
+                51.0526
+              ],
+              [
+                12.1267,
+                51.0526
+              ],
+              [
+                12.1267,
+                51.0488
+              ],
+              [
+                12.1229,
+                51.0488
+              ],
+              [
+                12.1229,
+                51.0526
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11021,
+        "shortest_travel_time": 0.3,
+        "nearest_einrichtung": "47",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0107,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1267,
+                51.0526
+              ],
+              [
+                12.1305,
+                51.0526
+              ],
+              [
+                12.1305,
+                51.0488
+              ],
+              [
+                12.1267,
+                51.0488
+              ],
+              [
+                12.1267,
+                51.0526
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11022,
+        "shortest_travel_time": 4.55,
+        "nearest_einrichtung": "47",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0135,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1305,
+                51.0526
+              ],
+              [
+                12.1342,
+                51.0526
+              ],
+              [
+                12.1342,
+                51.0488
+              ],
+              [
+                12.1305,
+                51.0488
+              ],
+              [
+                12.1305,
+                51.0526
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11023,
+        "shortest_travel_time": 8.4833,
+        "nearest_einrichtung": "47",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0152,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1342,
+                51.0526
+              ],
+              [
+                12.138,
+                51.0526
+              ],
+              [
+                12.138,
+                51.0488
+              ],
+              [
+                12.1342,
+                51.0488
+              ],
+              [
+                12.1342,
+                51.0526
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11024,
+        "shortest_travel_time": 8.6833,
+        "nearest_einrichtung": "113",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0165,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.138,
+                51.0526
+              ],
+              [
+                12.1418,
+                51.0526
+              ],
+              [
+                12.1418,
+                51.0488
+              ],
+              [
+                12.138,
+                51.0488
+              ],
+              [
+                12.138,
+                51.0526
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11025,
+        "shortest_travel_time": 4.7167,
+        "nearest_einrichtung": "113",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0122,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1418,
+                51.0526
+              ],
+              [
+                12.1455,
+                51.0526
+              ],
+              [
+                12.1455,
+                51.0488
+              ],
+              [
+                12.1418,
+                51.0488
+              ],
+              [
+                12.1418,
+                51.0526
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11026,
+        "shortest_travel_time": 0.1667,
+        "nearest_einrichtung": "113",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0175,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1455,
+                51.0526
+              ],
+              [
+                12.1493,
+                51.0526
+              ],
+              [
+                12.1493,
+                51.0488
+              ],
+              [
+                12.1455,
+                51.0488
+              ],
+              [
+                12.1455,
+                51.0526
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11027,
+        "shortest_travel_time": 4.2333,
+        "nearest_einrichtung": "113",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0008,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1493,
+                51.0526
+              ],
+              [
+                12.1531,
+                51.0526
+              ],
+              [
+                12.1531,
+                51.0488
+              ],
+              [
+                12.1493,
+                51.0488
+              ],
+              [
+                12.1493,
+                51.0526
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11028,
+        "shortest_travel_time": 10.2833,
+        "nearest_einrichtung": "113",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0031,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1531,
+                51.0526
+              ],
+              [
+                12.1568,
+                51.0526
+              ],
+              [
+                12.1568,
+                51.0488
+              ],
+              [
+                12.1531,
+                51.0488
+              ],
+              [
+                12.1531,
+                51.0526
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11029,
+        "shortest_travel_time": 11.9667,
+        "nearest_einrichtung": "103",
+        "class_map": "(11.2,21.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0016,
+        "color_map": "#9BB306",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1568,
+                51.0526
+              ],
+              [
+                12.1606,
+                51.0526
+              ],
+              [
+                12.1606,
+                51.0488
+              ],
+              [
+                12.1568,
+                51.0488
+              ],
+              [
+                12.1568,
+                51.0526
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11121,
+        "shortest_travel_time": 17.2667,
+        "nearest_einrichtung": "47",
+        "class_map": "(11.2,21.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0018,
+        "color_map": "#9BB306",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1154,
+                51.0488
+              ],
+              [
+                12.1191,
+                51.0488
+              ],
+              [
+                12.1191,
+                51.045
+              ],
+              [
+                12.1154,
+                51.045
+              ],
+              [
+                12.1154,
+                51.0488
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11122,
+        "shortest_travel_time": 11.0167,
+        "nearest_einrichtung": "47",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.011,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1191,
+                51.0488
+              ],
+              [
+                12.1229,
+                51.0488
+              ],
+              [
+                12.1229,
+                51.045
+              ],
+              [
+                12.1191,
+                51.045
+              ],
+              [
+                12.1191,
+                51.0488
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11123,
+        "shortest_travel_time": 8.2833,
+        "nearest_einrichtung": "47",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0139,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1229,
+                51.0488
+              ],
+              [
+                12.1267,
+                51.0488
+              ],
+              [
+                12.1267,
+                51.045
+              ],
+              [
+                12.1229,
+                51.045
+              ],
+              [
+                12.1229,
+                51.0488
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11124,
+        "shortest_travel_time": 7.85,
+        "nearest_einrichtung": "47",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0086,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1267,
+                51.0488
+              ],
+              [
+                12.1305,
+                51.0488
+              ],
+              [
+                12.1305,
+                51.045
+              ],
+              [
+                12.1267,
+                51.045
+              ],
+              [
+                12.1267,
+                51.0488
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11125,
+        "shortest_travel_time": 1.6667,
+        "nearest_einrichtung": "111",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0123,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1305,
+                51.0488
+              ],
+              [
+                12.1342,
+                51.0488
+              ],
+              [
+                12.1342,
+                51.045
+              ],
+              [
+                12.1305,
+                51.045
+              ],
+              [
+                12.1305,
+                51.0488
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11126,
+        "shortest_travel_time": 5.8667,
+        "nearest_einrichtung": "111",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0127,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1342,
+                51.0488
+              ],
+              [
+                12.138,
+                51.0488
+              ],
+              [
+                12.138,
+                51.045
+              ],
+              [
+                12.1342,
+                51.045
+              ],
+              [
+                12.1342,
+                51.0488
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11127,
+        "shortest_travel_time": 9.3167,
+        "nearest_einrichtung": "111",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0123,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.138,
+                51.0488
+              ],
+              [
+                12.1418,
+                51.0488
+              ],
+              [
+                12.1418,
+                51.045
+              ],
+              [
+                12.138,
+                51.045
+              ],
+              [
+                12.138,
+                51.0488
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11128,
+        "shortest_travel_time": 9.3,
+        "nearest_einrichtung": "113",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0181,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1418,
+                51.0488
+              ],
+              [
+                12.1455,
+                51.0488
+              ],
+              [
+                12.1455,
+                51.045
+              ],
+              [
+                12.1418,
+                51.045
+              ],
+              [
+                12.1418,
+                51.0488
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11129,
+        "shortest_travel_time": 8.95,
+        "nearest_einrichtung": "113",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0101,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1455,
+                51.0488
+              ],
+              [
+                12.1493,
+                51.0488
+              ],
+              [
+                12.1493,
+                51.045
+              ],
+              [
+                12.1455,
+                51.045
+              ],
+              [
+                12.1455,
+                51.0488
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11130,
+        "shortest_travel_time": 7.6333,
+        "nearest_einrichtung": "113",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0012,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1493,
+                51.0488
+              ],
+              [
+                12.1531,
+                51.0488
+              ],
+              [
+                12.1531,
+                51.045
+              ],
+              [
+                12.1493,
+                51.045
+              ],
+              [
+                12.1493,
+                51.0488
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11131,
+        "shortest_travel_time": 4,
+        "nearest_einrichtung": "103",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0049,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1531,
+                51.0488
+              ],
+              [
+                12.1568,
+                51.0488
+              ],
+              [
+                12.1568,
+                51.045
+              ],
+              [
+                12.1531,
+                51.045
+              ],
+              [
+                12.1531,
+                51.0488
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11132,
+        "shortest_travel_time": 2.9333,
+        "nearest_einrichtung": "103",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0091,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1568,
+                51.0488
+              ],
+              [
+                12.1606,
+                51.0488
+              ],
+              [
+                12.1606,
+                51.045
+              ],
+              [
+                12.1568,
+                51.045
+              ],
+              [
+                12.1568,
+                51.0488
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11133,
+        "shortest_travel_time": 6.4833,
+        "nearest_einrichtung": "103",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0033,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1606,
+                51.0488
+              ],
+              [
+                12.1644,
+                51.0488
+              ],
+              [
+                12.1644,
+                51.045
+              ],
+              [
+                12.1606,
+                51.045
+              ],
+              [
+                12.1606,
+                51.0488
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11211,
+        "shortest_travel_time": 22.4,
+        "nearest_einrichtung": "47",
+        "class_map": "(21.4,33.3]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0004,
+        "color_map": "#E1BB4E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1116,
+                51.045
+              ],
+              [
+                12.1154,
+                51.045
+              ],
+              [
+                12.1154,
+                51.0412
+              ],
+              [
+                12.1116,
+                51.0412
+              ],
+              [
+                12.1116,
+                51.045
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11212,
+        "shortest_travel_time": 21.4333,
+        "nearest_einrichtung": "106",
+        "class_map": "(11.2,21.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0045,
+        "color_map": "#9BB306",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1154,
+                51.045
+              ],
+              [
+                12.1191,
+                51.045
+              ],
+              [
+                12.1191,
+                51.0412
+              ],
+              [
+                12.1154,
+                51.0412
+              ],
+              [
+                12.1154,
+                51.045
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11213,
+        "shortest_travel_time": 15.3333,
+        "nearest_einrichtung": "47",
+        "class_map": "(11.2,21.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0133,
+        "color_map": "#9BB306",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1191,
+                51.045
+              ],
+              [
+                12.1229,
+                51.045
+              ],
+              [
+                12.1229,
+                51.0412
+              ],
+              [
+                12.1191,
+                51.0412
+              ],
+              [
+                12.1191,
+                51.045
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11214,
+        "shortest_travel_time": 10.0167,
+        "nearest_einrichtung": "106",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0105,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1229,
+                51.045
+              ],
+              [
+                12.1267,
+                51.045
+              ],
+              [
+                12.1267,
+                51.0412
+              ],
+              [
+                12.1229,
+                51.0412
+              ],
+              [
+                12.1229,
+                51.045
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11215,
+        "shortest_travel_time": 5.3,
+        "nearest_einrichtung": "106",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0138,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1267,
+                51.045
+              ],
+              [
+                12.1305,
+                51.045
+              ],
+              [
+                12.1305,
+                51.0412
+              ],
+              [
+                12.1267,
+                51.0412
+              ],
+              [
+                12.1267,
+                51.045
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11216,
+        "shortest_travel_time": 1.6833,
+        "nearest_einrichtung": "16",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0082,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1305,
+                51.045
+              ],
+              [
+                12.1342,
+                51.045
+              ],
+              [
+                12.1342,
+                51.0412
+              ],
+              [
+                12.1305,
+                51.0412
+              ],
+              [
+                12.1305,
+                51.045
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11217,
+        "shortest_travel_time": 4.15,
+        "nearest_einrichtung": "16",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0095,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1342,
+                51.045
+              ],
+              [
+                12.138,
+                51.045
+              ],
+              [
+                12.138,
+                51.0412
+              ],
+              [
+                12.1342,
+                51.0412
+              ],
+              [
+                12.1342,
+                51.045
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11219,
+        "shortest_travel_time": 6.9333,
+        "nearest_einrichtung": "101",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0168,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1418,
+                51.045
+              ],
+              [
+                12.1455,
+                51.045
+              ],
+              [
+                12.1455,
+                51.0412
+              ],
+              [
+                12.1418,
+                51.0412
+              ],
+              [
+                12.1418,
+                51.045
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11220,
+        "shortest_travel_time": 8.6833,
+        "nearest_einrichtung": "112",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0158,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1455,
+                51.045
+              ],
+              [
+                12.1493,
+                51.045
+              ],
+              [
+                12.1493,
+                51.0412
+              ],
+              [
+                12.1455,
+                51.0412
+              ],
+              [
+                12.1455,
+                51.045
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11221,
+        "shortest_travel_time": 4.5167,
+        "nearest_einrichtung": "112",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0125,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1493,
+                51.045
+              ],
+              [
+                12.1531,
+                51.045
+              ],
+              [
+                12.1531,
+                51.0412
+              ],
+              [
+                12.1493,
+                51.0412
+              ],
+              [
+                12.1493,
+                51.045
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11222,
+        "shortest_travel_time": 3.7667,
+        "nearest_einrichtung": "112",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0135,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1531,
+                51.045
+              ],
+              [
+                12.1568,
+                51.045
+              ],
+              [
+                12.1568,
+                51.0412
+              ],
+              [
+                12.1531,
+                51.0412
+              ],
+              [
+                12.1531,
+                51.045
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11223,
+        "shortest_travel_time": 3.8667,
+        "nearest_einrichtung": "103",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0057,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1568,
+                51.045
+              ],
+              [
+                12.1606,
+                51.045
+              ],
+              [
+                12.1606,
+                51.0412
+              ],
+              [
+                12.1568,
+                51.0412
+              ],
+              [
+                12.1568,
+                51.045
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11224,
+        "shortest_travel_time": 7.5167,
+        "nearest_einrichtung": "103",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0013,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1606,
+                51.045
+              ],
+              [
+                12.1644,
+                51.045
+              ],
+              [
+                12.1644,
+                51.0412
+              ],
+              [
+                12.1606,
+                51.0412
+              ],
+              [
+                12.1606,
+                51.045
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11226,
+        "shortest_travel_time": 24.5833,
+        "nearest_einrichtung": "103",
+        "class_map": "(21.4,33.3]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0001,
+        "color_map": "#E1BB4E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1682,
+                51.045
+              ],
+              [
+                12.1719,
+                51.045
+              ],
+              [
+                12.1719,
+                51.0412
+              ],
+              [
+                12.1682,
+                51.0412
+              ],
+              [
+                12.1682,
+                51.045
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11302,
+        "shortest_travel_time": 18.8833,
+        "nearest_einrichtung": "106",
+        "class_map": "(11.2,21.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0068,
+        "color_map": "#9BB306",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1154,
+                51.0412
+              ],
+              [
+                12.1191,
+                51.0412
+              ],
+              [
+                12.1191,
+                51.0375
+              ],
+              [
+                12.1154,
+                51.0375
+              ],
+              [
+                12.1154,
+                51.0412
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11306,
+        "shortest_travel_time": 6.3667,
+        "nearest_einrichtung": "106",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0117,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1305,
+                51.0412
+              ],
+              [
+                12.1342,
+                51.0412
+              ],
+              [
+                12.1342,
+                51.0375
+              ],
+              [
+                12.1305,
+                51.0375
+              ],
+              [
+                12.1305,
+                51.0412
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11307,
+        "shortest_travel_time": 8.8167,
+        "nearest_einrichtung": "101",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0114,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1342,
+                51.0412
+              ],
+              [
+                12.138,
+                51.0412
+              ],
+              [
+                12.138,
+                51.0375
+              ],
+              [
+                12.1342,
+                51.0375
+              ],
+              [
+                12.1342,
+                51.0412
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11309,
+        "shortest_travel_time": 8.4667,
+        "nearest_einrichtung": "101",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0153,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1418,
+                51.0412
+              ],
+              [
+                12.1455,
+                51.0412
+              ],
+              [
+                12.1455,
+                51.0375
+              ],
+              [
+                12.1418,
+                51.0375
+              ],
+              [
+                12.1418,
+                51.0412
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11311,
+        "shortest_travel_time": 8.2333,
+        "nearest_einrichtung": "112",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0043,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1493,
+                51.0412
+              ],
+              [
+                12.1531,
+                51.0412
+              ],
+              [
+                12.1531,
+                51.0375
+              ],
+              [
+                12.1493,
+                51.0375
+              ],
+              [
+                12.1493,
+                51.0412
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11312,
+        "shortest_travel_time": 6.3167,
+        "nearest_einrichtung": "112",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0125,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1531,
+                51.0412
+              ],
+              [
+                12.1568,
+                51.0412
+              ],
+              [
+                12.1568,
+                51.0375
+              ],
+              [
+                12.1531,
+                51.0375
+              ],
+              [
+                12.1531,
+                51.0412
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11313,
+        "shortest_travel_time": 8.4167,
+        "nearest_einrichtung": "112",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0123,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1568,
+                51.0412
+              ],
+              [
+                12.1606,
+                51.0412
+              ],
+              [
+                12.1606,
+                51.0375
+              ],
+              [
+                12.1568,
+                51.0375
+              ],
+              [
+                12.1568,
+                51.0412
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11314,
+        "shortest_travel_time": 11.7667,
+        "nearest_einrichtung": "103",
+        "class_map": "(11.2,21.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0046,
+        "color_map": "#9BB306",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1606,
+                51.0412
+              ],
+              [
+                12.1644,
+                51.0412
+              ],
+              [
+                12.1644,
+                51.0375
+              ],
+              [
+                12.1606,
+                51.0375
+              ],
+              [
+                12.1606,
+                51.0412
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11315,
+        "shortest_travel_time": 14.25,
+        "nearest_einrichtung": "103",
+        "class_map": "(11.2,21.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0095,
+        "color_map": "#9BB306",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1644,
+                51.0412
+              ],
+              [
+                12.1682,
+                51.0412
+              ],
+              [
+                12.1682,
+                51.0375
+              ],
+              [
+                12.1644,
+                51.0375
+              ],
+              [
+                12.1644,
+                51.0412
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11316,
+        "shortest_travel_time": 20.0333,
+        "nearest_einrichtung": "103",
+        "class_map": "(11.2,21.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0061,
+        "color_map": "#9BB306",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1682,
+                51.0412
+              ],
+              [
+                12.1719,
+                51.0412
+              ],
+              [
+                12.1719,
+                51.0375
+              ],
+              [
+                12.1682,
+                51.0375
+              ],
+              [
+                12.1682,
+                51.0412
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11399,
+        "shortest_travel_time": 16.2,
+        "nearest_einrichtung": "106",
+        "class_map": "(11.2,21.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0015,
+        "color_map": "#9BB306",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1305,
+                51.0375
+              ],
+              [
+                12.1342,
+                51.0375
+              ],
+              [
+                12.1342,
+                51.0337
+              ],
+              [
+                12.1305,
+                51.0337
+              ],
+              [
+                12.1305,
+                51.0375
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11400,
+        "shortest_travel_time": 15.05,
+        "nearest_einrichtung": "101",
+        "class_map": "(11.2,21.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.011,
+        "color_map": "#9BB306",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1342,
+                51.0375
+              ],
+              [
+                12.138,
+                51.0375
+              ],
+              [
+                12.138,
+                51.0337
+              ],
+              [
+                12.1342,
+                51.0337
+              ],
+              [
+                12.1342,
+                51.0375
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11406,
+        "shortest_travel_time": 14.1,
+        "nearest_einrichtung": "112",
+        "class_map": "(11.2,21.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0029,
+        "color_map": "#9BB306",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1568,
+                51.0375
+              ],
+              [
+                12.1606,
+                51.0375
+              ],
+              [
+                12.1606,
+                51.0337
+              ],
+              [
+                12.1568,
+                51.0337
+              ],
+              [
+                12.1568,
+                51.0375
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11408,
+        "shortest_travel_time": 19.7,
+        "nearest_einrichtung": "103",
+        "class_map": "(11.2,21.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0001,
+        "color_map": "#9BB306",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1644,
+                51.0375
+              ],
+              [
+                12.1682,
+                51.0375
+              ],
+              [
+                12.1682,
+                51.0337
+              ],
+              [
+                12.1644,
+                51.0337
+              ],
+              [
+                12.1644,
+                51.0375
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11499,
+        "shortest_travel_time": 19.4167,
+        "nearest_einrichtung": "101",
+        "class_map": "(11.2,21.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0041,
+        "color_map": "#9BB306",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.138,
+                51.0337
+              ],
+              [
+                12.1418,
+                51.0337
+              ],
+              [
+                12.1418,
+                51.0299
+              ],
+              [
+                12.138,
+                51.0299
+              ],
+              [
+                12.138,
+                51.0337
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11500,
+        "shortest_travel_time": 19.7667,
+        "nearest_einrichtung": "101",
+        "class_map": "(11.2,21.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0064,
+        "color_map": "#9BB306",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1418,
+                51.0337
+              ],
+              [
+                12.1455,
+                51.0337
+              ],
+              [
+                12.1455,
+                51.0299
+              ],
+              [
+                12.1418,
+                51.0299
+              ],
+              [
+                12.1418,
+                51.0337
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11501,
+        "shortest_travel_time": 20.15,
+        "nearest_einrichtung": "112",
+        "class_map": "(11.2,21.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0058,
+        "color_map": "#9BB306",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1455,
+                51.0337
+              ],
+              [
+                12.1493,
+                51.0337
+              ],
+              [
+                12.1493,
+                51.0299
+              ],
+              [
+                12.1455,
+                51.0299
+              ],
+              [
+                12.1455,
+                51.0337
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11502,
+        "shortest_travel_time": 17.2833,
+        "nearest_einrichtung": "112",
+        "class_map": "(11.2,21.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0148,
+        "color_map": "#9BB306",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1493,
+                51.0337
+              ],
+              [
+                12.1531,
+                51.0337
+              ],
+              [
+                12.1531,
+                51.0299
+              ],
+              [
+                12.1493,
+                51.0299
+              ],
+              [
+                12.1493,
+                51.0337
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11513,
+        "shortest_travel_time": 44.8333,
+        "nearest_einrichtung": "112",
+        "class_map": "(33.3,46.7]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0001,
+        "color_map": "#26A63A",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1908,
+                51.0337
+              ],
+              [
+                12.1946,
+                51.0337
+              ],
+              [
+                12.1946,
+                51.0299
+              ],
+              [
+                12.1908,
+                51.0299
+              ],
+              [
+                12.1908,
+                51.0337
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11514,
+        "shortest_travel_time": 52.8667,
+        "nearest_einrichtung": "99",
+        "class_map": "(46.7,63.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0006,
+        "color_map": "#F1F1F1",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1946,
+                51.0337
+              ],
+              [
+                12.1983,
+                51.0337
+              ],
+              [
+                12.1983,
+                51.0299
+              ],
+              [
+                12.1946,
+                51.0299
+              ],
+              [
+                12.1946,
+                51.0337
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11515,
+        "shortest_travel_time": 49.2333,
+        "nearest_einrichtung": "99",
+        "class_map": "(46.7,63.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0004,
+        "color_map": "#F1F1F1",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1983,
+                51.0337
+              ],
+              [
+                12.2021,
+                51.0337
+              ],
+              [
+                12.2021,
+                51.0299
+              ],
+              [
+                12.1983,
+                51.0299
+              ],
+              [
+                12.1983,
+                51.0337
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11519,
+        "shortest_travel_time": 42.7833,
+        "nearest_einrichtung": "27",
+        "class_map": "(33.3,46.7]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0001,
+        "color_map": "#26A63A",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.2134,
+                51.0337
+              ],
+              [
+                12.2172,
+                51.0337
+              ],
+              [
+                12.2172,
+                51.0299
+              ],
+              [
+                12.2134,
+                51.0299
+              ],
+              [
+                12.2134,
+                51.0337
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11520,
+        "shortest_travel_time": 39.8,
+        "nearest_einrichtung": "27",
+        "class_map": "(33.3,46.7]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0021,
+        "color_map": "#26A63A",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.2172,
+                51.0337
+              ],
+              [
+                12.221,
+                51.0337
+              ],
+              [
+                12.221,
+                51.0299
+              ],
+              [
+                12.2172,
+                51.0299
+              ],
+              [
+                12.2172,
+                51.0337
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11521,
+        "shortest_travel_time": 36.8833,
+        "nearest_einrichtung": "27",
+        "class_map": "(33.3,46.7]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0019,
+        "color_map": "#26A63A",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.221,
+                51.0337
+              ],
+              [
+                12.2247,
+                51.0337
+              ],
+              [
+                12.2247,
+                51.0299
+              ],
+              [
+                12.221,
+                51.0299
+              ],
+              [
+                12.221,
+                51.0337
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11522,
+        "shortest_travel_time": 37.3667,
+        "nearest_einrichtung": "27",
+        "class_map": "(33.3,46.7]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0002,
+        "color_map": "#26A63A",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.2247,
+                51.0337
+              ],
+              [
+                12.2285,
+                51.0337
+              ],
+              [
+                12.2285,
+                51.0299
+              ],
+              [
+                12.2247,
+                51.0299
+              ],
+              [
+                12.2247,
+                51.0337
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11597,
+        "shortest_travel_time": 24.9,
+        "nearest_einrichtung": "112",
+        "class_map": "(21.4,33.3]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0008,
+        "color_map": "#E1BB4E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1493,
+                51.0299
+              ],
+              [
+                12.1531,
+                51.0299
+              ],
+              [
+                12.1531,
+                51.0262
+              ],
+              [
+                12.1493,
+                51.0262
+              ],
+              [
+                12.1493,
+                51.0299
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11598,
+        "shortest_travel_time": 29.2,
+        "nearest_einrichtung": "112",
+        "class_map": "(21.4,33.3]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0001,
+        "color_map": "#E1BB4E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1531,
+                51.0299
+              ],
+              [
+                12.1568,
+                51.0299
+              ],
+              [
+                12.1568,
+                51.0262
+              ],
+              [
+                12.1531,
+                51.0262
+              ],
+              [
+                12.1531,
+                51.0299
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11615,
+        "shortest_travel_time": 42.2167,
+        "nearest_einrichtung": "27",
+        "class_map": "(33.3,46.7]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0001,
+        "color_map": "#26A63A",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.2172,
+                51.0299
+              ],
+              [
+                12.221,
+                51.0299
+              ],
+              [
+                12.221,
+                51.0262
+              ],
+              [
+                12.2172,
+                51.0262
+              ],
+              [
+                12.2172,
+                51.0299
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11703,
+        "shortest_travel_time": 37.0833,
+        "nearest_einrichtung": "99",
+        "class_map": "(33.3,46.7]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0006,
+        "color_map": "#26A63A",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.2059,
+                51.0262
+              ],
+              [
+                12.2096,
+                51.0262
+              ],
+              [
+                12.2096,
+                51.0224
+              ],
+              [
+                12.2059,
+                51.0224
+              ],
+              [
+                12.2059,
+                51.0262
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11704,
+        "shortest_travel_time": 35.75,
+        "nearest_einrichtung": "99",
+        "class_map": "(33.3,46.7]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.001,
+        "color_map": "#26A63A",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.2096,
+                51.0262
+              ],
+              [
+                12.2134,
+                51.0262
+              ],
+              [
+                12.2134,
+                51.0224
+              ],
+              [
+                12.2096,
+                51.0224
+              ],
+              [
+                12.2096,
+                51.0262
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11708,
+        "shortest_travel_time": 42.55,
+        "nearest_einrichtung": "27",
+        "class_map": "(33.3,46.7]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0001,
+        "color_map": "#26A63A",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.2247,
+                51.0262
+              ],
+              [
+                12.2285,
+                51.0262
+              ],
+              [
+                12.2285,
+                51.0224
+              ],
+              [
+                12.2247,
+                51.0224
+              ],
+              [
+                12.2247,
+                51.0262
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11784,
+        "shortest_travel_time": 10.4167,
+        "nearest_einrichtung": "99",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0001,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1832,
+                51.0224
+              ],
+              [
+                12.187,
+                51.0224
+              ],
+              [
+                12.187,
+                51.0186
+              ],
+              [
+                12.1832,
+                51.0186
+              ],
+              [
+                12.1832,
+                51.0224
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11793,
+        "shortest_travel_time": 45.4,
+        "nearest_einrichtung": "99",
+        "class_map": "(33.3,46.7]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0004,
+        "color_map": "#26A63A",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.2172,
+                51.0224
+              ],
+              [
+                12.221,
+                51.0224
+              ],
+              [
+                12.221,
+                51.0186
+              ],
+              [
+                12.2172,
+                51.0186
+              ],
+              [
+                12.2172,
+                51.0224
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11794,
+        "shortest_travel_time": 41.7833,
+        "nearest_einrichtung": "27",
+        "class_map": "(33.3,46.7]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0001,
+        "color_map": "#26A63A",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.221,
+                51.0224
+              ],
+              [
+                12.2247,
+                51.0224
+              ],
+              [
+                12.2247,
+                51.0186
+              ],
+              [
+                12.221,
+                51.0186
+              ],
+              [
+                12.221,
+                51.0224
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11795,
+        "shortest_travel_time": 38.0833,
+        "nearest_einrichtung": "27",
+        "class_map": "(33.3,46.7]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0026,
+        "color_map": "#26A63A",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.2247,
+                51.0224
+              ],
+              [
+                12.2285,
+                51.0224
+              ],
+              [
+                12.2285,
+                51.0186
+              ],
+              [
+                12.2247,
+                51.0186
+              ],
+              [
+                12.2247,
+                51.0224
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11796,
+        "shortest_travel_time": 36.4167,
+        "nearest_einrichtung": "27",
+        "class_map": "(33.3,46.7]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0002,
+        "color_map": "#26A63A",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.2285,
+                51.0224
+              ],
+              [
+                12.2323,
+                51.0224
+              ],
+              [
+                12.2323,
+                51.0186
+              ],
+              [
+                12.2285,
+                51.0186
+              ],
+              [
+                12.2285,
+                51.0224
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11866,
+        "shortest_travel_time": 5.2667,
+        "nearest_einrichtung": "99",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0001,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1757,
+                51.0186
+              ],
+              [
+                12.1795,
+                51.0186
+              ],
+              [
+                12.1795,
+                51.0148
+              ],
+              [
+                12.1757,
+                51.0148
+              ],
+              [
+                12.1757,
+                51.0186
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11867,
+        "shortest_travel_time": 2.9,
+        "nearest_einrichtung": "99",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0022,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1795,
+                51.0186
+              ],
+              [
+                12.1832,
+                51.0186
+              ],
+              [
+                12.1832,
+                51.0148
+              ],
+              [
+                12.1795,
+                51.0148
+              ],
+              [
+                12.1795,
+                51.0186
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11868,
+        "shortest_travel_time": 5.3,
+        "nearest_einrichtung": "99",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0053,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1832,
+                51.0186
+              ],
+              [
+                12.187,
+                51.0186
+              ],
+              [
+                12.187,
+                51.0148
+              ],
+              [
+                12.1832,
+                51.0148
+              ],
+              [
+                12.1832,
+                51.0186
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11869,
+        "shortest_travel_time": 7.8333,
+        "nearest_einrichtung": "99",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0006,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.187,
+                51.0186
+              ],
+              [
+                12.1908,
+                51.0186
+              ],
+              [
+                12.1908,
+                51.0148
+              ],
+              [
+                12.187,
+                51.0148
+              ],
+              [
+                12.187,
+                51.0186
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11876,
+        "shortest_travel_time": 41.4333,
+        "nearest_einrichtung": "99",
+        "class_map": "(33.3,46.7]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0001,
+        "color_map": "#26A63A",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.2134,
+                51.0186
+              ],
+              [
+                12.2172,
+                51.0186
+              ],
+              [
+                12.2172,
+                51.0148
+              ],
+              [
+                12.2134,
+                51.0148
+              ],
+              [
+                12.2134,
+                51.0186
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11877,
+        "shortest_travel_time": 44.5833,
+        "nearest_einrichtung": "99",
+        "class_map": "(33.3,46.7]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0003,
+        "color_map": "#26A63A",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.2172,
+                51.0186
+              ],
+              [
+                12.221,
+                51.0186
+              ],
+              [
+                12.221,
+                51.0148
+              ],
+              [
+                12.2172,
+                51.0148
+              ],
+              [
+                12.2172,
+                51.0186
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11879,
+        "shortest_travel_time": 43.3833,
+        "nearest_einrichtung": "27",
+        "class_map": "(33.3,46.7]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0012,
+        "color_map": "#26A63A",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.2247,
+                51.0186
+              ],
+              [
+                12.2285,
+                51.0186
+              ],
+              [
+                12.2285,
+                51.0148
+              ],
+              [
+                12.2247,
+                51.0148
+              ],
+              [
+                12.2247,
+                51.0186
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11880,
+        "shortest_travel_time": 39.3333,
+        "nearest_einrichtung": "27",
+        "class_map": "(33.3,46.7]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0009,
+        "color_map": "#26A63A",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.2285,
+                51.0186
+              ],
+              [
+                12.2323,
+                51.0186
+              ],
+              [
+                12.2323,
+                51.0148
+              ],
+              [
+                12.2285,
+                51.0148
+              ],
+              [
+                12.2285,
+                51.0186
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11949,
+        "shortest_travel_time": 9.3,
+        "nearest_einrichtung": "99",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0009,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1795,
+                51.0148
+              ],
+              [
+                12.1832,
+                51.0148
+              ],
+              [
+                12.1832,
+                51.0111
+              ],
+              [
+                12.1795,
+                51.0111
+              ],
+              [
+                12.1795,
+                51.0148
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11950,
+        "shortest_travel_time": 6.5167,
+        "nearest_einrichtung": "99",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0016,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1832,
+                51.0148
+              ],
+              [
+                12.187,
+                51.0148
+              ],
+              [
+                12.187,
+                51.0111
+              ],
+              [
+                12.1832,
+                51.0111
+              ],
+              [
+                12.1832,
+                51.0148
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11951,
+        "shortest_travel_time": 8.95,
+        "nearest_einrichtung": "99",
+        "class_map": "[0.167,11.2]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0008,
+        "color_map": "#FFC59E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.187,
+                51.0148
+              ],
+              [
+                12.1908,
+                51.0148
+              ],
+              [
+                12.1908,
+                51.0111
+              ],
+              [
+                12.187,
+                51.0111
+              ],
+              [
+                12.187,
+                51.0148
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11954,
+        "shortest_travel_time": 22.85,
+        "nearest_einrichtung": "99",
+        "class_map": "(21.4,33.3]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0001,
+        "color_map": "#E1BB4E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1983,
+                51.0148
+              ],
+              [
+                12.2021,
+                51.0148
+              ],
+              [
+                12.2021,
+                51.0111
+              ],
+              [
+                12.1983,
+                51.0111
+              ],
+              [
+                12.1983,
+                51.0148
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11955,
+        "shortest_travel_time": 24.7667,
+        "nearest_einrichtung": "99",
+        "class_map": "(21.4,33.3]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0006,
+        "color_map": "#E1BB4E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.2021,
+                51.0148
+              ],
+              [
+                12.2059,
+                51.0148
+              ],
+              [
+                12.2059,
+                51.0111
+              ],
+              [
+                12.2021,
+                51.0111
+              ],
+              [
+                12.2021,
+                51.0148
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11961,
+        "shortest_travel_time": 45.3167,
+        "nearest_einrichtung": "99",
+        "class_map": "(33.3,46.7]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0007,
+        "color_map": "#26A63A",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.2247,
+                51.0148
+              ],
+              [
+                12.2285,
+                51.0148
+              ],
+              [
+                12.2285,
+                51.0111
+              ],
+              [
+                12.2247,
+                51.0111
+              ],
+              [
+                12.2247,
+                51.0148
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 11962,
+        "shortest_travel_time": 47.2167,
+        "nearest_einrichtung": "27",
+        "class_map": "(46.7,63.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0006,
+        "color_map": "#F1F1F1",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.2285,
+                51.0148
+              ],
+              [
+                12.2323,
+                51.0148
+              ],
+              [
+                12.2323,
+                51.0111
+              ],
+              [
+                12.2285,
+                51.0111
+              ],
+              [
+                12.2285,
+                51.0148
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 12032,
+        "shortest_travel_time": 13.1,
+        "nearest_einrichtung": "99",
+        "class_map": "(11.2,21.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0005,
+        "color_map": "#9BB306",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1832,
+                51.0111
+              ],
+              [
+                12.187,
+                51.0111
+              ],
+              [
+                12.187,
+                51.0073
+              ],
+              [
+                12.1832,
+                51.0073
+              ],
+              [
+                12.1832,
+                51.0111
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 12037,
+        "shortest_travel_time": 25.2833,
+        "nearest_einrichtung": "99",
+        "class_map": "(21.4,33.3]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.001,
+        "color_map": "#E1BB4E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.2021,
+                51.0111
+              ],
+              [
+                12.2059,
+                51.0111
+              ],
+              [
+                12.2059,
+                51.0073
+              ],
+              [
+                12.2021,
+                51.0073
+              ],
+              [
+                12.2021,
+                51.0111
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 12043,
+        "shortest_travel_time": 46.6,
+        "nearest_einrichtung": "99",
+        "class_map": "(33.3,46.7]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0011,
+        "color_map": "#26A63A",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.2247,
+                51.0111
+              ],
+              [
+                12.2285,
+                51.0111
+              ],
+              [
+                12.2285,
+                51.0073
+              ],
+              [
+                12.2247,
+                51.0073
+              ],
+              [
+                12.2247,
+                51.0111
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 12044,
+        "shortest_travel_time": 50.65,
+        "nearest_einrichtung": "99",
+        "class_map": "(46.7,63.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0013,
+        "color_map": "#F1F1F1",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.2285,
+                51.0111
+              ],
+              [
+                12.2323,
+                51.0111
+              ],
+              [
+                12.2323,
+                51.0073
+              ],
+              [
+                12.2285,
+                51.0073
+              ],
+              [
+                12.2285,
+                51.0111
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 12115,
+        "shortest_travel_time": 23.9333,
+        "nearest_einrichtung": "99",
+        "class_map": "(21.4,33.3]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0004,
+        "color_map": "#E1BB4E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1908,
+                51.0073
+              ],
+              [
+                12.1946,
+                51.0073
+              ],
+              [
+                12.1946,
+                51.0035
+              ],
+              [
+                12.1908,
+                51.0035
+              ],
+              [
+                12.1908,
+                51.0073
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 12116,
+        "shortest_travel_time": 22.8333,
+        "nearest_einrichtung": "99",
+        "class_map": "(21.4,33.3]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0005,
+        "color_map": "#E1BB4E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1946,
+                51.0073
+              ],
+              [
+                12.1983,
+                51.0073
+              ],
+              [
+                12.1983,
+                51.0035
+              ],
+              [
+                12.1946,
+                51.0035
+              ],
+              [
+                12.1946,
+                51.0073
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 12124,
+        "shortest_travel_time": 52.0667,
+        "nearest_einrichtung": "99",
+        "class_map": "(46.7,63.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0002,
+        "color_map": "#F1F1F1",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.2247,
+                51.0073
+              ],
+              [
+                12.2285,
+                51.0073
+              ],
+              [
+                12.2285,
+                51.0035
+              ],
+              [
+                12.2247,
+                51.0035
+              ],
+              [
+                12.2247,
+                51.0073
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 12125,
+        "shortest_travel_time": 54.1333,
+        "nearest_einrichtung": "99",
+        "class_map": "(46.7,63.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0002,
+        "color_map": "#F1F1F1",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.2285,
+                51.0073
+              ],
+              [
+                12.2323,
+                51.0073
+              ],
+              [
+                12.2323,
+                51.0035
+              ],
+              [
+                12.2285,
+                51.0035
+              ],
+              [
+                12.2285,
+                51.0073
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 12127,
+        "shortest_travel_time": 47.8833,
+        "nearest_einrichtung": "27",
+        "class_map": "(46.7,63.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0001,
+        "color_map": "#F1F1F1",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.236,
+                51.0073
+              ],
+              [
+                12.2398,
+                51.0073
+              ],
+              [
+                12.2398,
+                51.0035
+              ],
+              [
+                12.236,
+                51.0035
+              ],
+              [
+                12.236,
+                51.0073
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 12194,
+        "shortest_travel_time": 30.1167,
+        "nearest_einrichtung": "99",
+        "class_map": "(21.4,33.3]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0003,
+        "color_map": "#E1BB4E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.187,
+                51.0035
+              ],
+              [
+                12.1908,
+                51.0035
+              ],
+              [
+                12.1908,
+                50.9998
+              ],
+              [
+                12.187,
+                50.9998
+              ],
+              [
+                12.187,
+                51.0035
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 12195,
+        "shortest_travel_time": 26.8667,
+        "nearest_einrichtung": "99",
+        "class_map": "(21.4,33.3]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0014,
+        "color_map": "#E1BB4E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1908,
+                51.0035
+              ],
+              [
+                12.1946,
+                51.0035
+              ],
+              [
+                12.1946,
+                50.9998
+              ],
+              [
+                12.1908,
+                50.9998
+              ],
+              [
+                12.1908,
+                51.0035
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 12196,
+        "shortest_travel_time": 25.9833,
+        "nearest_einrichtung": "99",
+        "class_map": "(21.4,33.3]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0026,
+        "color_map": "#E1BB4E",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.1946,
+                51.0035
+              ],
+              [
+                12.1983,
+                51.0035
+              ],
+              [
+                12.1983,
+                50.9998
+              ],
+              [
+                12.1946,
+                50.9998
+              ],
+              [
+                12.1946,
+                51.0035
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 12208,
+        "shortest_travel_time": 45.6,
+        "nearest_einrichtung": "27",
+        "class_map": "(33.3,46.7]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0002,
+        "color_map": "#26A63A",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.2398,
+                51.0035
+              ],
+              [
+                12.2436,
+                51.0035
+              ],
+              [
+                12.2436,
+                50.9998
+              ],
+              [
+                12.2398,
+                50.9998
+              ],
+              [
+                12.2398,
+                51.0035
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 12209,
+        "shortest_travel_time": 45.3833,
+        "nearest_einrichtung": "27",
+        "class_map": "(33.3,46.7]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0003,
+        "color_map": "#26A63A",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.2436,
+                51.0035
+              ],
+              [
+                12.2474,
+                51.0035
+              ],
+              [
+                12.2474,
+                50.9998
+              ],
+              [
+                12.2436,
+                50.9998
+              ],
+              [
+                12.2436,
+                51.0035
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 12211,
+        "shortest_travel_time": 42.95,
+        "nearest_einrichtung": "27",
+        "class_map": "(33.3,46.7]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.004,
+        "color_map": "#26A63A",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.2511,
+                51.0035
+              ],
+              [
+                12.2549,
+                51.0035
+              ],
+              [
+                12.2549,
+                50.9998
+              ],
+              [
+                12.2511,
+                50.9998
+              ],
+              [
+                12.2511,
+                51.0035
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 12212,
+        "shortest_travel_time": 42.95,
+        "nearest_einrichtung": "27",
+        "class_map": "(33.3,46.7]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0023,
+        "color_map": "#26A63A",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.2549,
+                51.0035
+              ],
+              [
+                12.2587,
+                51.0035
+              ],
+              [
+                12.2587,
+                50.9998
+              ],
+              [
+                12.2549,
+                50.9998
+              ],
+              [
+                12.2549,
+                51.0035
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 12281,
+        "shortest_travel_time": 44.2167,
+        "nearest_einrichtung": "99",
+        "class_map": "(33.3,46.7]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0017,
+        "color_map": "#26A63A",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.2096,
+                50.9998
+              ],
+              [
+                12.2134,
+                50.9998
+              ],
+              [
+                12.2134,
+                50.996
+              ],
+              [
+                12.2096,
+                50.996
+              ],
+              [
+                12.2096,
+                50.9998
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 12282,
+        "shortest_travel_time": 46.6167,
+        "nearest_einrichtung": "99",
+        "class_map": "(33.3,46.7]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0005,
+        "color_map": "#26A63A",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.2134,
+                50.9998
+              ],
+              [
+                12.2172,
+                50.9998
+              ],
+              [
+                12.2172,
+                50.996
+              ],
+              [
+                12.2134,
+                50.996
+              ],
+              [
+                12.2134,
+                50.9998
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 12287,
+        "shortest_travel_time": 56.65,
+        "nearest_einrichtung": "27",
+        "class_map": "(46.7,63.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0006,
+        "color_map": "#F1F1F1",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.2323,
+                50.9998
+              ],
+              [
+                12.236,
+                50.9998
+              ],
+              [
+                12.236,
+                50.996
+              ],
+              [
+                12.2323,
+                50.996
+              ],
+              [
+                12.2323,
+                50.9998
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 12288,
+        "shortest_travel_time": 53.25,
+        "nearest_einrichtung": "27",
+        "class_map": "(46.7,63.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0023,
+        "color_map": "#F1F1F1",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.236,
+                50.9998
+              ],
+              [
+                12.2398,
+                50.9998
+              ],
+              [
+                12.2398,
+                50.996
+              ],
+              [
+                12.236,
+                50.996
+              ],
+              [
+                12.236,
+                50.9998
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 12289,
+        "shortest_travel_time": 51.2667,
+        "nearest_einrichtung": "27",
+        "class_map": "(46.7,63.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0013,
+        "color_map": "#F1F1F1",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.2398,
+                50.9998
+              ],
+              [
+                12.2436,
+                50.9998
+              ],
+              [
+                12.2436,
+                50.996
+              ],
+              [
+                12.2398,
+                50.996
+              ],
+              [
+                12.2398,
+                50.9998
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 12291,
+        "shortest_travel_time": 49.1667,
+        "nearest_einrichtung": "27",
+        "class_map": "(46.7,63.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0001,
+        "color_map": "#F1F1F1",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.2474,
+                50.9998
+              ],
+              [
+                12.2511,
+                50.9998
+              ],
+              [
+                12.2511,
+                50.996
+              ],
+              [
+                12.2474,
+                50.996
+              ],
+              [
+                12.2474,
+                50.9998
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 12292,
+        "shortest_travel_time": 50.3,
+        "nearest_einrichtung": "27",
+        "class_map": "(46.7,63.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0007,
+        "color_map": "#F1F1F1",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.2511,
+                50.9998
+              ],
+              [
+                12.2549,
+                50.9998
+              ],
+              [
+                12.2549,
+                50.996
+              ],
+              [
+                12.2511,
+                50.996
+              ],
+              [
+                12.2511,
+                50.9998
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 12293,
+        "shortest_travel_time": 49.75,
+        "nearest_einrichtung": "27",
+        "class_map": "(46.7,63.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0021,
+        "color_map": "#F1F1F1",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.2549,
+                50.9998
+              ],
+              [
+                12.2587,
+                50.9998
+              ],
+              [
+                12.2587,
+                50.996
+              ],
+              [
+                12.2549,
+                50.996
+              ],
+              [
+                12.2549,
+                50.9998
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 12360,
+        "shortest_travel_time": 44.3333,
+        "nearest_einrichtung": "99",
+        "class_map": "(33.3,46.7]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0007,
+        "color_map": "#26A63A",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.2096,
+                50.996
+              ],
+              [
+                12.2134,
+                50.996
+              ],
+              [
+                12.2134,
+                50.9922
+              ],
+              [
+                12.2096,
+                50.9922
+              ],
+              [
+                12.2096,
+                50.996
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 12361,
+        "shortest_travel_time": 48.2,
+        "nearest_einrichtung": "99",
+        "class_map": "(46.7,63.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0001,
+        "color_map": "#F1F1F1",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.2134,
+                50.996
+              ],
+              [
+                12.2172,
+                50.996
+              ],
+              [
+                12.2172,
+                50.9922
+              ],
+              [
+                12.2134,
+                50.9922
+              ],
+              [
+                12.2134,
+                50.996
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 12365,
+        "shortest_travel_time": 59.55,
+        "nearest_einrichtung": "27",
+        "class_map": "(46.7,63.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0012,
+        "color_map": "#F1F1F1",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.2285,
+                50.996
+              ],
+              [
+                12.2323,
+                50.996
+              ],
+              [
+                12.2323,
+                50.9922
+              ],
+              [
+                12.2285,
+                50.9922
+              ],
+              [
+                12.2285,
+                50.996
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 12366,
+        "shortest_travel_time": 59.1333,
+        "nearest_einrichtung": "27",
+        "class_map": "(46.7,63.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0047,
+        "color_map": "#F1F1F1",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.2323,
+                50.996
+              ],
+              [
+                12.236,
+                50.996
+              ],
+              [
+                12.236,
+                50.9922
+              ],
+              [
+                12.2323,
+                50.9922
+              ],
+              [
+                12.2323,
+                50.996
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 12367,
+        "shortest_travel_time": 58.6,
+        "nearest_einrichtung": "27",
+        "class_map": "(46.7,63.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0065,
+        "color_map": "#F1F1F1",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.236,
+                50.996
+              ],
+              [
+                12.2398,
+                50.996
+              ],
+              [
+                12.2398,
+                50.9922
+              ],
+              [
+                12.236,
+                50.9922
+              ],
+              [
+                12.236,
+                50.996
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 12368,
+        "shortest_travel_time": 61.4167,
+        "nearest_einrichtung": "27",
+        "class_map": "(46.7,63.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0016,
+        "color_map": "#F1F1F1",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.2398,
+                50.996
+              ],
+              [
+                12.2436,
+                50.996
+              ],
+              [
+                12.2436,
+                50.9922
+              ],
+              [
+                12.2398,
+                50.9922
+              ],
+              [
+                12.2398,
+                50.996
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 12372,
+        "shortest_travel_time": 55.1667,
+        "nearest_einrichtung": "27",
+        "class_map": "(46.7,63.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0002,
+        "color_map": "#F1F1F1",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.2549,
+                50.996
+              ],
+              [
+                12.2587,
+                50.996
+              ],
+              [
+                12.2587,
+                50.9922
+              ],
+              [
+                12.2549,
+                50.9922
+              ],
+              [
+                12.2549,
+                50.996
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 12437,
+        "shortest_travel_time": 58.2833,
+        "nearest_einrichtung": "128",
+        "class_map": "(46.7,63.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0032,
+        "color_map": "#F1F1F1",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.2323,
+                50.9922
+              ],
+              [
+                12.236,
+                50.9922
+              ],
+              [
+                12.236,
+                50.9884
+              ],
+              [
+                12.2323,
+                50.9884
+              ],
+              [
+                12.2323,
+                50.9922
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 12438,
+        "shortest_travel_time": 56.8167,
+        "nearest_einrichtung": "128",
+        "class_map": "(46.7,63.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0049,
+        "color_map": "#F1F1F1",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.236,
+                50.9922
+              ],
+              [
+                12.2398,
+                50.9922
+              ],
+              [
+                12.2398,
+                50.9884
+              ],
+              [
+                12.236,
+                50.9884
+              ],
+              [
+                12.236,
+                50.9922
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 12439,
+        "shortest_travel_time": 63.35,
+        "nearest_einrichtung": "128",
+        "class_map": "(46.7,63.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0002,
+        "color_map": "#F1F1F1",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.2398,
+                50.9922
+              ],
+              [
+                12.2436,
+                50.9922
+              ],
+              [
+                12.2436,
+                50.9884
+              ],
+              [
+                12.2398,
+                50.9884
+              ],
+              [
+                12.2398,
+                50.9922
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 12502,
+        "shortest_travel_time": 47.5667,
+        "nearest_einrichtung": "128",
+        "class_map": "(46.7,63.4]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0004,
+        "color_map": "#F1F1F1",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.221,
+                50.9884
+              ],
+              [
+                12.2247,
+                50.9884
+              ],
+              [
+                12.2247,
+                50.9847
+              ],
+              [
+                12.221,
+                50.9847
+              ],
+              [
+                12.221,
+                50.9884
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 12569,
+        "shortest_travel_time": 40.2,
+        "nearest_einrichtung": "128",
+        "class_map": "(33.3,46.7]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0008,
+        "color_map": "#26A63A",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.2285,
+                50.9847
+              ],
+              [
+                12.2323,
+                50.9847
+              ],
+              [
+                12.2323,
+                50.9809
+              ],
+              [
+                12.2285,
+                50.9809
+              ],
+              [
+                12.2285,
+                50.9847
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 12570,
+        "shortest_travel_time": 41.9333,
+        "nearest_einrichtung": "128",
+        "class_map": "(33.3,46.7]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0005,
+        "color_map": "#26A63A",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.2323,
+                50.9847
+              ],
+              [
+                12.236,
+                50.9847
+              ],
+              [
+                12.236,
+                50.9809
+              ],
+              [
+                12.2323,
+                50.9809
+              ],
+              [
+                12.2323,
+                50.9847
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 12629,
+        "shortest_travel_time": 35.0833,
+        "nearest_einrichtung": "128",
+        "class_map": "(33.3,46.7]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0001,
+        "color_map": "#26A63A",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.221,
+                50.9809
+              ],
+              [
+                12.2247,
+                50.9809
+              ],
+              [
+                12.2247,
+                50.9771
+              ],
+              [
+                12.221,
+                50.9771
+              ],
+              [
+                12.221,
+                50.9809
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 12631,
+        "shortest_travel_time": 40.5833,
+        "nearest_einrichtung": "128",
+        "class_map": "(33.3,46.7]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0011,
+        "color_map": "#26A63A",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.2285,
+                50.9809
+              ],
+              [
+                12.2323,
+                50.9809
+              ],
+              [
+                12.2323,
+                50.9771
+              ],
+              [
+                12.2285,
+                50.9771
+              ],
+              [
+                12.2285,
+                50.9809
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 12632,
+        "shortest_travel_time": 40.65,
+        "nearest_einrichtung": "128",
+        "class_map": "(33.3,46.7]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0009,
+        "color_map": "#26A63A",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.2323,
+                50.9809
+              ],
+              [
+                12.236,
+                50.9809
+              ],
+              [
+                12.236,
+                50.9771
+              ],
+              [
+                12.2323,
+                50.9771
+              ],
+              [
+                12.2323,
+                50.9809
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 12685,
+        "shortest_travel_time": 37.1667,
+        "nearest_einrichtung": "128",
+        "class_map": "(33.3,46.7]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0009,
+        "color_map": "#26A63A",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.2172,
+                50.9771
+              ],
+              [
+                12.221,
+                50.9771
+              ],
+              [
+                12.221,
+                50.9734
+              ],
+              [
+                12.2172,
+                50.9734
+              ],
+              [
+                12.2172,
+                50.9771
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "raster_id": 12686,
+        "shortest_travel_time": 35.9333,
+        "nearest_einrichtung": "128",
+        "class_map": "(33.3,46.7]",
+        "ID": 1,
+        "share_of_population_living_in_raster": 0.0014,
+        "color_map": "#26A63A",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                12.221,
+                50.9771
+              ],
+              [
+                12.2247,
+                50.9771
+              ],
+              [
+                12.2247,
+                50.9734
+              ],
+              [
+                12.221,
+                50.9734
+              ],
+              [
+                12.221,
+                50.9771
+              ]
+            ]
+          ]
+        }
+      }
+    ],
+    "Point params": [
+      {
+        "Kategorie": "Bildung",
+        "Typ": "Kindertagesstaette",
+        "Name": "Kindertagesstaette \"Trebnitzer Landmaeuse\"",
+        "share_population": 0.0019,
+        "closest_raster": [
+          9285,
+          9435,
+          9439,
+          9440
+        ],
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            12.0695,
+            51.0975
+          ]
+        }
+      },
+      {
+        "Kategorie": "Bildung",
+        "Typ": "Kindertagesstaette",
+        "Name": "Integrat. Kindertagesstaette \"Regenbogen\"",
+        "share_population": 0.0649,
+        "closest_raster": [
+          11219,
+          11307,
+          11309,
+          11400,
+          11499,
+          11500
+        ],
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            12.1385,
+            51.0426
+          ]
+        }
+      },
+      {
+        "Kategorie": "Bildung",
+        "Typ": "Kindertagesstaette",
+        "Name": "Integrat. Kindertagesstaette \"Kleine Strolche\"",
+        "share_population": 0.0251,
+        "closest_raster": [
+          10785,
+          10911,
+          10912,
+          10913
+        ],
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            12.1337,
+            51.0542
+          ]
+        }
+      },
+      {
+        "Kategorie": "Bildung",
+        "Typ": "Kindertagesstaette",
+        "Name": "Integrat. Kindertagesstaette Montessori-Kinderhaus Zeitz",
+        "share_population": 0.0464,
+        "closest_raster": [
+          11029,
+          11131,
+          11132,
+          11133,
+          11223,
+          11224,
+          11226,
+          11314,
+          11315,
+          11316,
+          11408
+        ],
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            12.1576,
+            51.0456
+          ]
+        }
+      },
+      {
+        "Kategorie": "Bildung",
+        "Typ": "Kindertagesstaette",
+        "Name": "Integrative Kindertagesstaette \"Musikus\"",
+        "share_population": 0.1336,
+        "closest_raster": [
+          10073,
+          10222,
+          10223,
+          10224,
+          10367,
+          10368,
+          10369,
+          10371,
+          10372,
+          10373,
+          10374,
+          10375,
+          10508,
+          10509,
+          10510,
+          10511,
+          10512,
+          10513,
+          10514,
+          10645,
+          10646,
+          10647,
+          10648,
+          10649,
+          10780,
+          10781,
+          10782,
+          10783,
+          10784
+        ],
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            12.1311,
+            51.0587
+          ]
+        }
+      },
+      {
+        "Kategorie": "Bildung",
+        "Typ": "Kindertagesstaette",
+        "Name": "Kindertagesstaette \"Voelkerfreundschaft\"",
+        "share_population": 0.0488,
+        "closest_raster": [
+          11212,
+          11214,
+          11215,
+          11302,
+          11306,
+          11399
+        ],
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            12.1318,
+            51.0416
+          ]
+        }
+      },
+      {
+        "Kategorie": "Bildung",
+        "Typ": "Kindertagesstaette",
+        "Name": "Kindertagesstaette \"Kleine Waldspatzen\"",
+        "share_population": 0.0138,
+        "closest_raster": [
+          9593,
+          9594,
+          9595,
+          9596,
+          9597,
+          9750,
+          9751,
+          9752,
+          9905,
+          9906,
+          9907
+        ],
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            12.0842,
+            51.0832
+          ]
+        }
+      },
+      {
+        "Kategorie": "Bildung",
+        "Typ": "Kindertagesstaette",
+        "Name": "Kindertagesstaette Theissen \"Kleine Maulwuerfe\" mit AST Nonnewitz",
+        "share_population": 0.08,
+        "closest_raster": [
+          9296,
+          9297,
+          9298,
+          9299,
+          9446,
+          9447,
+          9448,
+          9449,
+          9450,
+          9451,
+          9452,
+          9453,
+          9600,
+          9601,
+          9602,
+          9603,
+          9606,
+          9607,
+          9610,
+          9755,
+          9756,
+          9757,
+          9758,
+          9910,
+          9911,
+          9912,
+          10064,
+          10065
+        ],
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            12.0999,
+            51.0855
+          ]
+        }
+      },
+      {
+        "Kategorie": "Bildung",
+        "Typ": "Kindertagesstaette",
+        "Name": "Integrat. Kindertagesstaette \"Kindertraeume\"",
+        "share_population": 0.0103,
+        "closest_raster": [
+          10909,
+          11018
+        ],
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            12.1207,
+            51.0515
+          ]
+        }
+      },
+      {
+        "Kategorie": "Bildung",
+        "Typ": "Kindertagesstaette",
+        "Name": "Kneipp Kindertagesstaette \"Wasserfloehe\"",
+        "share_population": 0.0373,
+        "closest_raster": [
+          11125,
+          11126,
+          11127
+        ],
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            12.1326,
+            51.0469
+          ]
+        }
+      },
+      {
+        "Kategorie": "Bildung",
+        "Typ": "Kindertagesstaette",
+        "Name": "Kindertagesstaette \"Kunterbunt\"",
+        "share_population": 0.0954,
+        "closest_raster": [
+          11220,
+          11221,
+          11222,
+          11311,
+          11312,
+          11313,
+          11406,
+          11501,
+          11502,
+          11513,
+          11597,
+          11598
+        ],
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            12.1538,
+            51.0416
+          ]
+        }
+      },
+      {
+        "Kategorie": "Bildung",
+        "Typ": "Kindertagesstaette",
+        "Name": "Integrat. Kindertagesstaette \"Froebelhaus\"",
+        "share_population": 0.1054,
+        "closest_raster": [
+          10376,
+          10789,
+          10914,
+          10915,
+          10916,
+          10917,
+          10918,
+          11024,
+          11025,
+          11026,
+          11027,
+          11028,
+          11128,
+          11129,
+          11130
+        ],
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            12.1472,
+            51.0507
+          ]
+        }
+      },
+      {
+        "Kategorie": "Bildung",
+        "Typ": "Kindertagesstaette",
+        "Name": "Kindertagesstaette \"Abenteuerland\" Broeckau",
+        "share_population": 0.0143,
+        "closest_raster": [
+          12437,
+          12438,
+          12439,
+          12502,
+          12569,
+          12570,
+          12629,
+          12631,
+          12632,
+          12685,
+          12686
+        ],
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            12.2095,
+            50.9641
+          ]
+        }
+      },
+      {
+        "Kategorie": "Bildung",
+        "Typ": "Kindertagesstaette",
+        "Name": "Evang. Kindertagesstaette \"St. Michael\"",
+        "share_population": 0.0177,
+        "closest_raster": [
+          11216,
+          11217
+        ],
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            12.1337,
+            51.0438
+          ]
+        }
+      },
+      {
+        "Kategorie": "Bildung",
+        "Typ": "Kindertagesstaette",
+        "Name": "Kindertagesstaette \"Zwergenhaus\" Bornitz",
+        "share_population": 0.0102,
+        "closest_raster": [
+          9611,
+          9612,
+          9765,
+          10074,
+          10078,
+          10227,
+          10228,
+          10229
+        ],
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            12.1737,
+            51.0903
+          ]
+        }
+      },
+      {
+        "Kategorie": "Bildung",
+        "Typ": "Kindertagesstaette",
+        "Name": "Kindertagesstaette \"Sporaer Spielmaeuse\"",
+        "share_population": 0.0382,
+        "closest_raster": [
+          11519,
+          11520,
+          11521,
+          11522,
+          11615,
+          11708,
+          11794,
+          11795,
+          11796,
+          11879,
+          11880,
+          11962,
+          12127,
+          12208,
+          12209,
+          12211,
+          12212,
+          12287,
+          12288,
+          12289,
+          12291,
+          12292,
+          12293,
+          12365,
+          12366,
+          12367,
+          12368,
+          12372
+        ],
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            12.26,
+            51.0255
+          ]
+        }
+      },
+      {
+        "Kategorie": "Bildung",
+        "Typ": "Kindertagesstaette",
+        "Name": "Kathol. Kindertagesstaette \"St. Peter und Paul\"",
+        "share_population": 0.0947,
+        "closest_raster": [
+          11020,
+          11021,
+          11022,
+          11023,
+          11121,
+          11122,
+          11123,
+          11124,
+          11211,
+          11213
+        ],
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            12.1282,
+            51.0507
+          ]
+        }
+      },
+      {
+        "Kategorie": "Bildung",
+        "Typ": "Kindertagesstaette",
+        "Name": "Kindertagesstaette \"Deubener Bergzwerge\"",
+        "share_population": 0.0003,
+        "closest_raster": [
+          9144
+        ],
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            12.0753,
+            51.116
+          ]
+        }
+      },
+      {
+        "Kategorie": "Bildung",
+        "Typ": "Kindertagesstaette",
+        "Name": "Kindertagesstaette \"Kleine Entdecker\" Geussnitz",
+        "share_population": 0.0293,
+        "closest_raster": [
+          11514,
+          11515,
+          11703,
+          11704,
+          11784,
+          11793,
+          11866,
+          11867,
+          11868,
+          11869,
+          11876,
+          11877,
+          11949,
+          11950,
+          11951,
+          11954,
+          11955,
+          11961,
+          12032,
+          12037,
+          12043,
+          12044,
+          12115,
+          12116,
+          12124,
+          12125,
+          12194,
+          12195,
+          12196,
+          12281,
+          12282,
+          12360,
+          12361
+        ],
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            12.1814,
+            51.0153
+          ]
+        }
+      }
+    ]
+  }

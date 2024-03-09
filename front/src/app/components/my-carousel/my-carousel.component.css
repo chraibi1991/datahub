@@ -1,0 +1,121 @@
+.datahub-tile2{
+    border: 3px solid grey; 
+    height: 300px;
+    width: 500px; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+  }
+
+.datahub-tile2:hover{
+  -webkit-transform: scale(1.1);
+-ms-transform: scale(1.1);
+transform: scale(1.1);
+transition: 0.5s ease;
+height: 300px;
+width: 500px; 
+}
+
+
+  .datahub-tile3{
+    border: 3px solid grey; 
+    height: 250px;
+    width: 250px; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    border-left: none;
+    opacity: 0.5;
+    z-index:0
+
+
+  }
+
+  .datahub-tile3:hover{
+    -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  transition: 0.5s ease;
+  height: 300px;
+  width: 500px; 
+  border: 3px solid grey; 
+  }
+
+  .datahub-tile4{
+    background-color: white;
+    border: 3px solid grey; 
+    height: 200px;
+    width: 150px; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    border-left: none;
+    opacity: 0.25;
+  }
+
+
+  .datahub-tile4:hover{
+    -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  transition: 0.5s ease;
+  height: 300px;
+  width: 500px; 
+  border: 3px solid grey; 
+  z-index:1000
+  }
+  .datahub-tile1{
+    border: 3px solid grey; 
+    height: 250px;
+    width: 250px; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    border-right: none;
+    opacity: 0.5;
+
+
+  }
+
+  .datahub-tile1:hover{
+    border: 3px solid grey; 
+    -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  transition: 0.5s ease;
+  height: 300px;
+  width: 500px; 
+  border: 3px solid grey; 
+
+  }
+
+  .datahub-tile0{
+    border: 3px solid grey; 
+    height: 200px;
+    width: 150px; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    border-right: none;
+    opacity: 0.25;
+
+  }
+
+  .datahub-tile0:hover{
+    border: 3px solid grey; 
+    -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  transition: 0.5s ease;
+
+  height: 300px;
+  width: 500px; 
+  }
+
+
+
+.content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

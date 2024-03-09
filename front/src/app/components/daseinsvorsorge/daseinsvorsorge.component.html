@@ -1,0 +1,113 @@
+<div class="container">
+
+
+
+
+
+<div style="width: 100%; margin-left: 3%; margin-bottom: 1%;">
+    <span  class="span0">  Analysen </span> <span class="span1"> - Analysen Notfallinfrastruktur </span> <br>
+    <br>
+
+    <span class="span-small"> 
+
+        Willkommen bei unserer Daseinsvorsorge! Hier können Sie Analysen zu unserer Notfallinfrastruktur machen und die perfekten Standorte für Rettungswachen finden.
+
+    </span>
+  </div>
+    <div class="row">
+
+            <div class="map" leaflet [leafletOptions]="options" [leafletLayers]="layers"
+                (leafletMapReady)="onMapReady($event)">
+            </div>
+
+        <div class="chart">
+            <h1>Notfallversorgung Burgenlandkreis 2023 </h1>
+            <canvas id="canvas0">{{chart}}</canvas>
+        </div>
+
+
+
+
+    </div>
+
+    <div style="display: flex; flex-direction: column; align-items: center;">
+
+        <div style="display: flex; "> 
+
+        <button class="btn" (click)="setInitState()" *ngIf="hasBeenModified && !generateBool"> Ausgangsstatus </button>
+        <button class="btn" (click)="setModifyMode()" *ngIf="!modifiyMode && !generateBool"> Standorte modifizieren </button>
+        <button class="btn" (click)="endModifyMode()" *ngIf="modifiyMode && !generateBool"> Modifikation setzen </button>
+      
+
+        <button class="btn" *ngIf="!modifiyMode && !generateBool"  style="color: grey;"> Vorschlagsgenerierung </button>
+
+ 
+        <button class="btn" *ngIf="!modifiyMode && generateBool" [ngStyle]="{'background-color': optimizationIndex == 0 ? 'lightgray' : '#10684E'}"   (click)="drawMarkersOpti(0)"> Optimierung 1  </button>
+        <button class="btn" *ngIf="!modifiyMode && generateBool" [ngStyle]="{'background-color': optimizationIndex == 1 ? 'lightgray' : '#10684E'}"(click)="drawMarkersOpti(1)"> Optimierung 2 </button>
+        <button class="btn" *ngIf="!modifiyMode && generateBool" [ngStyle]="{'background-color': optimizationIndex == 2 ? 'lightgray' : '#10684E'}"(click)="drawMarkersOpti(2)"> Optimierung 3 </button>
+        <button class="btn" *ngIf="!modifiyMode && generateBool" [ngStyle]="{'background-color': optimizationIndex == 3 ? 'lightgray' : '#10684E'}"(click)="drawMarkersOpti(3)"> Status Quo </button>
+    </div>
+        
+        <button class="btn" *ngIf="generateBool" (click)="endOpti()"> Beenden </button>
+        <button class="btn" (click)="modifiyMode = false; generateBool = false; hasBeenModified = false" *ngIf="modifiyMode && !generateBool"> Beenden </button>
+
+
+
+
+    </div>
+
+
+
+
+</div>
+
+
+<dialog id="dialog">
+    <div style="width: 100vw; display: flex; align-items: center; flex-direction: column; ">
+      <h1> Hinweis </h1>
+      <h3> Um eine neue Einrichtung hinzuzufügen, klicken Sie auf den gewünschten Ort in der Karte </h3>
+      <h3> Eine bestehende Einrichtung kann mittels Klick auf der gewünschten Einrichtung verschoben oder gelöscht werden </h3>
+
+      <button mat-raised-button  (click)="closeDialog()"> OK!</button>
+    </div>
+  </dialog>
+
+
+
+
+  <dialog id="dialog3">
+    <div style="width: 20vw; display: flex; align-items: center; flex-direction: column; position: right;
+       height: 50vh;
+    overflow-y: scroll; ">
+
+     <div *ngIf="selectedMarkerForOpti == ''" style="display: flex; align-items: center; flex-direction: column;"> 
+      <h3> Klicken Sie die Einrichtung an, für die es Optimierungsvorschläge geben soll</h3>
+     
+
+      <button mat-raised-button color="primary" (click)="setMarker()"> Einrichtung auswählen </button>
+
+    </div>
+
+
+    <div *ngIf="selectedMarkerForOpti != ''" style="display: flex; align-items: center; flex-direction: column;">
+      <h2> Ausgewählte Einrichtung</h2>
+      <h3> {{ selectedMarkerForOpti }} </h3>
+     
+
+      <button mat-raised-button color="primary" (click)="generate()"> Optimierung starten </button>
+
+    </div>
+    </div>
+  </dialog>
+
+
+
+
+<dialog id="dialog2">
+    <div style="width: 100px; display: flex; align-items: center; ">
+      <mat-spinner *ngIf="spinner"></mat-spinner>
+    </div>
+  </dialog>
+
+
+

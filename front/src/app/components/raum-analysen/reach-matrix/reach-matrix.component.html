@@ -1,0 +1,299 @@
+<div *ngIf="needDialog" id="errorDialog">
+
+  <div id="dialogMessage">
+    <div id="dialogTileMsg">
+      Anfrageergebnis 
+    </div>
+    <div>Ihre gewählte Eingabekombination hat leider keine Ergebnisse erbracht. Wir empfehlen, eine alternative Eingabe zu versuchen.</div>
+    <div id="iconDialog">!</div>
+    <button id="confirmDialog" (click)="needDialog=false;">OK</button>
+   <img  id="imgDialog" src =  "https://upload.wikimedia.org/wikipedia/commons/5/53/Wappen_Sachsen-Anhalt.svg" width="30px">
+  </div>
+  
+  
+
+</div><div style="width: 100%; margin-left: 3%; margin-bottom: 1%;">
+  <span  class="span0"> Räumliche Analyse  </span> <span class="span1"> - Erreichbarkeitsanalyse </span>
+</div>
+
+
+<div style="display: flex; flex-direction: row; height: 80vh;">
+
+<div style="display: flex; flex-direction: row; justify-content: space-around; height: 80vh">
+  <div class="col">
+
+
+
+    <div class="map-container" [ngStyle]="{'width': storageService.reachResult.einrichtungen ? '90%' : '30%'}"
+      style="height: 500px">
+      <div class="map" leaflet [leafletOptions]="options" [leafletLayers]="layers"
+        (leafletMapReady)="onMapReady($event)"></div>
+    </div>
+
+
+    <div class="textbox" [ngStyle]="{'width': storageService.reachResult.einrichtungen ? '90%' : '0%'}">
+      <span class="span3"> Willkommen bei den Erreichbarkeitsanalysen! Um die gewünschten Gebiete auf verschiedene
+        Einrichtungstypen zu
+        erkunden, klicken Sie einfach auf das + um somit unter Ihrer persönlichen Auswahl die Karte zu analysieren
+      </span>
+
+    </div>
+
+
+
+
+    <div class="auswahl">
+      <b> Ihre Auswahl </b>
+      <button mat-mini-fab aria-label="Example icon button with a home icon" (click)="showModal()"
+        style="background-color: #10684E; color:white" >
+        <mat-icon>add</mat-icon>
+      </button>
+     <div *ngIf = "showDiv()">  
+        
+        <b> Umkreis ändern: 
+  
+          <button [ngStyle]="{'background-color': radiusMode == 'km' ? '#10684E' : 'white', 'color': radiusMode == 'km' ? 'white' : 'black'}" class="tg-button1" 
+    
+    [ngStyle]="{'background-color': storageService.results[selectedIndex].unit == 'm'? '#10684E' : 'white'}" 
+    (click)="radiusMode = 'km'; radius = storageService.results[selectedIndex].Distanz / 1000 ?storageService.results[selectedIndex].Distanz / 1000 :30
+    
+    " > 
+   km
+    </button>
+    <button [ngStyle]="{'background-color': radiusMode == 'min' ? '#10684E' : 'white', 'color': radiusMode == 'min' ? 'white' : 'black'}" 
+    [ngStyle]="{'background-color': storageService.results[selectedIndex].unit == 'min'? '#10684E' : 'white'}" 
+    
+    class="tg-button2"(click)="radiusMode = 'min'; radius = storageService.results[selectedIndex].Fahrzeit ?storageService.results[selectedIndex].Fahrzeit : 15
+    
+    "> 
+      min
+    </button>
+  </b>
+      <mat-slider *ngIf="(storageService.results[selectedIndex].unit == 'm' && !radiusMode) || radiusMode == 'km'" style="width: 20%;" min="0" max="30" step="0.1"  discrete>
+        <input #slider [(ngModel)]="radius" value="radius" matSliderThumb >
+      </mat-slider>
+
+
+      <mat-slider *ngIf="(storageService.results[selectedIndex].unit == 'min' && !radiusMode) || radiusMode == 'min'" style="width: 20%;" min="0" max="60" step="1"  discrete>
+        <input #slider [(ngModel)]="radius" value="radius" matSliderThumb >
+      </mat-slider>
+      <b> 
+        {{ radius }}  
+          <ng-container *ngIf="radiusMode == 'km'">
+              Kilometer 
+          </ng-container>
+
+          <ng-container *ngIf="radiusMode == 'min'">
+            Minuten  
+        </ng-container>
+      </b>
+      <button  mat-mini-fab aria-label="Example icon button with a home icon" (click)="updateRadius(selectedIndex)"
+        style="background-color: #10684E; color:white">
+        <mat-icon>done_all</mat-icon>
+      </button>
+    </div>
+
+      <div style="display: flex; flex-direction: row; height: 60%;">
+        <ng-container  *ngFor="let res of storageService.results; let i = index">
+
+    
+
+
+
+
+
+          <div class="btnTyp" [ngStyle]="{'background-color': i == selectedIndex ? 'lightgray' : 'white'}" 
+        
+          
+          (click)=" selectedIndex = i; setResult(res); removeGeoJsonLayer();">
+            Typ: {{ res.Typ }} {{ res.Distanz }} {{ res.Fahrzeit }} {{ res.unit }} <br>
+
+            <ng-container *ngIf="res.Typ == 'Rasteranalyse'">
+              Population: {{ res.Population }}<br>
+              Analysejahr: {{ res.Analysejahr }}<br>
+              Zielalter: {{ res.Zielalter }}<br>
+              Einrichtung: {{ res.Einrichtung }} <br>
+              Transportmodus: {{ res.Transportmodus }}<br>
+            </ng-container>
+
+            <ng-container *ngIf="res.Typ != 'Rasteranalyse' && res.Filter == 'Fahrzeit' ">
+              Filter: {{ res.Filter }} ({{(res.url).split('mode=')[1].split('&')[0]}}) <br>
+              <br>
+              Einrichtungen:
+              <div *ngFor="let t of res.Einrichtungen">
+
+
+
+                {{ t }} <br>
+              </div>
+            </ng-container>
+
+            <ng-container *ngIf="res.Typ != 'Rasteranalyse' && res.Filter == 'Distanz' ">
+              Filter: {{ res.Filter }}  <br>
+              <br>
+              Einrichtungen:
+              <div *ngFor="let t of res.Einrichtungen">
+
+
+
+                {{ t }} <br>
+              </div>
+            </ng-container>
+
+
+
+
+
+          </div>
+
+
+        </ng-container>
+      </div>
+
+    </div>
+
+    </div>
+
+
+
+
+  </div>
+
+<!-- [ngStyle]="{'display': storageService.reachResult.einrichtungen  ? 'inline' : 'none'}" -->
+
+  <div class="result-container" [ngStyle]="{'width': storageService.reachResult.einrichtungen && storageService.reachResult.einrichtungen.length > 0  ? '40%' : '0'}">
+
+
+      <div class="chart-container" [hidden]="!storageService.reachResult.plot">
+    
+        <h1> Erreichbarkeitsanalyse Raster </h1>    
+        
+       <ng-container *ngIf="storageService.reachResult.meta">
+
+      
+            Reisezeit ({{ storageService.reachResult.meta[0].Transportmodus }}) zu Einrichtung {{ storageService.reachResult.meta[0].Einrichtung}} <br>
+            Bevölkerung im Alter von {{ storageService.reachResult.meta[0].Zielalter }} im Jahr {{ storageService.reachResult.meta[0].Analysejahr }}
+
+          </ng-container>
+        <canvas width="78%" height="50%" id="canvas0">{{chart}}</canvas>
+      </div>
+
+
+      <div class="result" [ngStyle]="{'height': storageService.reachResult.meta[0].Typ != 'Rasteranalyse' ? '30vh' : '25vh', 'margin-bottom': '20px'}"
+        *ngIf="storageService.reachResult.einrichtungen && storageService.reachResult.einrichtungen.length > 0 && storageService.reachResult.meta[0].Typ != 'Rasteranalyse'">
+
+        <div style="display: flex;justify-content:center; align-items: center; height:100%">
+          <div [ngStyle]="{'height': storageService.selectedTypes.length > 1? '100%' : '0'}" style="display: flex; flex-direction: column; align-items: center" > 
+            <h3 *ngIf='storageService.selectedTypes.length > 1'  style="display: flex; flex-direction: column;justify-content:center; align-items: center;"> Filter </h3>
+    
+            <div *ngIf='storageService.selectedTypes.length > 1' style="display: flex;justify-content:center; align-items: center;max-height: 70%;width:70%;flex-wrap: wrap; overflow-y: scroll;" >
+    
+    
+              <div *ngFor="let typ of storageService.selectedTypes" >
+                <div [ngStyle]="{'background-color': typeSelected.indexOf(typ) > - 1 ? 'gray' : 'white'}" class="btnTyp2"
+                  (click)="selectType(typ)">
+                  <img src='{{ getLogo(typ) }}' width="40px" height="40px">
+                </div>
+              </div>
+              <button id="nEinrichtung">Einrichtungen:</button>
+            </div>
+
+            <div *ngIf='storageService.selectedTypes.length == 1'  style="display: flex; flex-direction: column;justify-content:center; align-items: center;"> 
+            <button id="nEinrichtungOne">Einrichtungen:</button>
+          </div>
+          </div>
+            <div style="height: 80%;">
+              <canvas id="myChart" >{{myChart}}</canvas> 
+            </div>
+          </div>
+        
+      </div>
+
+      <div class="result"  [ngStyle]="{'height': storageService.reachResult.meta[0].Typ !='Rasteranalyse'? '50vh' : '25vh'}"   
+        *ngIf="storageService.reachResult.einrichtungen && storageService.reachResult.einrichtungen.length > 0">
+        
+             <!--  [ngStyle]="{'height': storageService.reachResult.meta[0].Typ !='Rasteranalyse' && storageService.selectedTypes.length > 1? '63vh' : '78vh'}"     -->
+
+        <div  class="scrollable" 
+       
+
+        [ngStyle]="getBoolStatement()"
+      
+        
+          
+          
+          >  
+          <ng-container *ngFor="let einrichtung of storageService.reachResult.einrichtungen">
+
+
+            <ng-container *ngIf="typeSelected.length == 0 || typeSelected.indexOf(einrichtung.Typ) > - 1">
+              <div class="list-item" (click)="clickEinrichtung(einrichtung)"
+              clickedEinrichtung
+              [ngStyle]="{'background-color': clickedEinrichtung == einrichtung ? 'lightgray' : 'white'}">
+
+                <div>
+                  <img src='{{ getLogo(einrichtung.Typ) }}' width="70px" height="70px">
+                </div>
+
+                <div style=" display: flex; justify-content: start; align-items: center; width: 60%;">
+                  {{ einrichtung.Name }} <br>
+                  {{ einrichtung.Typ }} | {{ einrichtung.Kategorie }}
+                </div>
+
+
+
+                <div class="pad"  >
+               
+                 <ng-container *ngIf="storageService.reachResult.meta[0].Typ !='Rasteranalyse' ">
+
+                
+                  <ng-container *ngIf="storageService.reachResult.meta[0].unit =='m' "> 
+                    {{ (einrichtung.Distanz / 1000).toFixed(2) }} 
+                  k{{ storageService.reachResult.meta[0].unit }}
+                </ng-container>
+
+                <ng-container *ngIf="storageService.reachResult.meta[0].unit !='m' "> 
+                  {{ einrichtung.Distanz.toFixed(0)  }} 
+                  {{ storageService.reachResult.meta[0].unit }}
+                </ng-container>
+
+              </ng-container>
+
+              <ng-container *ngIf="storageService.reachResult.meta[0].Typ =='Rasteranalyse' ">
+
+
+               {{ einrichtung.share_population.toFixed(2)  }} %
+
+              </ng-container>
+               
+
+
+                </div>
+              </div>
+
+            </ng-container>
+          </ng-container>
+        </div>
+
+      </div>
+
+
+
+
+  </div>
+
+
+</div>
+  <dialog id="dialog">
+    <div style="width: 1200px; ">
+
+      <app-reach-config> </app-reach-config>
+    </div>
+  </dialog>
+
+
+  <dialog id="dialog2">
+    <div style="width: 100px; display: flex; align-items: center; ">
+      <mat-spinner *ngIf="spinner2"></mat-spinner>
+    </div>
+  </dialog>

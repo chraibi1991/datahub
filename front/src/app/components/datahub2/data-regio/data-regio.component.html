@@ -1,0 +1,333 @@
+<div style=" margin-left: 5%; margin-bottom: 0.5%;">
+  <span class="span0"> Datahub. </span> <span class="span1"> Regionalindikatoren nach Gebietseinheiten. </span> <br>
+
+</div>
+<div>
+  <div class="row1">
+    <div id="map-container">
+
+      <div *ngIf="spinner">
+        <mat-spinner></mat-spinner>
+      </div>
+      <div class="map" leaflet [leafletOptions]="options" [leafletLayers]="layers"
+        (leafletMapReady)="onMapReady($event)"></div>
+    </div>
+
+
+
+
+    <div id="chart-container">
+      <h1 *ngIf="selectedChartObject"> {{ selectedChartObject.Name }} <mat-icon
+          (click)="showInfo(selectedChartObject)">info</mat-icon> </h1>
+
+
+
+      <div *ngIf="selectedChartObject" class="selection">
+        <button class="btn3" [style.background-color]="selectedChartIndex  === 0 ? 'lightgray' : 'white'"
+          (click)="changeChartType(0)"> Allgemein </button>
+        <button class="btn3" [style.background-color]="selectedChartIndex   === 1 ? 'lightgray' : 'white'"
+          (click)="changeChartType(1)"> Jährliche Veränderungsrate </button>
+        <button class="btn3" [style.background-color]="selectedChartIndex  === 2 ? 'lightgray' : 'white'"
+          (click)="changeChartType(2)"> Änderungsrate zwischen Zeitpunkten </button>
+        <button class="btn3" [style.background-color]="selectedChartIndex   === 3 ? 'lightgray' : 'white'"
+          (click)="changeChartType(3)"> Vergleich </button>
+
+
+      </div>
+
+      <div class="generalChart"> <!-- *ngIf="indi[0]" -->
+
+        <div *ngIf="selectedChartObject" style="display: flex; justify-content: center; align-items: center;">
+
+
+
+          <ng-container *ngIf="selectedChartIndex < 2">
+            <div>
+              Wertefilter: <mat-slider min="{{ minValue }}" max="{{ maxValue }}" discrete step="0.1"
+                [displayWith]="formatLabel">
+                <input matSliderStartThumb value="{{ minValue }}" (change)="filter($event, 'valMin', chart)">
+                <input matSliderEndThumb value="{{ maxValue }}" (change)="filter($event, 'valMax', chart)">
+              </mat-slider>
+            </div>
+          </ng-container>
+          <div style="margin-left: 10px; ">
+            Zeitstrahl:
+            <mat-slider min="{{ minYear }}" max="{{ maxYear }}" step="1" showTickMarks discrete
+              [displayWith]="formatLabel">
+              <input matSliderStartThumb value="{{ minYear }}" (change)="filter($event, 'timeMin', chart)">
+              <input matSliderEndThumb value="{{ maxYear }}" (change)="filter($event, 'timeMax', chart)">
+            </mat-slider>
+          </div>
+        </div>
+
+        <div> 
+
+        <div style="display: flex;   flex-wrap: wrap; gap: 2px; height: 20px; margin-bottom:10px;">
+
+          <div style="display: flex;" *ngFor="let l of chartLegend ">
+            <div [style.background-color]="l.backgroundColor" style="width:10px; height: 20px "> </div>
+
+            <div style="margin-left: 5px" (click)="filterRegion(l)">
+
+              <s *ngIf="l.disabled"> {{ l.label }} </s>
+              <span *ngIf="!l.disabled"> {{ l.label }} </span>
+            </div>
+          </div>
+
+          <div style="display: flex;" >
+            <div  style="width:10px; height: 20px "> </div>
+
+            <div style="margin-left: 5px" >
+   
+              <u (click)="deselectAll(false)" *ngIf="selectMode"> Alle auswählen </u>
+              <u (click)="deselectAll(true)" *ngIf="!selectMode"> Alle abwählen </u>
+            </div>
+          </div>
+
+       
+
+        </div>
+
+        <br>
+        <br>
+
+
+
+<div>
+        <canvas height='110vh' style="margin-top: 30px;" id="canvasGeneral">
+          {{ chartGeneral }}
+        </canvas>
+      </div>
+    </div>
+      </div>
+  
+
+
+
+
+      <div *ngIf="selectedChartObject" style="display: flex; justify-content: space-around;">
+
+        <button mat-mini-fab> <mat-icon>share</mat-icon>
+        </button>
+
+
+        <button mat-mini-fab style="margin-left: 10px;"> <mat-icon>save_alt</mat-icon>
+        </button>
+
+      </div>
+    </div>
+  </div>
+
+
+
+  <div style="margin-top: 1%; margin-left: 5%; margin-bottom: 1%;">
+    <span class="span2" *ngIf="!selectedChartObject">
+      Willkommen zur Karte mit unseren Regionalindikatoren! Um die
+      gewünschten Gebiete zu erkunden, klicken Sie einfach auf das + um somit
+      unter Ihrer persönlichen Auswahl die Karte zu analysieren.
+    </span>
+
+
+
+    <!--<button *ngIf="!selectedChartObject" mat-mini-fab aria-label="Example icon button with a home icon"
+      (click)="showModal(0)" style="background-color: #10684E;">
+      <mat-icon *ngIf="!selectedChartObject">add</mat-icon>
+
+    </button>-->
+
+    <br> 
+
+
+
+    <span *ngIf="selectedTopic.length > 0 "> Analyseebene: </span>
+
+    <button class="btn" disabled *ngIf="selectedLevel==3"> Landkreis</button>
+    <button class="btn" disabled *ngIf="selectedLevel==4"> Verbandsgemeinde</button>
+    <button class="btn" disabled *ngIf="selectedLevel==5"> Gemeinde</button>
+    <mat-icon *ngIf="selectedChartObject" (click)="showModal(0)">edit</mat-icon>
+
+
+    <span *ngIf="selectedTopic.length > 0 "> Themen: </span>
+    <ng-container *ngFor="let topic of regioMetaData">
+
+      <button *ngIf="topic.checked" class="btn" disabled [ngStyle]="{'border-color': topic.color }"> {{ topic.Bereich }}
+      </button>
+
+    </ng-container>
+    <mat-icon *ngIf="selectedChartObject" (click)="showModal(1)">edit</mat-icon><br>
+
+
+    <span *ngIf="selectedTopic.length > 0 "> Indikatoren:
+
+
+
+
+
+    </span>
+    <ng-container *ngFor="let topic of regioMetaData ">
+      <ng-container *ngFor="let indi of topic.data; let i = index ">
+        <button *ngIf="indi.checked && topic.checked" class="btn2" [ngStyle]="{'border-color': indi.color }"
+          [style.background-color]="selectedChartObject.Name  == indi.Name ? indi.color : 'white'" [value]="indi"
+          (click)="changeChart(indi)">
+
+          {{indi.Name}}
+        </button>
+      </ng-container>
+    </ng-container>
+    <mat-icon *ngIf="selectedChartObject" (click)="showModal(2)">edit</mat-icon>
+
+
+
+<div style="width: 85vw; display: flex; justify-content: center; align-items: center; gap: 20px;">
+  <button *ngIf="!selectedChartObject" (click)="showModal(0)" mat-raised-button color="primary">Indikatoren aus Datahub laden</button>
+  <button  mat-raised-button color="primary" >Eigene Daten importieren</button>
+</div>
+
+
+
+  </div>
+
+</div>
+
+<dialog id="dialog">
+  <div style="width: 1200px; ">
+
+    <button style="margin-left:96.8%; background-color: #10684E;color: white" mat-mini-fab (click)="close()">
+      <mat-icon>close </mat-icon>
+    </button>
+    <br>
+    <br>
+    <div *ngIf="showAnal">
+      <span class="span1"> Schritt 1: Auswahl Regionalebene </span>
+      <br>
+      <br>
+      <span class="span2"> Wählen Sie im ersten Schritt die für Sie relevante Analysebene aus. </span>
+      <br>
+      <br>
+
+      <mat-radio-group [(ngModel)]="selectedLevel" #radioGroup="matRadioGroup">
+        <mat-radio-button value=3> Landkreis</mat-radio-button>
+        <mat-radio-button value=4> Verbandsgemeinde</mat-radio-button>
+        <mat-radio-button value=5> Gemeinde</mat-radio-button>
+
+      </mat-radio-group>
+
+      <div style="display: flex; justify-content: end;">
+        <span style="margin-right: 0; " class="span2"> Zur Themen-Auswahl
+          <button mat-mini-fab (click)="themenauswahl()" style="background-color: #10684E; color: white;">
+            <mat-icon>arrow_forward_ios </mat-icon>
+          </button>
+        </span>
+      </div>
+    </div>
+
+    <br>
+    <br>
+
+    <div *ngIf="showDetail && !showIndi">
+
+      <span class="span1"> Schritt 2: Auswahl Themen </span>
+      <br>
+      <br>
+      <span class="span2"> Wählen Sie im zweiten Schritt die für Sie relevanten Themen aus. </span>
+      <br> <br> <br> <br>
+      <div *ngIf="topicsLoaded">
+        <mat-spinner></mat-spinner>
+      </div>
+
+      <div *ngIf="!topicsLoaded">
+        <mat-checkbox color="#10684E" *ngFor="let topic of regioMetaData" [checked]="topic.checked"
+          [value]="topic.Bereich" (change)="onChange(topic, $event)">
+          {{ topic.Bereich }}
+        </mat-checkbox>
+
+
+
+        <span *ngIf="regioMetaData.length == 0" class="span2"> Keine Themen verfügbar </span>
+      </div>
+      <br> <br> <br> <br>
+      <div style="display: flex; justify-content: space-between;">
+
+        <button mat-mini-fab aria-label="Example icon button with a home icon"
+          (click)="showAnal = true; showDetail = false; showIndi = false" style="background-color: #10684E; color:white">
+          <mat-icon>arrow_backward_ios </mat-icon>
+        </button>
+
+
+        <span style="margin-right: 0; " class="span2"> Zur Indikatoren-Auswahl
+          <button mat-mini-fab aria-label="Example icon button with a home icon"
+            (click)="showIndi = true; showDetail = false; showAnal = false;" style="background-color: #10684E; color:white">
+            <mat-icon>arrow_forward_ios </mat-icon>
+          </button>
+        </span>
+      </div>
+
+    </div>
+
+
+
+    <div *ngIf="showIndi">
+      <span class="span1"> Schritt 3: Auswahl Indikatoren </span>
+      <br>
+      <br>
+      <span class="span2"> Wählen Sie im letzten Schritt die für Sie relevanten Indikatoren aus. </span>
+      <br>
+      <br>
+      <br>
+      <br>
+
+
+      <ng-container *ngFor="let t of regioMetaData">
+        <br *ngIf="t.checked">
+        <span *ngIf="t.checked" class="span1"> {{ t.Bereich }} </span>
+        <br *ngIf="t.checked">
+
+
+        <ng-container *ngFor="let indi of t.data">
+          <mat-checkbox *ngIf="t.checked" [checked]="indi.checked" color="#10684E"
+            (change)="indi.color = t.color; indi.checked = $event.checked;"> {{ indi.Name }} </mat-checkbox>
+        </ng-container>
+
+
+      </ng-container>
+      <br>
+
+
+      <div style="display: flex; justify-content: space-between;">
+
+        <button style="background-color: #10684E; color: white" mat-mini-fab aria-label="Example icon button with a home icon"
+          (click)="showDetail = true; showIndi = false">
+          <mat-icon>arrow_backward_ios </mat-icon>
+        </button>
+
+        <span style="margin-right: 0; " class="span2"> Auswahl festlegen
+          <button mat-mini-fab aria-label="Example icon button with a home icon" (click)="auswahl()"
+            style="background-color: #10684E; color: white">
+            <mat-icon>arrow_forward_ios </mat-icon>
+          </button>
+        </span>
+      </div>
+
+    </div>
+
+
+
+
+
+  </div>
+
+
+
+</dialog>
+
+
+<dialog id="info">
+  <div style="width: 600px; ">
+    <button style="margin-left:95%; background-color: #10684E; color: white" mat-mini-fab (click)="closeInfo()">
+      <mat-icon>close </mat-icon>
+    </button>
+    <h3> Beschreibung des Indikators</h3>
+
+    {{ info }}
+  </div>
+</dialog>

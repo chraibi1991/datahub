@@ -1,0 +1,840 @@
+<div style="margin-top: 1%; margin-left: 5%; margin-right: 5%; margin-bottom: 1%;">
+  <span class="span0"> SYNTHETISCHE BEVÖLKERUNG. </span> <span class="span1"> ENTWICKLUNGSPROGNOSEN </span> <br>
+  <br>
+  <br>
+
+
+
+
+
+
+
+
+
+
+
+  <div id="screen1" *ngIf="mode == 1 || mode == 0"
+  >
+    <span class="span1"> EINSTELLUNGEN
+    </span>
+  
+
+
+   <div id="scr1">
+    <div id="scrr11">
+      <div>
+        <span class="span-small"> Geben Sie an zwischen welchen Jahren Sie Daten analysieren möchten:
+        </span>
+      </div>
+  
+              
+          <div id="selectDrop">
+            <div class="dropDown" id="left">
+              <mat-form-field>
+                <mat-label> von</mat-label>
+                <mat-select [(ngModel)]="startYear">
+                  <mat-option value="2023"> 2023 </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+
+
+
+              <div class="dropDown" id="right">
+                <mat-form-field>
+                  <mat-label> bis</mat-label>
+                  <mat-select [(ngModel)]="endYear">
+                    <mat-option *ngFor="let e of [].constructor(10);
+                  let i = index;" value="{{ 2024 + i }}"> {{ 2024 + i }}</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+          </div>
+
+
+     </div>
+  
+    </div>
+
+    <div class="progress-bar">
+      <div class="progress-pointU" style="background-color: rgb(58, 102, 223);width: 160px; height: 20px; border-radius: 8px;">1: Analyse Zeitraum</div>
+      <div class="progress-pointU" style="background-color: gainsboro;width: 160px; height: 20px; border-radius: 8px;">2: Fertilitätsrate </div>
+      <div class="progress-pointU" style="background-color: gainsboro;width: 140px; height: 20px; border-radius: 8px;">3: Sterbetafeln</div>
+      <div class="progress-pointU" style="background-color: gainsboro;width: 170px; height: 20px; border-radius: 8px;">4: Migrationsbewegung </div>
+      <div class="progress-pointU" style="background-color: gainsboro;width: 130px; height: 20px; border-radius: 8px;">5: Übersicht</div>
+      <div class="progress-bar-fill" [ngStyle]="{'width.%': 0.1* 100}" style="background: linear-gradient(90deg, yellowgreen 0%, yellowgreen 50%, rgb(58, 102, 223) 100%);"> </div>
+    </div>
+  
+
+  </div>
+
+
+  <div id="screen2" *ngIf="(mode == 2)">
+    <span class="span1"> Neugeburtenparameter - Zeitliche Entwicklung der Fertilitätsrate:
+    </span>
+    <br>
+    <br>
+
+    <span class="span-small"> Geben Sie an wie sich die Rate im Laufe der Zeit verändert:
+    </span>
+
+    <br>
+    <br>
+
+    <div style="display: flex; flex-direction: row;  align-items: flex-start; height: 50vh;">
+
+      <div style=" width: 25vw; height: 50vh ; overflow-y: scroll;">
+
+
+        <div>
+          <div style="display: flex; flex-direction: row;">
+            <div class="cellHead">
+              <b> </b>
+              <b> Jahr </b>
+            </div>
+
+            <div class="cellHead">
+              <b> </b>
+              <b> Fertilitätsrate </b>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: row;"
+            *ngFor="let res of fertility[selectedFert].data; let i = index; ">
+
+            <ng-container *ngIf="res.Jahr <= endYear">
+              <div class="cell">
+                <b>
+                  {{ res.Jahr }}
+                </b>
+              </div>
+
+              <div class="cell" [ngStyle]="{'color': res.changed   ? '#65ab96' : 'black'}">
+                <b>
+                  {{ res['Fertilitätsrate'] }}
+
+                </b>
+
+              </div>
+
+            </ng-container>
+
+          </div>
+
+          <button class="btn2" style="width: 18vw;" (click)="reset()">
+            Zurücksetzen
+          </button>
+
+        </div>
+
+
+
+
+      </div>
+
+      <div style="width: 75vw; height: 50vh;" >
+        <div style="display: flex; align-items: center; justify-content: center;">
+
+          <button class="btn2" style="width: 25%"
+            [ngStyle]="{'background-color': 0 == selectedFert  ? '#65ab96' : 'white'}" (click)="changeFert(0)">
+            Anstieg
+          </button>
+
+          <button class="btn2" style="width: 25%"
+            [ngStyle]="{'background-color': 1 == selectedFert  ? '#65ab96' : 'white'}" (click)="changeFert(1)">
+            Kontinuität
+          </button>
+
+          <button class="btn2" style="width: 25%"
+            [ngStyle]="{'background-color': 2 == selectedFert  ? '#65ab96' : 'white'}" (click)="changeFert(2)">
+            Rückgang
+          </button>
+        </div>
+        <div style="width: 58vw; display: flex; align-items: center; justify-content: center;"> 
+
+        <canvas width="100%" height="40vh" id="canvasFert">{{chartFert}}</canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="progress-bar">
+      <div class="progress-pointU" style="background-color: yellowgreen; width: 160px; height: 20px; border-radius: 8px;">✔ Analyse Zeitraum</div>
+      <div class="progress-pointU" style="background-color: rgb(58, 102, 223); width: 160px;height: 20px;border-radius: 8px;">2:Fertilitätsrate</div>
+      <div class="progress-pointU" style="background-color: gainsboro;width: 160px; height: 20px; border-radius: 8px;">3: Sterbetafeln</div>
+      <div class="progress-pointU" style="background-color: gainsboro;width: 180px; height: 20px; border-radius: 8px;">4: Migrationsbewegung </div>
+      <div class="progress-pointU" style="background-color: gainsboro;width: 140px; height: 20px; border-radius: 8px;">5: Übersicht</div>
+      <div class="progress-bar-fill" [ngStyle]="{'width.%': 0.3* 100}" style="background: linear-gradient(90deg, yellowgreen 0%, yellowgreen 75%, rgb(58, 102, 223) 100%);"></div>
+    </div>
+
+
+  </div>
+
+
+
+  <div id="screen2" *ngIf="(mode == 3)">
+    <span class="span1"> Sterbetafeln - Sterbewahrscheinlichkeiten im Laufe der Zeit:
+    </span>
+    <br>
+    <br>
+
+    <span class="span-small"> Geben Sie an wie sich die Sterbewahrscheinlichkeiten ändern:
+    </span>
+
+    <br>
+    <br>
+
+
+    <div style="display: flex; flex-direction: row; justify-content: space-around;">
+
+
+      <div style=" width: 45vw; margin-right: 1vw;">
+
+        <div>
+          <div style="display: flex; flex-direction: row;">
+            <div class="cellHead">
+              <b> Alterskohorte </b>
+            </div>
+
+            <div class="cellHead2">
+              <b> Sterbewahrscheinlichkeit 2023 in % </b>
+            </div>
+
+            <div class="cellHead2">
+              <b> Sterbewahrscheinlichkeit 2033 in % </b>
+            </div>
+
+            <div class="cellHead2">
+              <b> Veränderung in Prozentpunkten </b>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: row;"
+            *ngFor="let res of deathRates[selectedGender].data.table; let i = index; ">
+
+
+            <div class="cell2">
+              <b>
+                {{ res.Altersklasse }}
+              </b>
+            </div>
+
+            <div class="cell2">
+
+              {{ res['Sterbewahrscheinlichkeit 2023 in %'] }}
+
+
+
+            </div>
+
+            <div class="cell2" [ngStyle]="{'color': getColor2(res)}">
+
+              {{ res['Sterbewahrscheinlichkeit 2033 in %']}}
+
+
+            </div>
+
+            <div class="cell2"[ngStyle]="{'color': getColor2(res)}">
+
+
+              <b>  {{(   res['Sterbewahrscheinlichkeit 2033 in %'] - res['Sterbewahrscheinlichkeit 2023 in %'] ).toFixed(2)}} </b>
+
+
+
+            </div>
+
+
+
+          </div>
+
+
+
+          <button class="btn2" style="width: 19vw; margin-left: 13vw" (click)="resetDeath()">
+            Zurücksetzen
+          </button>
+
+        </div>
+
+
+
+
+      </div>
+
+      <div style="width: 44vw;" [hidden]="!showChart">
+        <div style="display: flex; justify-content: center; align-items: flex-start;">
+
+          <button class="btn2" style="width: 25%"
+            [ngStyle]="{'background-color': 0 == selectedGender  ? '#65ab96' : 'white'}" (click)="changeDeath(0)">
+            männlich
+          </button>
+
+          <button class="btn2" style="width: 25%"
+            [ngStyle]="{'background-color': 1 == selectedGender  ? '#65ab96' : 'white'}" (click)="changeDeath(1)">
+            weiblich
+          </button>
+
+        </div>
+
+
+        <canvas width="400" height="400" id="canvas0">{{chartDeathEnd}}</canvas>
+      </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <div class="progress-bar">
+      <div class="progress-pointU" style="background-color: yellowgreen; width: 160px; height: 20px; border-radius: 8px;">✔ Analyse Zeitraum</div>
+      <div class="progress-pointU" style="background-color: yellowgreen; width: 150px;height: 20px;border-radius: 8px;">✔ Fertilitätsrate</div>
+      <div class="progress-pointU" style="background-color: rgb(58, 102, 223);width: 150px;height: 20px;border-radius: 8px;">3:Sterbetafeln</div>
+      <div class="progress-pointU" style="background-color: gainsboro;width: 180px; height: 20px; border-radius: 8px;">4: Migrationsbewegung</div>
+      <div class="progress-pointU" style="background-color: gainsboro;width: 130px; height: 20px; border-radius: 8px;">5: Übersicht</div>
+      <div class="progress-bar-fill" [ngStyle]="{'width.%': 0.5* 100}" style="background: linear-gradient(90deg, yellowgreen 0%, yellowgreen 83%, rgb(58, 102, 223) 100%);"></div>
+    </div>
+
+
+  </div>
+
+  <div id="screen4" *ngIf="mode == 4">
+    <span class="span1"> Prognoseparameter
+    </span>
+    <br>
+    <br>
+
+    <span class="span-small"> Wanderung - Migrationsbewegung im Laufe der Zeit:
+    </span> <br> <br>
+
+    <div *ngIf="!saveTrends">
+
+
+
+
+      <span class="span-small"> Wählen Sie Ihre gewünschten Trendzeiträume zwischen {{ startYear}} und {{ endYear }}:
+
+
+      </span> <br> <br>
+
+      Trendzeiträume zwischen Weiblich und Männlich unterscheiden? <mat-checkbox [(ngModel)]="diffGendTrends">
+      </mat-checkbox>
+
+
+      <br>
+      <br>
+    </div>
+
+
+    <div style="display: flex; flex-direction: row;">
+      <div>
+        <ng-container *ngIf="!saveTrends">
+
+          <div style="display: flex; flex-direction: column;">
+
+            <div class="zeitraumContainer">
+
+
+              <div class="mZeitraumContainer">
+
+                <div style="display: flex; justify-content: flex-start; align-items: start;">
+                  <h3 *ngIf="diffGendTrends"> Weiblich </h3>
+                </div>
+
+                <div style="display: flex;">
+                  <div *ngFor="let trend  of trendzeitenF; let i = index" class="zContainer">
+                    <b> Trendzeitraum # {{ i + 1 }}</b> <br>
+                    <br>
+                    <mat-form-field style="width: 6vw; margin: 1px ">
+                      <mat-label> von</mat-label>
+                      <mat-select [(ngModel)]="trend.start">
+                        <mat-option [value]=trend.start> {{ trend.start}} </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field style="width: 6vw;  margin: 1px  ">
+                      <mat-label> bis</mat-label>
+                      <mat-select [(ngModel)]="trend.end" (selectionChange)="addTrendF(i)">
+
+
+                        <mat-option *ngFor="let e of [].constructor(endYear - trend.start); let i = index;"
+                          [disabled]="trend.disabled || ((trend.start + 1 + i) == (endYear - 1))"
+                          value="{{ trend.start + 1 + i }}"> {{ trend.start + 1 + i }}</mat-option>
+
+
+                      </mat-select>
+                    </mat-form-field>
+
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="mZeitraumContainer" *ngIf="diffGendTrends" style="margin-top: 1vh;">
+
+                <div style="display: flex; justify-content: flex-start; align-items: start;">
+                  <h3> Männlich </h3>
+                </div>
+
+                <div style="display: flex;">
+                  <div *ngFor="let trend  of trendzeitenM; let i = index" class="zContainer">
+                    <b> Trendzeitraum # {{ i + 1 }}</b> <br>
+                    <br>
+                    <mat-form-field style="width: 6vw; margin: 1px ">
+                      <mat-label> von</mat-label>
+                      <mat-select [(ngModel)]="trend.start">
+                        <mat-option [value]=trend.start> {{ trend.start}} </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field style="width: 6vw;  margin: 1px  ">
+                      <mat-label> bis</mat-label>
+                      <mat-select [(ngModel)]="trend.end" (selectionChange)="addTrendM(i)">
+
+
+                        <mat-option *ngFor="let e of [].constructor(endYear - trend.start); let i = index;"
+                          [disabled]="trend.disabled || ((trend.start + 1 + i) == (endYear - 1))"
+                          value="{{ trend.start + 1 + i }}"> {{ trend.start + 1 + i }}</mat-option>
+
+
+                      </mat-select>
+                    </mat-form-field>
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+
+          <br>
+          <br>
+
+
+
+          <button *ngIf="trendzeitenF[trendzeitenF.length - 1].end == endYear"  mat-flat-button color="primary"
+            (click)="saveTrend()">
+            Trendzeiträume speichern
+            <mat-icon>save</mat-icon>
+          </button>
+        </ng-container>
+
+
+
+        <div class="migContainer" *ngIf="saveTrends">
+
+          <div class="migAuswahl">
+
+
+            <div style="display: flex; align-items: center; border-bottom: 1px solid grey;">
+              <h3> Weiblich </h3>
+              <div *ngFor="let trend  of trendzeitenF; let i = index">
+                <button class="btn2" style="height: 4vh; width: 8vw; margin: 2px"
+                  [ngStyle]="{'background-color': getColorForTrend(trend) }"
+                  (click)="setTrendzeitraum(trend, i)">{{trend.start }} - {{ trend.end}}
+                </button>
+              </div>
+
+              <button mat-mini-fab  (click)='saveTrends = false'>
+                <mat-icon>edit</mat-icon>
+              </button>
+
+            </div>
+
+            <div style="display: flex; align-items: center;">
+              <h3> Männlich </h3>
+              <div *ngFor="let trend  of trendzeitenM; let i = index">
+                <button class="btn2" style="height: 4vh; width: 8vw; margin: 2px"
+                [ngStyle]="{'background-color': getColorForTrend(trend) }"
+                  (click)="setTrendzeitraum(trend, i)">{{trend.start }} - {{ trend.end}}
+                </button>
+              </div>
+              <button mat-mini-fab aria-label="Example icon button with a filter list icon"
+                (click)='saveTrends = false'>
+                <mat-icon>edit</mat-icon>
+              </button>
+
+            </div>
+
+          </div>
+
+          <div style="display: flex; flex-direction: row;">
+            <div style=" margin-right: 5vw;">
+              <div>
+
+
+
+
+
+                <h3 *ngIf="selectedTrend.gender == 'f'"> Weiblich
+                  Trendzeitraum #{{ selectedTrendIndex + 1}}: {{ selectedTrend.start }} - {{
+                  selectedTrend.end}}
+                </h3>
+                <h3 *ngIf="selectedTrend.gender == 'm'"> Männlich
+                  Trendzeitraum #{{ selectedTrendIndex + 1}}: {{ selectedTrend.start }} - {{
+                  selectedTrend.end}}
+                </h3>
+
+
+                <div style="display: flex; flex-direction: row;">
+                  <div class="cellHead">
+                    <b> Alterskohorte </b>
+                  </div>
+
+                  <div class="cellHead2">
+                    <b>  Durchschnittliches, jährliches Migrationssaldo Vergangenheit  </b>
+                    <br>
+                    <button mat-flat-button color="primary"  >
+                      <a (click)="modifyYears()" class="Jahre"> Jahre anpassen </a>
+                      <div class="popup">
+                        <div *ngFor="let y of selectedTrend.checkedYears">
+                          {{y}}
+                        </div>
+                      </div>
+                      
+                      
+                  </button>
+
+                  </div>
+
+                  <div class="cellHead2">
+                    <b> Durchschnittliches, jährliches Migrationssaldo für Trendzeitraum </b>
+                    
+                  </div>
+
+
+                </div>
+
+
+                <div style="display: flex; flex-direction: row;" *ngFor="let d of selectedTrend.data; let i = index; ">
+ 
+
+                  <div class="cell2">
+                    <b>
+                      {{ d.Alter }}
+                    </b>
+                  </div>
+
+                  <div class="cell2">
+                    {{ d.Average }}
+                  </div>
+                  <div class="cell2" [ngStyle]="{'color': getColor1(d) }">
+                    {{ d.AverageNew }}
+
+                    ( {{ ((d.AverageNew/d.Average) * 100 ).toFixed(2)  }} % )
+                  </div>
+                </div>
+                <button mat-flat-button color="primary"
+                  (click)="saveMig(selectedTrend)">
+                  Werte speichern
+                  <mat-icon>save</mat-icon>
+                </button>
+
+
+
+              </div>
+
+
+
+
+            </div>
+
+            <div [hidden]="!showChart"
+              style="width: 50vw; display: flex; justify-content: center; align-items: center;">
+
+
+
+
+              <canvas width="50vw" height="100vh" id="canvas0">{{chart}}</canvas>
+            </div>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+
+      <div>
+
+
+
+
+      </div>
+
+    </div>
+
+    <div class="progress-bar">
+      <div class="progress-pointU" style="background-color: yellowgreen; width: 160px; height: 20px; border-radius: 8px;">✔ Analyse Zeitraum</div>
+      <div class="progress-pointU" style="background-color: yellowgreen; width: 150px;height: 20px;border-radius: 8px;">✔ Fertilitätsrate</div>
+      <div class="progress-pointU" style="background-color: yellowgreen;width: 150px;height: 20px;border-radius: 8px;">✔ Sterbetafeln</div>
+      <div class="progress-pointU" style="background-color: rgb(58, 102, 223);width: 200px;height: 20px;border-radius: 8px;">4:Migrationsbewegung</div>
+      <div class="progress-pointU" style="background-color: gainsboro;width: 130px; height: 20px; border-radius: 8px;">5: Übersicht</div>
+      <div class="progress-bar-fill" [ngStyle]="{'width.%': 0.7* 100}" style="background: linear-gradient(90deg, yellowgreen 0%, yellowgreen 87%, rgb(58, 102, 223) 100%);"></div>
+    </div>
+
+
+
+  </div>
+
+
+  <div *ngIf="mode == 5"> 
+
+    <div style="display: flex; flex-direction: column;"> 
+
+   <div style="display: flex; align-items: flex-start; height: 30vh; width: 45vw; justify-content:  space-between;"> 
+      <div> 
+
+    <label for="fname">  <h3> Name der Bevölkerung  </h3>  </label>
+    <input type="text" id="fname" name="fname" [(ngModel)]="popName"> 
+    
+    <br> 
+
+
+    <label for="desc"> <h3> Beschreibung (optional): </h3>  </label>
+    <textarea id="desc" name="desc" [(ngModel)]="popDesc"> </textarea>
+  </div>
+
+  <div style="display: flex; justify-content: center; align-items: center;">
+  
+
+    <button class="btn2" style="height: 30vh; width: 45vw;" (click)="startPrognose()">
+
+      <span class="span0" >   Prognose starten</span>
+     
+   
+  </button>
+  </div>
+
+  </div>
+
+  <h2> Übersicht </h2>
+  <div style=" display: flex">
+
+
+    <div style=" height: 30vh; width: 30vw">
+      <h3> Fertilitätsrate </h3>
+
+     <canvas width="100%" height="100%" id="canvasFert">{{chart}}</canvas>
+  </div>
+
+
+  <div style=" height: 30vh; width: 30vw">
+    <h3> Jährliche Sterbewahrscheinlichkeiten (2033) </h3>
+    <canvas width="20px" height="20px" id="canvas0">{{chartDeathEnd}}</canvas>
+  </div>
+  <div style="height: 30vh; width: 30vw;">
+    <h3> Durchschnittliches, jährliches Migrationssaldo  </h3>
+    <canvas width="20px" height="20px" id="canvas1">{{chartMigAvg}}</canvas>
+  </div>
+  </div>
+
+
+  </div>
+
+  <div class="progress-bar">
+    <div class="progress-pointU" style="background-color: yellowgreen; width: 160px; height: 20px; border-radius: 8px;">✔ Analyse Zeitraum</div>
+    <div class="progress-pointU" style="background-color: yellowgreen; width: 150px;height: 20px;border-radius: 8px;">✔ Fertilitätsrate</div>
+    <div class="progress-pointU" style="background-color: yellowgreen;width: 150px;height: 20px;border-radius: 8px;">✔ Sterbetafeln</div>
+    <div class="progress-pointU" style="background-color: yellowgreen;width: 200px;height: 20px;border-radius: 8px;">✔ Migrationsbewegung</div>
+    <div class="progress-pointU" style="background-color: rgb(58, 102, 223);width: 130px;height: 20px;border-radius: 8px;">5:Übersicht</div>
+    <div class="progress-bar-fill" [ngStyle]="{'width.%': 1* 100}" style="background: linear-gradient(90deg, yellowgreen 0%, yellowgreen 95%, rgb(58, 102, 223) 100%);"></div>
+  </div>
+
+
+</div>
+
+
+<div *ngIf="mode == 6"> 
+
+  <div *ngIf="spinner == true">
+  <div class="center">
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+  </div>
+
+</div>
+
+<h1> Population:  {{ resStats.pop_name}} </h1>
+ <div style="display: flex; align-items: center;"> 
+  <div> 
+<h3> Prognosefortschritt: {{ resStats.progress }}  </h3> 
+</div>
+<div style="margin-left: 2vh;"> 
+<mat-spinner *ngIf="resStats.progress != '100%' " style="width: 3vh "></mat-spinner>
+</div>
+</div>
+
+
+<div style="display : flex; flex-wrap: wrap; justify-content: center;"> 
+
+<div style=" height: 30vh; width: 30vw">
+ <h3 *ngIf="resStats.pop_name == popName "> {{ chartRes1Title }} </h3> 
+  <canvas width="20px" height="20px" id="canvasRes1">{{chartRes1}}</canvas>
+</div>
+
+<div style=" height: 30vh; width: 30vw">
+  <h3 *ngIf="resStats.pop_name == popName "> {{ chartRes2Title }} </h3> 
+  <canvas width="20px" height="20px" id="canvasRes2">{{chartRes2}}</canvas>
+</div>
+<div style=" height: 30vh; width: 30vw">
+  <h3 *ngIf="resStats.pop_name == popName "> {{ chartRes3Title }} </h3> 
+  <canvas width="20px" height="20px" id="canvasRes3">{{chartRes3}}</canvas>
+</div>
+
+<div style=" height: 30vh; width: 30vw">
+  <h3 *ngIf="resStats.pop_name == popName "> {{ chartRes4Title }} </h3> 
+  <canvas width="20px" height="20px" id="canvasRes4">{{chartRes4}}</canvas>
+</div>
+
+<div style=" height: 30vh; width: 30vw">
+  <h3 *ngIf="resStats.pop_name == popName "> {{ chartRes5Title }} </h3> 
+  <canvas width="20px" height="20px" id="canvasRes5">{{chartRes5}}</canvas>
+</div>
+
+</div>
+
+
+
+
+</div>
+
+
+
+<div class="button-container" [ngStyle]="{ 'justify-content': mode==1 || mode == 0 ? 'flex-end': 'space-between' }">
+
+    <span *ngIf="mode > 1" style="margin-right: 0; " class="span2">
+      <button mat-mini-fab aria-label="Example icon button with a home icon" style="background-color: #10684E; color:white" 
+        (click)="back()">
+        <mat-icon>arrow_backward_ios </mat-icon>
+      </button>
+    </span>
+
+
+    <span *ngIf="mode > -1 && showNext()" style="margin-right: 0; " class="span2" > Nächster Schritt
+      <button mat-mini-fab aria-label="Example icon button with a home icon" style="background-color: #10684E; color:white" 
+        (click)="next()">
+        <mat-icon style="background-color: #10684E;" >arrow_forward_ios </mat-icon>
+      </button> </span>
+
+
+  </div>
+
+
+</div>
+
+<dialog id="migDialog">
+
+  <button style="margin-left:95%; background-color: #10684E;  color:white"   mat-mini-fab (click)="close()">
+    <mat-icon>close </mat-icon>
+  </button>
+
+  <h1> Welche Jahre sollen exkludiert werden?</h1>
+
+  <div>
+    <div>
+      Wieso Jahre exkludieren?
+      Entscheiden Sie, welche Jahre von der Berechnung des durchschnittlichen jährlichen Migrationssaldos ausgeschlossen
+      werden sollen.
+
+
+      <div>
+
+        <div style="display: flex; align-items: center; flex-direction: column;">
+          <div style="display:flex; flex-direction: row;">
+            <div *ngFor="let y of avgAll.YearsObj;  " style="margin: 2vh;" (click)="clickYears(y)"
+              [ngStyle]="{'color': y.checked   ? 'red' : 'black'}">
+
+              <s *ngIf="y.checked"> {{ y.y }} </s>
+              <span *ngIf="!y.checked">  {{ y.y }} </span>
+
+             
+
+
+            </div>
+          </div>
+
+
+          <div style="display: flex;">
+
+            <div *ngIf="compMigData">
+
+              <div style="display: flex; flex-direction: row;">
+
+
+                <div class="cellHead">
+                  <b> Alterskohorte </b>
+                </div>
+
+                <div class="cellHead2" *ngIf="selectedTrend.gender == 'f'" >
+                  <b> Durchschnittliches Migrationssaldo des aufgewählten Zeitraumes </b>
+                  <b> Weiblich </b>
+                </div>
+                <div class="cellHead2" *ngIf="selectedTrend.gender == 'm'">
+                  <b> Durchschnittliches Migrationssaldo des aufgewählten Zeitraumes </b>
+                  <b> Männlich </b>
+                </div>
+
+              </div>
+
+
+              <div *ngFor="let d of compMigData.f; let i = index" style="display: flex; flex-direction: row;">
+
+                <div class="cell2">
+                  {{d.Alter }}
+                </div>
+                <div class="cell2" *ngIf="selectedTrend.gender == 'f'">
+                  {{d.Average }}
+                </div>
+
+                <div class="cell2" *ngIf="selectedTrend.gender == 'm'">
+                  {{compMigData.m[i].Average }}
+                </div>
+
+              </div>
+
+            </div>
+
+            <div>
+
+              <canvas width="800" height="1000" id="canvas1">{{chartMigAvg}}</canvas>
+
+
+            </div>
+
+
+          </div>
+
+          <button class="btn2" style="width: 40%" (click)=updateMigration()>
+
+            <span class="span0"> Werte übernehmen
+            </span> </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+</dialog>

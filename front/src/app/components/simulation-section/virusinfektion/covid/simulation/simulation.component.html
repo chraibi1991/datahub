@@ -1,0 +1,161 @@
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+/>
+<!--@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css")-->
+<div class="map-container">
+  <div class="map-frame">
+    <div id="map">
+
+      <div id="chartDisplay">
+        <div id="collapse" (click)="toggleChart()">
+          <i id="collapseIcon" class="bi bi-arrows-angle-contract"></i>
+        </div>
+        <div id="pieChartTitle">Infektionsstatus Bevölkerung</div>
+        <div class="pieChartDisplay">
+          <div id="pieChartContainer" style="height: 250px">
+            <canvas id="myChart">{{ chart }}</canvas>
+          </div>
+          <div id="legende">
+            <p style="color: rgba(0, 0, 255, 1)">
+              &#9632; Infiziert, aber nicht ansteckend:
+              {{ q }}%
+            </p>
+            <p style="color: rgb(233, 13, 196)">&#9632; Ansteckend: {{ w }}%</p>
+            <p style="color: rgb(250, 144, 6)">
+              &#9632; Symptome zeigen: {{ e }}%
+            </p>
+            <p style="color: rgba(255, 0, 0, 1)">
+              &#9632; Schwer krank: {{ r }}%
+            </p>
+            <p style="color: rgba(128, 0, 128, 1)">
+              &#9632; Kritisch: {{ t }}%
+            </p>
+            <p style="color: rgba(0, 128, 0, 0.6)">&#9632; Genesen: {{ z }}%</p>
+            <p id="pwhite" style="color: rgba(49, 46, 48, 0.486)">
+              &#9632; Kein Kontakt: {{ f }}%
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div id="barDisplay">
+        <div id="collapseBar" (click)="toggleBarChart()">
+          <i id="collapseIconBar" class="bi bi-arrows-angle-contract"></i>
+        </div>
+        <canvas id="myBarChart">{{ barChart }}</canvas>
+      </div>
+      <!-- <div id="person">
+    <table id="tablePErson">
+      <tr>
+        <th class="number-cell">Person_8231</th>
+        <th class="number-cell">Tag2</th>
+        <th class="number-cell">Tag3</th>
+      </tr>
+      <tr>
+        <td class="number-cell">zuhause um 7Uhr</td>
+        <td class="number-cell">6</td>
+        <td class="number-cell">2</td>
+      </tr>
+      <tr>
+        <td class="number-cell">6 min zu Arbeit mit Bus</td>
+        <td class="number-cell">0</td>
+        <td class="number-cell">1</td>
+      </tr>
+      <tr>
+        <td class="number-cell">7 Stunden Arbeit</td>
+        <td class="number-cell">4</td>
+        <td class="number-cell">1</td>
+      </tr>
+      <tr>
+        <td class="number-cell">4 min Bus</td>
+        <td class="number-cell">4</td>
+        <td class="number-cell">0</td>
+      </tr>
+      <tr>
+        <td class="number-cell">1 Stunde Bus</td>
+        <td class="number-cell">1/td>
+        <td class="number-cell">5</td>
+      </tr>
+      <tr>
+        <td class="number-cell">18 Uhr zuhause</td>
+        <td class="number-cell">0</td>
+        <td class="number-cell">0</td>
+      </tr>
+    </table>
+    
+  </div> -->
+      <div id="calenderContainer">
+        <div id="collapseCalender" (click)="toggleCalender()">
+          <i id="collapseIconCalender" class="bi bi-arrows-angle-contract"></i>
+        </div>
+        <div id="calenderDay">Tag {{ nextDay }}</div>
+        <div id="calender-navigation">
+          <div id="navigation-container">
+            <i
+              class="bi bi-caret-left-fill arrow"
+              (click)="priviousMonth()"
+              [ngStyle]="{ display: startDay < 24 ? 'none' : 'block' }"
+            ></i>
+
+            <i
+              class="bi bi-caret-right-fill arrow"
+              (click)="nextMonth()"
+              [ngStyle]="{ display: startDay > 336 ? 'none' : 'block' }"
+            ></i>
+          </div>
+          <div>
+            <table id="calender">
+              <tbody>
+                <ng-container *ngFor="let zeile of zahlenliste; let i = index">
+                  <tr *ngIf="i % 8 === 0">
+                    <ng-container
+                      *ngFor="
+                        let spalte of zahlenliste.slice(i, i + 8);
+                        let j = index
+                      "
+                    >
+                      <td
+                        class="number-cell"
+                        (click)="applyOnSimulation(spalte)"
+                      >
+                        {{ spalte }}
+                      </td>
+                    </ng-container>
+                  </tr>
+                </ng-container>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div id="btnTest">
+        <span id="dayDisplay">Tag {{ nextDay }}</span>
+
+        <div id="playContainer">
+          <button class="zoomBtn" (click)="Zoom()" [disabled]="!isZooming">
+            <i [ngClass]="disableZoom ? 'bi bi-zoom-in' : 'bi bi-zoom-out'"></i>
+          </button>
+
+          <button class="zoomBtn">
+            <i (click)="zoomBLK()" style="font-size: 16px">BLK</i>
+          </button>
+
+          <button id="playButton" (click)="startSimulation()">
+            <i id="playBtn" class="bi bi-play-fill"></i>
+          </button>
+
+          <input
+            type="range"
+            id="customRange1"
+            value="1"
+            min="1"
+            max="360"
+            (change)="updateNextDay($event)"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
