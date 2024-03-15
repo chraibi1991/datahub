@@ -4,74 +4,84 @@ import { latLng, tileLayer } from 'leaflet';
 import { RegioService } from '../../../service/regioservice/regioservice.component';
 import { Storageservice } from '../../../service/storageservice-component/storageservice-component.component';
 import { MatCheckboxChange } from '@angular/material/checkbox';
-import { DatahubService } from '../../../service/datahubservice/datahubservice.component';
 import { Router } from '@angular/router';
 import { Chart } from 'chart.js';
-import { GeoJsonObject } from 'geojson';
+import { MatDialog } from '@angular/material/dialog';
+import { ReportModalComponent } from './report-modal/report-modal.component';
 
 @Component({
   selector: 'app-data-regio',
   templateUrl: './data-regio.component.html',
   styleUrls: ['./data-regio.component.css']
 })
+
 export class DataRegioComponent {
   async deselectAll(bool: any) {
- this.selectMode = bool;
+    this.selectMode = bool;
 
-this.chartLegend.forEach(element => {
-  element.disabled = bool; 
-  
-});
+    this.chartLegend.forEach(element => {
+      element.disabled = bool;
 
-console.log("leg", this.chartLegend)
+    });
 
-switch(this.selectedChartIndex) {
-  case 0:
-    await this.showGeneralChart();  break;
+    console.log("leg", this.chartLegend)
 
-  case 1:
-    await this.showYearlyChangeChart(); break; 
+    switch (this.selectedChartIndex) {
+      case 0:
+        await this.showGeneralChart();
+        break;
+      case 1:
+        await this.showYearlyChangeChart();
+        break;
 
-  case 2:
-    await this.showChangeRateChart(); break; 
-  case 3:
-    await this.showCompareChart(); break; 
-  default:
-      await this.showGeneralChart();  break;
-}
-}
-selectMode = false; 
-  selectedShape: any;
-topicsLoaded: any = false;
-  async filterRegion(l: any) {
-  l.disabled = !l.disabled; 
-  
-  
-  switch(this.selectedChartIndex) {
-    case 0:
-      await this.showGeneralChart();  break;
-
-    case 1:
-      await this.showYearlyChangeChart(); break; 
-
-    case 2:
-      await this.showChangeRateChart(); break; 
-    case 3:
-      await this.showCompareChart(); break; 
-    default:
-        await this.showGeneralChart();  break;
+      case 2:
+        await this.showChangeRateChart();
+        break;
+      case 3:
+        await this.showCompareChart();
+        break;
+      default:
+        await this.showGeneralChart();
+        break;
+    }
   }
-}
+  selectMode = false;
+  selectedShape: any;
+  topicsLoaded: any = false;
+  async filterRegion(l: any) {
+    l.disabled = !l.disabled;
+
+
+    switch (this.selectedChartIndex) {
+      case 0:
+        await this.showGeneralChart();
+        break;
+
+      case 1:
+        await this.showYearlyChangeChart();
+        break;
+
+      case 2:
+        await this.showChangeRateChart();
+        break;
+      case 3:
+        await this.showCompareChart();
+        break;
+      default:
+        await this.showGeneralChart();
+        break;
+    }
+  }
   async showCompareChart() {
-    
+
     var yAxisLabel = this.selectedChartObject.unit;
     console.warn("BODY", this.buildRequestObject());
     var requestBody = this.buildRequestObject()
 
-  
+
     var testData = await this.regioService.getCompareChartData(requestBody);
 
-    console.warn("RESULTS", testData); 
+    console.warn("RESULTS", testData);
     //@ts-ignore
     this.setMinMax(testData.chart.chartMeta);
 
@@ -96,7 +106,7 @@ topicsLoaded: any = false;
       }
     }
 
-  
+
     var chartDisplay = {
       type: 'bar',
       data: {
@@ -105,7 +115,7 @@ topicsLoaded: any = false;
         //@ts-ignore
         datasets: testData.chart.chartData.datasets
       },
- 
+
       options: {
         scales: {
           y: {
@@ -117,13 +127,13 @@ topicsLoaded: any = false;
             }
           }
         },
-        
+
         plugins: {
           legend: {
             display: false,
           }
         }
-     
+
       }
     }
 
@@ -131,16 +141,16 @@ topicsLoaded: any = false;
       this.chartGeneral = new Chart("canvasGeneral", chartDisplay);
     }, 10);
 
-   //@ts-ignore
-   this.chartLegend = testData.chart.chartMeta.regions; 
+    //@ts-ignore
+    this.chartLegend = testData.chart.chartMeta.regions;
     //@ts-ignore
     this.addShapelayers(testData.shapefiles.data);
 
 
-    
+
     //@ts-ignore
     this.addLegendNew(testData, 'Vergleich')
-    
+
   }
 
   chartReady: any = false;
@@ -192,25 +202,30 @@ topicsLoaded: any = false;
     if (type == 'valMax') {
       this.selectedMaxVal = value
     }
-    
 
 
-    switch(this.selectedChartIndex) {
+
+    switch (this.selectedChartIndex) {
       case 0:
-        await this.showGeneralChart();  break;
+        await this.showGeneralChart();
+        break;
 
       case 1:
-        await this.showYearlyChangeChart(); break; 
+        await this.showYearlyChangeChart();
+        break;
 
-    case 2:
-        await this.showChangeRateChart(); break; 
-        case 3:
-          await this.showCompareChart(); break; 
+      case 2:
+        await this.showChangeRateChart();
+        break;
+      case 3:
+        await this.showCompareChart();
+        break;
       default:
-          await this.showGeneralChart();  break;
+        await this.showGeneralChart();
+        break;
 
     }
-   
+
     return;
 
 
@@ -239,7 +254,10 @@ topicsLoaded: any = false;
 
   options = {
     layers: [
-      tileLayer('https://m.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', { maxZoom: 18, attribution: '...' })
+      tileLayer('https://m.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+        maxZoom: 18,
+        attribution: '...'
+      })
     ],
     zoom: 12,
     minZoom: 7,
@@ -274,7 +292,9 @@ topicsLoaded: any = false;
     var data = JSON.parse(JSON.stringify(this.chartRootData[2].myData));
     var dataForLabel = JSON.parse(JSON.stringify(this.chartRootData[2].datasets));
 
-    var dataObj: { label: any; data: number[]; }[] = [];
+    var dataObj: {
+      label: any;data: number[];
+    } [] = [];
 
     var maxValue = -10000000;
     var minValue = 10000000;
@@ -284,19 +304,27 @@ topicsLoaded: any = false;
 
     console.warn(lower, upper);
 
-    var lowerData = data.filter((el: { x: any; }) => el.x == lower);
-    var upperData = data.filter((el: { x: any; }) => el.x == upper);
+    var lowerData = data.filter((el: {
+      x: any;
+    }) => el.x == lower);
+    var upperData = data.filter((el: {
+      x: any;
+    }) => el.x == upper);
     if (lowerData.length > 0 && upperData.length > 0) {
       var upperObj = upperData[0];
       var lowerObj = lowerData[0];
       var resultObj = {};
       var values: number[] = [];
 
-      (Object.keys(lowerObj) as (keyof typeof lowerObj)[]).forEach((key, index) => {
+      (Object.keys(lowerObj) as(keyof typeof lowerObj)[]).forEach((key, index) => {
 
         var obj = {};
         if (!(key == 'x') && lowerObj[key] != 0) {
-          var label = dataForLabel.filter((el: { parsing: { yAxisKey: string | number | symbol; }; }) => el.parsing.yAxisKey == key)
+          var label = dataForLabel.filter((el: {
+            parsing: {
+              yAxisKey: string | number | symbol;
+            };
+          }) => el.parsing.yAxisKey == key)
           var val = parseFloat(((upperObj[key] - lowerObj[key]) / lowerObj[key]).toFixed(3)) * 100
 
           if (maxValue < val) {
@@ -321,8 +349,7 @@ topicsLoaded: any = false;
     //@ts-ignore
     console.log("time", lowerData, upperData, resultObj, dataObj);
 
-    var chartDisplay =
-    {
+    var chartDisplay = {
       type: 'bar',
       data: {
         labels: ['Änderungsrate'],
@@ -398,12 +425,12 @@ topicsLoaded: any = false;
 
     console.log("hh", chartData, selectedMinVal, selectedMaxVal, selectedMinYear, selectedMaxYear)
     var newLabels = chartData.labels.filter((l: number) => l >= selectedMinYear && l <= selectedMaxYear);
-    var newData: {}[] = [];
+    var newData: {} [] = [];
 
     console.log("chart filter", data, selectedMinVal, selectedMaxVal);
     data.forEach((element: any) => {
       var filteredObj = {};
-      (Object.keys(element) as (keyof typeof element)[]).forEach((key, index) => {
+      (Object.keys(element) as(keyof typeof element)[]).forEach((key, index) => {
         var obj = {};
         // console.log(key, element[key], index);
         if (key == 'x') {
@@ -454,12 +481,12 @@ topicsLoaded: any = false;
     var selectedMaxYear = this.selectedMaxYear ? this.selectedMaxYear : chartData.maxTime;
 
     var newLabels = chartData.labels.filter((l: number) => l >= selectedMinYear && l <= selectedMaxYear);
-    var newData: {}[] = [];
+    var newData: {} [] = [];
 
     console.log("chart filter", data, selectedMinVal, selectedMaxVal);
     data.forEach((element: any) => {
       var filteredObj = {};
-      (Object.keys(element) as (keyof typeof element)[]).forEach((key, index) => {
+      (Object.keys(element) as(keyof typeof element)[]).forEach((key, index) => {
         var obj = {};
         // console.log(key, element[key], index);
         if (key == 'x') {
@@ -508,7 +535,7 @@ topicsLoaded: any = false;
 
   updateChartChange(newData: any, labels: any, chartType: any, canvasId: string) {
     console.log("update", newData, labels);
-    
+
 
     this.chartChange?.destroy();
 
@@ -516,7 +543,9 @@ topicsLoaded: any = false;
     var chartType = this.chartChange;
     var canvasId = "canvasChange";
     var chartData = chartType.data; //this.getSelectedChartRootData(); 
-    chartData.datasets.forEach((d: { data: any; }) => {
+    chartData.datasets.forEach((d: {
+      data: any;
+    }) => {
       d.data = newData;
 
     });
@@ -577,7 +606,9 @@ topicsLoaded: any = false;
 
     console.log("CHT", chartType.data);
     var chartData = chartType.data; //this.getSelectedChartRootData(); 
-    chartData.datasets.forEach((d: { data: any; }) => {
+    chartData.datasets.forEach((d: {
+      data: any;
+    }) => {
       d.data = newData;
 
     });
@@ -629,7 +660,11 @@ topicsLoaded: any = false;
   }
 
   formatChart(chartData: any, type: any, title: any) {
-    chartData.datasets.forEach((d: { data: any; }) => { d.data = chartData.myData; });
+    chartData.datasets.forEach((d: {
+      data: any;
+    }) => {
+      d.data = chartData.myData;
+    });
     this.maxYear = chartData.maxTime;
     if (!isNaN(chartData.minTime)) {
       this.minYear = chartData.minTime;
@@ -642,32 +677,41 @@ topicsLoaded: any = false;
 
 
     //test transform datasets
-    var testFormat: { label: any; data: any[]; }[] = [];
+    var testFormat: {
+      label: any;data: any[];
+    } [] = [];
     var keys: any[] = [];
 
     console.warn(chartData.datasets);
     try {
-      chartData.datasets.forEach((d: any) => { keys.push({ key: d.parsing.yAxisKey, label: d.label }) });
+      chartData.datasets.forEach((d: any) => {
+        keys.push({
+          key: d.parsing.yAxisKey,
+          label: d.label
+        })
+      });
     } catch {
 
     }
 
     keys.forEach(key => {
-      var values: any[] = []
-      chartData.myData.forEach((d: { [x: string]: any; }) => {
-        values.push(d[key.key]);
+        var values: any[] = []
+        chartData.myData.forEach((d: {
+          [x: string]: any;
+        }) => {
+          values.push(d[key.key]);
 
-        if (this.selectedChartIndex == 1) {
-          values
-        }
-      });
+          if (this.selectedChartIndex == 1) {
+            values
+          }
+        });
 
-      testFormat.push({
-        label: key.label,
-        data: values
+        testFormat.push({
+          label: key.label,
+          data: values
 
-      })
-    }
+        })
+      }
 
     )
 
@@ -680,7 +724,7 @@ topicsLoaded: any = false;
       type: type,
       data: {
         labels: chartData.labels,
-        datasets: chartData.datasets//testFormat,
+        datasets: chartData.datasets //testFormat,
 
 
       },
@@ -704,37 +748,41 @@ topicsLoaded: any = false;
 
 
   async changeChart(i: any) {
-    this.selectedChartObject = i; 
-    await this.showGeneralChart(); 
-    return; 
+    this.selectedChartObject = i;
+    await this.showGeneralChart();
+    return;
   }
 
   async changeChartType(selectedIndex: number) {
     this.selectedChartIndex = selectedIndex;
 
-      this.selectedMinYear = 0;
-      this.selectedMaxYear = 4000;
-      this.selectedMinVal = -1000000;
-      this.selectedMaxVal = 1000000;
-    
+    this.selectedMinYear = 0;
+    this.selectedMaxYear = 4000;
+    this.selectedMinVal = -1000000;
+    this.selectedMaxVal = 1000000;
 
-    switch(selectedIndex) {
+
+    switch (selectedIndex) {
       case 0:
-        await this.showGeneralChart();  break;
+        await this.showGeneralChart();
+        break;
 
       case 1:
-        await this.showYearlyChangeChart(); break; 
+        await this.showYearlyChangeChart();
+        break;
 
-        case 2:
-      await this.showChangeRateChart(); break; 
+      case 2:
+        await this.showChangeRateChart();
+        break;
 
       case 3:
-        await this.showCompareChart(); break; 
+        await this.showCompareChart();
+        break;
     }
-  
 
-    return; 
-  
+
+    return;
+
 
 
 
@@ -755,61 +803,61 @@ topicsLoaded: any = false;
 
   buildRequestObject() {
 
-    try{
+    try {
 
-    console.warn("chartlegend", this.chartLegend); 
-    var disableRegions = this.chartLegend.filter(c => c.disabled == true);
-    var disableKeys: any[] = []
-    disableRegions.forEach(el => disableKeys.push(el.Object_Key))
-    if (!this.selectedMinYear) {
-      this.selectedMinYear = 0;
+      console.warn("chartlegend", this.chartLegend);
+      var disableRegions = this.chartLegend.filter(c => c.disabled == true);
+      var disableKeys: any[] = []
+      disableRegions.forEach(el => disableKeys.push(el.Object_Key))
+      if (!this.selectedMinYear) {
+        this.selectedMinYear = 0;
+      }
+
+      if (!this.selectedMaxYear) {
+        this.selectedMaxYear = 4000;
+      }
+
+      if (!this.selectedMinVal) {
+        this.selectedMinVal = -1000000;
+      }
+
+      if (!this.selectedMaxVal) {
+        this.selectedMaxVal = 1000000;
+      }
+
+      if (!this.selectedShape) {
+        this.selectedShape = this.storageService.getObject().Object_Key
+      }
+
+
+
+      var selObjKey = this.storageService.getObject().Object_Key;
+
+      if (this.selectedLevel == 3) {
+        selObjKey = "15"
+      }
+
+      var body = {
+        "objectKey": selObjKey,
+        "focusedKey": this.selectedShape, //this.storageService.getObject().Object_Key,  //HOW TO?
+        "tableKey": this.selectedChartObject.Source + this.selectedChartObject.Tabellen_ID,
+        "admin_level": Number(this.selectedLevel),
+        "minTime": this.selectedMinYear,
+        "maxTime": this.selectedMaxYear,
+        "minValue": this.selectedMinVal,
+        "maxValue": this.selectedMaxVal,
+        "filterKeys": disableKeys
+
+      }
+
+
+
+      return body;
+    } catch (error) {
+      console.warn("req obj failed");
+      return [];
+
     }
-
-    if (!this.selectedMaxYear) {
-      this.selectedMaxYear = 4000;
-    }
-
-    if (!this.selectedMinVal) {
-      this.selectedMinVal = -1000000;
-    }
-
-    if (!this.selectedMaxVal) {
-      this.selectedMaxVal = 1000000;
-    }
-
-    if(!this.selectedShape) {
-      this.selectedShape = this.storageService.getObject().Object_Key
-    }
-
-
-
-  var selObjKey = this.storageService.getObject().Object_Key;
-
-  if(this.selectedLevel == 3) {
-    selObjKey = "15"
-  }
-
-    var body = {
-      "objectKey": selObjKey,
-      "focusedKey": this.selectedShape, //this.storageService.getObject().Object_Key,  //HOW TO?
-      "tableKey": this.selectedChartObject.Source + this.selectedChartObject.Tabellen_ID,
-      "admin_level": Number(this.selectedLevel),
-      "minTime": this.selectedMinYear,
-      "maxTime": this.selectedMaxYear,
-      "minValue": this.selectedMinVal,
-      "maxValue": this.selectedMaxVal,
-      "filterKeys": disableKeys
-
-    }
-
- 
-
-    return body;
-  } catch(error) {
-    console.warn("req obj failed");
-    return []; 
-    
-  }
 
   }
 
@@ -820,7 +868,7 @@ topicsLoaded: any = false;
     var requestBody = this.buildRequestObject()
     var testData = await this.regioService.getYearlyChangeChartData(requestBody);
 
-    console.warn("RESULTS", testData); 
+    console.warn("RESULTS", testData);
     //@ts-ignore
     this.setMinMax(testData.chart.chartMeta);
 
@@ -856,12 +904,12 @@ topicsLoaded: any = false;
 
 
 
-     //@ts-ignore
-   this.chartLegend = testData.chart.chartMeta.regions; 
+    //@ts-ignore
+    this.chartLegend = testData.chart.chartMeta.regions;
     //@ts-ignore
     this.addShapelayers(testData.shapefiles.data);
     //@ts-ignore
-    this.addLegendNew(testData, 'Jährliche Veränderungsrate ' +  testData.chart.chartData.labels[testData.chart.chartData.labels.length - 1])
+    this.addLegendNew(testData, 'Jährliche Veränderungsrate ' + testData.chart.chartData.labels[testData.chart.chartData.labels.length - 1])
   }
 
   async showGeneralChart() {
@@ -870,7 +918,7 @@ topicsLoaded: any = false;
     var requestBody = this.buildRequestObject()
     var testData = await this.regioService.getGeneralChartData(requestBody);
 
-    console.warn("RESULTS", testData); 
+    console.warn("RESULTS", testData);
     //@ts-ignore
     this.setMinMax(testData.chart.chartMeta);
 
@@ -905,28 +953,28 @@ topicsLoaded: any = false;
     }, 10);
 
 
-  //@ts-ignore
-   this.chartLegend = testData.chart.chartMeta.regions; 
+    //@ts-ignore
+    this.chartLegend = testData.chart.chartMeta.regions;
     //@ts-ignore
     this.addShapelayers(testData.shapefiles.data);
 
 
-    
+
     //@ts-ignore
-    this.addLegendNew(testData, 'Allgemein ' +  testData.chart.chartData.labels[testData.chart.chartData.labels.length - 1])
+    this.addLegendNew(testData, 'Allgemein ' + testData.chart.chartData.labels[testData.chart.chartData.labels.length - 1])
   }
 
 
   async showChangeRateChart() {
-   
+
     console.warn("BODY", this.buildRequestObject());
     var requestBody = this.buildRequestObject()
     var testData = await this.regioService.getChangeRateChart(requestBody);
 
-      //@ts-ignore
-      var yAxisLabel = testData.chart.chartData.labels[0] + "in %" ;
+    //@ts-ignore
+    var yAxisLabel = testData.chart.chartData.labels[0] + "in %";
 
-    console.warn("RESULTS", testData); 
+    console.warn("RESULTS", testData);
     //@ts-ignore
     this.setMinMax(testData.chart.chartMeta);
 
@@ -948,11 +996,12 @@ topicsLoaded: any = false;
             }
           },
           x: {
-            
-              display: false}
+
+            display: false
+          }
 
           ,
-          
+
         },
         plugins: {
           legend: {
@@ -966,20 +1015,22 @@ topicsLoaded: any = false;
       this.chartGeneral = new Chart("canvasGeneral", chartDisplay);
     }, 10);
 
-    
+
 
     //@ts-ignore
-   this.chartLegend = testData.chart.chartMeta.regions; 
+    this.chartLegend = testData.chart.chartMeta.regions;
     //@ts-ignore
     this.addShapelayers(testData.shapefiles.data);
     //@ts-ignore
-    this.addLegendNew(testData, 'Veränderung zwischen ' +   testData.chart.chartMeta.minChartYear + " - " + testData.chart.chartMeta.maxChartYear)
+    this.addLegendNew(testData, 'Veränderung zwischen ' + testData.chart.chartMeta.minChartYear + " - " + testData.chart.chartMeta.maxChartYear)
   }
   addLegendNew(d: any, chartType: string) {
 
     this.addLegendTitle(this.selectedChartObject.Name + ' - ' + chartType);
 
-    if (this.legendCluster instanceof L.Control) { this.map.removeControl(this.legendCluster); }
+    if (this.legendCluster instanceof L.Control) {
+      this.map.removeControl(this.legendCluster);
+    }
 
 
 
@@ -988,7 +1039,9 @@ topicsLoaded: any = false;
 
 
     //@ts-ignore
-    this.legendCluster = L.control({ position: 'bottomleft' });
+    this.legendCluster = L.control({
+      position: 'bottomleft'
+    });
     //@ts-ignore
     this.legendCluster.onAdd = () => {
 
@@ -999,7 +1052,7 @@ topicsLoaded: any = false;
         '<div style="display: flex; flex-direction: row" > <div class="circle" style="background-color:' + colorArray[0] + '; width:40px; height: 20px"></div> ' +
         '<div style="margin-left: 4px; margin-right: 4px;"> <b> [' + breaks[0].toFixed(2) + ' , ' + breaks[1].toFixed(2) + ')  </b> </div> </div>' +
         '<div style="display: flex; flex-direction: row" > <div class="circle" style="background-color:' + colorArray[1] + '; width:40px; height: 20px"></div> ' +
-        '<div style="margin-left: 4px; margin-right: 4px;"> <b> [' +  breaks[1].toFixed(2) + ' , ' + breaks[2].toFixed(2) + ') </b> </div> </div>' +
+        '<div style="margin-left: 4px; margin-right: 4px;"> <b> [' + breaks[1].toFixed(2) + ' , ' + breaks[2].toFixed(2) + ') </b> </div> </div>' +
         '</div>' +
 
         '<div style="display: flex; flex-direction: row; margin: 4px;">' +
@@ -1032,39 +1085,38 @@ topicsLoaded: any = false;
 
   }
   addShapelayers(data: any) {
-    data = data.reverse(); 
+    data = data.reverse();
 
 
     this.layers = []
     data.forEach((element: any) => {
       var fillOpacity = 0.5;
-      if(!element.value) {
+      if (!element.value) {
         fillOpacity = 0.1;
         element.value = "Kein Wert!"
-      } 
+      }
       var weight = 1.5;
       var color = 'black';
-      if( this.selectedShape == element.Object_Key ) {
+      if (this.selectedShape == element.Object_Key) {
         fillOpacity = 1
-        weight      = 5;
-        color      = 'red'
-        
+        weight = 5;
+        color = 'red'
+
       }
 
-      var l = L.geoJSON(element.geometry,
-        {
-          style: {
-            fillColor: element.color,
-            fillOpacity : fillOpacity,
-            weight: weight,
-            color: color
-          },
-          onEachFeature: (f, l) => {
+      var l = L.geoJSON(element.geometry, {
+        style: {
+          fillColor: element.color,
+          fillOpacity: fillOpacity,
+          weight: weight,
+          color: color
+        },
+        onEachFeature: (f, l) => {
 
-            l.bindPopup("<span class='span2'> " + element.Object_Nam + " </span> <br>" +
-              "<span class='span0'> " + element.value + " </span> <br>");
-          }
-        });
+          l.bindPopup("<span class='span2'> " + element.Object_Nam + " </span> <br>" +
+            "<span class='span0'> " + element.value + " </span> <br>");
+        }
+      });
 
       l.on('mouseover', () => {
         l.bindPopup("<span class='span2'> " + element.Object_Nam + " </span> <br>" +
@@ -1072,23 +1124,28 @@ topicsLoaded: any = false;
         // this.storageService.setActiveLabel(element.Object_Nam)
       });
 
-      l.on('click', async () => {      
-        this.selectedShape = element.Object_Key; 
-        switch(this.selectedChartIndex) {
+      l.on('click', async () => {
+        this.selectedShape = element.Object_Key;
+        switch (this.selectedChartIndex) {
           case 0:
-            await this.showGeneralChart();  break;
-    
+            await this.showGeneralChart();
+            break;
+
           case 1:
-            await this.showYearlyChangeChart(); break; 
-    
-        case 2:
-            await this.showChangeRateChart(); break; 
-            case 3:
-              await this.showCompareChart(); break; 
+            await this.showYearlyChangeChart();
+            break;
+
+          case 2:
+            await this.showChangeRateChart();
+            break;
+          case 3:
+            await this.showCompareChart();
+            break;
           default:
-              await this.showGeneralChart();  break;
+            await this.showGeneralChart();
+            break;
         }
-        
+
         // this.storageService.setActiveLabel(element.Object_Nam)
       });
       this.layers.push(l);
@@ -1104,7 +1161,7 @@ topicsLoaded: any = false;
 
 
   }
- 
+
 
   async auswahl() {
     var indi: any[] = [];
@@ -1113,7 +1170,9 @@ topicsLoaded: any = false;
     document.getElementById("map-container").style.width = "40%";
     //@ts-ignore
     document.getElementById("chart-container").style.width = "50%";
-    setTimeout(() => { this.map.invalidateSize(); }, 400);
+    setTimeout(() => {
+      this.map.invalidateSize();
+    }, 400);
 
 
 
@@ -1121,10 +1180,16 @@ topicsLoaded: any = false;
     //@ts-ignore
     document.getElementById("dialog").close();
 
-    var topics = this.regioMetaData.filter((t: { checked: boolean; }) => t.checked == true);
+    var topics = this.regioMetaData.filter((t: {
+      checked: boolean;
+    }) => t.checked == true);
 
-    topics.forEach((topic: { data: any[]; }) => {
-      var selIndis = topic.data.filter((t: { checked: boolean; }) => t.checked == true);
+    topics.forEach((topic: {
+      data: any[];
+    }) => {
+      var selIndis = topic.data.filter((t: {
+        checked: boolean;
+      }) => t.checked == true);
       indi = indi.concat(selIndis);
     });
 
@@ -1133,13 +1198,13 @@ topicsLoaded: any = false;
   async setIndicator(indicator: any) {
     this.selectedChartObject = indicator;
     await this.showGeneralChart();
-   
+
     console.warn("indi", indicator)
   }
 
 
 
-  
+
   updateLayerForTimeChart(chartData: any, minValue: any, maxValue: any, chartTitle: any) {
 
     console.warn('chartdata', chartData)
@@ -1166,7 +1231,9 @@ topicsLoaded: any = false;
     //@ts-ignore
     this.presLayer.forEach(element => {
       console.log(element.Object_Nam)
-      var filteredData = chartData.data.datasets.filter((el: { label: any; }) => el.label == element.Object_Nam);
+      var filteredData = chartData.data.datasets.filter((el: {
+        label: any;
+      }) => el.label == element.Object_Nam);
       var val = 0;
       var color = '';
       var fillOpacity = 0.6;
@@ -1188,20 +1255,19 @@ topicsLoaded: any = false;
         fillOpacity = 0.8;
       }
 
-      var l = L.geoJSON(element.geometry,
-        {
-          style: {
-            fillColor: color,
-            fillOpacity: fillOpacity,
-            weight: 1.5,
-            color: borderColor
-          },
-          onEachFeature: (f, l) => {
-            keys.push(element.Object_Key);
-            l.bindPopup("<span class='span2'> " + element.Object_Nam + " </span> <br>" +
-              "<span class='span0'> " + val + " </span> <br>");
-          }
-        });
+      var l = L.geoJSON(element.geometry, {
+        style: {
+          fillColor: color,
+          fillOpacity: fillOpacity,
+          weight: 1.5,
+          color: borderColor
+        },
+        onEachFeature: (f, l) => {
+          keys.push(element.Object_Key);
+          l.bindPopup("<span class='span2'> " + element.Object_Nam + " </span> <br>" +
+            "<span class='span0'> " + val + " </span> <br>");
+        }
+      });
 
       l.on('mouseover', () => {
         l.bindPopup("<span class='span2'> " + element.Object_Nam + " </span> <br>" +
@@ -1248,7 +1314,9 @@ topicsLoaded: any = false;
     //@ts-ignore
     this.presLayer.forEach(element => {
       console.log(element.Object_Nam)
-      var filteredData = chartData.data.datasets.filter((el: { label: any; }) => el.label == element.Object_Nam);
+      var filteredData = chartData.data.datasets.filter((el: {
+        label: any;
+      }) => el.label == element.Object_Nam);
       var val = 0;
       var color = '';
       var fillOpacity = 0.6;
@@ -1270,20 +1338,19 @@ topicsLoaded: any = false;
         fillOpacity = 0.8;
       }
 
-      var l = L.geoJSON(element.geometry,
-        {
-          style: {
-            fillColor: color,
-            fillOpacity: fillOpacity,
-            weight: 1.5,
-            color: borderColor
-          },
-          onEachFeature: (f, l) => {
-            keys.push(element.Object_Key);
-            l.bindPopup("<span class='span2'> " + element.Object_Nam + " </span> <br>" +
-              "<span class='span0'> " + val + " </span> <br>");
-          }
-        });
+      var l = L.geoJSON(element.geometry, {
+        style: {
+          fillColor: color,
+          fillOpacity: fillOpacity,
+          weight: 1.5,
+          color: borderColor
+        },
+        onEachFeature: (f, l) => {
+          keys.push(element.Object_Key);
+          l.bindPopup("<span class='span2'> " + element.Object_Nam + " </span> <br>" +
+            "<span class='span0'> " + val + " </span> <br>");
+        }
+      });
 
       l.on('mouseover', () => {
         l.bindPopup("<span class='span2'> " + element.Object_Nam + " </span> <br>" +
@@ -1318,7 +1385,9 @@ topicsLoaded: any = false;
 
     //@ts-ignore
     this.presLayer.forEach(element => {
-      var val = chartData.data.datasets.filter((el: { label: any; }) => el.label == element.Object_Nam);
+      var val = chartData.data.datasets.filter((el: {
+        label: any;
+      }) => el.label == element.Object_Nam);
       if (maxValue < val[0].data[0]) {
         maxValue = val[0].data[0];
       }
@@ -1344,7 +1413,9 @@ topicsLoaded: any = false;
     var keys: any[] = [];
     //@ts-ignore
     this.presLayer.forEach((element: any) => {
-      var val = chartData.data.datasets.filter((el: { label: any; }) => el.label == element.Object_Nam);
+      var val = chartData.data.datasets.filter((el: {
+        label: any;
+      }) => el.label == element.Object_Nam);
       var color = 'none'
       if (activeLabels.indexOf(element.Object_Nam) > -1) {
         for (var i = 1; i < clusterArray.length; i++) {
@@ -1360,20 +1431,19 @@ topicsLoaded: any = false;
         fillOpacity = 0.8;
       }
 
-      var l = L.geoJSON(element.geometry,
-        {
-          style: {
-            fillColor: color,
-            fillOpacity: fillOpacity,
-            weight: 1.5,
-            color: borderColor
-          },
-          onEachFeature: (f, l) => {
-            keys.push(element.Object_Key);
-            l.bindPopup("<span class='span2'> " + element.Object_Nam + " </span> <br>" +
-              "<span class='span2'> " + val[0].data[0] + " </span> <br>");
-          }
-        });
+      var l = L.geoJSON(element.geometry, {
+        style: {
+          fillColor: color,
+          fillOpacity: fillOpacity,
+          weight: 1.5,
+          color: borderColor
+        },
+        onEachFeature: (f, l) => {
+          keys.push(element.Object_Key);
+          l.bindPopup("<span class='span2'> " + element.Object_Nam + " </span> <br>" +
+            "<span class='span2'> " + val[0].data[0] + " </span> <br>");
+        }
+      });
 
       l.on('mouseover', () => {
         l.bindPopup("<span class='span2'> " + element.Object_Nam + " </span> <br>" +
@@ -1392,18 +1462,18 @@ topicsLoaded: any = false;
     this.showAnal = false;
     this.spinner = true;
 
-    this.topicsLoaded = true; 
+    this.topicsLoaded = true;
     await this.setLayer();
 
     console.warn("keys", this.keys);
-    this.regioMetaData = []; 
-    var regioMeta : any     = [];
+    this.regioMetaData = [];
+    var regioMeta: any = [];
 
-     var randomElement = this.keys[Math.floor(Math.random() * this.keys.length)];  
-    var randomElement1 = this.keys[Math.floor(Math.random() * this.keys.length)];  
-    var randomElement2 = this.keys[Math.floor(Math.random() * this.keys.length)]; 
-    this.keys = [ randomElement, randomElement1, randomElement2]; 
-    
+    var randomElement = this.keys[Math.floor(Math.random() * this.keys.length)];
+    var randomElement1 = this.keys[Math.floor(Math.random() * this.keys.length)];
+    var randomElement2 = this.keys[Math.floor(Math.random() * this.keys.length)];
+    this.keys = [randomElement, randomElement1, randomElement2];
+
     var regioData = await this.regioService.getRegioDataByKey(this.keys);
 
     console.warn("regioData", regioData)
@@ -1414,11 +1484,17 @@ topicsLoaded: any = false;
     console.warn("meta", regioMeta)
 
     //@ts-ignore
-    var indi = regioData.map(function (el: { Key: any; }) { return el.Key; });
+    var indi = regioData.map(function (el: {
+      Key: any;
+    }) {
+      return el.Key;
+    });
     const uniqueIndi = [...new Set(indi)];
     this.regioMetaData = regioMeta.data;
 
-    regioMeta.data.forEach((bereich: { data: any[]; visible: boolean; }) => {
+    regioMeta.data.forEach((bereich: {
+      data: any[];visible: boolean;
+    }) => {
       //@ts-ignore
       var filtered = bereich.data.filter(indi => {
         var key = indi.Source + indi.Tabellen_ID;
@@ -1436,12 +1512,11 @@ topicsLoaded: any = false;
         //@ts-ignore
         bereich.visible = false;
       }
-    }
-    );
+    });
     //@ts-ignore
     this.regioMetaData = regioMeta.data.filter(el => el.visible);
-    
-    this.topicsLoaded = false; 
+
+    this.topicsLoaded = false;
     console.warn("rm", this.regioMetaData)
     return;
   }
@@ -1464,11 +1539,15 @@ topicsLoaded: any = false;
       var randomColor = Math.floor(Math.random() * 16777215).toString(16);
       t.color = "#" + randomColor;
       t.checked = true;
-      t.data.forEach((indi: { color: any; }) => {
+      t.data.forEach((indi: {
+        color: any;
+      }) => {
         indi.color = t.color
       });
 
-      if (this.selectedTopic.filter((el: { Bereich: any; }) => el.Bereich == t.Bereich) == 0) {
+      if (this.selectedTopic.filter((el: {
+          Bereich: any;
+        }) => el.Bereich == t.Bereich) == 0) {
         this.selectedTopic.push(t);
       }
     } else {
@@ -1478,25 +1557,26 @@ topicsLoaded: any = false;
 
   showModal(step: any) {
 
-    switch(step) {
-    case  0:
-      this.showAnal = true;
-      this.showIndi = false; this.showDetail = false;
-      break;
-    case 1 :
-      this.showAnal = false;
-      this.showDetail = true;
-      this.showIndi = false;
-      break;
-    case 2:
-      this.showAnal = false;
-      this.showDetail = true;
-      this.showIndi = true;
+    switch (step) {
+      case 0:
+        this.showAnal = true;
+        this.showIndi = false;
+        this.showDetail = false;
+        break;
+      case 1:
+        this.showAnal = false;
+        this.showDetail = true;
+        this.showIndi = false;
+        break;
+      case 2:
+        this.showAnal = false;
+        this.showDetail = true;
+        this.showIndi = true;
 
 
 
     }
-    
+
 
 
 
@@ -1511,7 +1591,12 @@ topicsLoaded: any = false;
     }
   }
 
-  constructor(private storageService: Storageservice, private regioService: RegioService, private datahub: DatahubService, private router: Router) {
+  constructor(
+      private storageService: Storageservice,
+      private regioService: RegioService,
+      private router: Router,
+      public dialog: MatDialog
+    ) {
 
     console.warn("service", this.storageService.getObject());
     if (this.storageService.getObject().Logo_URL == '') {
@@ -1527,15 +1612,19 @@ topicsLoaded: any = false;
 
 
   addLegendTitle(title: any) {
-    if (this.legend instanceof L.Control) { this.map.removeControl(this.legend); }
+    if (this.legend instanceof L.Control) {
+      this.map.removeControl(this.legend);
+    }
 
     //@ts-ignore
-    this.legend = L.control({ position: 'topright' });
+    this.legend = L.control({
+      position: 'topright'
+    });
     //@ts-ignore
     this.legend.onAdd = () => {
 
       var div = L.DomUtil.create('div', 'info legend');
-      var labels = ['<div style="background-color: rgba(255, 255, 255, 0.5) ; padding: 2px; border-radius: 4px; width: 90%" >  <h1> ' + title  + ' </h1> </div>'];
+      var labels = ['<div style="background-color: rgba(255, 255, 255, 0.5) ; padding: 2px; border-radius: 4px; width: 90%" >  <h1> ' + title + ' </h1> </div>'];
 
 
 
@@ -1550,11 +1639,15 @@ topicsLoaded: any = false;
     this.addLegendTitle(title);
 
 
-    if (this.legendCluster instanceof L.Control) { this.map.removeControl(this.legendCluster); }
+    if (this.legendCluster instanceof L.Control) {
+      this.map.removeControl(this.legendCluster);
+    }
 
     var colorArray = ['#172421', '#09491A', '#576958', '#10684E', '#D4E5C6', '#ACB2A7', '#BBC6BD', '#FFFAE7']
     //@ts-ignore
-    this.legendCluster = L.control({ position: 'bottomleft' });
+    this.legendCluster = L.control({
+      position: 'bottomleft'
+    });
     //@ts-ignore
     this.legendCluster.onAdd = () => {
 
@@ -1634,26 +1727,24 @@ topicsLoaded: any = false;
     //@ts-ignore
     console.warn("set layer", bundesland[0][0]);
     //@ts-ignore
-    var bundeslandLayer = L.geoJSON(bundesland[0][0].geometry,
-      {
-        style: {
-          fillColor: 'white',
-          fillOpacity: 0,
-          weight: 4,
+    var bundeslandLayer = L.geoJSON(bundesland[0][0].geometry, {
+      style: {
+        fillColor: 'white',
+        fillOpacity: 0,
+        weight: 4,
 
-          color: 'black'
-        },
-        onEachFeature: (f, l) => {
-          var out: string[] = [];
-          //@ts-ignore
-          out.push("Name : " + bundesland[0][0].Object_Nam + "<br>"
-          );
-          //@ts-ignore
-          keys.push(bundesland[0][0].Object_Key);
-          //@ts-ignore
-          l.bindPopup("<span class='span2'> " + bundesland[0][0].Object_Nam + " </span> ");
-        },
-      });
+        color: 'black'
+      },
+      onEachFeature: (f, l) => {
+        var out: string[] = [];
+        //@ts-ignore
+        out.push("Name : " + bundesland[0][0].Object_Nam + "<br>");
+        //@ts-ignore
+        keys.push(bundesland[0][0].Object_Key);
+        //@ts-ignore
+        l.bindPopup("<span class='span2'> " + bundesland[0][0].Object_Nam + " </span> ");
+      },
+    });
 
 
     this.layers.push(bundeslandLayer);
@@ -1677,23 +1768,21 @@ topicsLoaded: any = false;
     keys = [];
     //@ts-ignore
     res[0].forEach((element: any) => {
-      var l = L.geoJSON(element.geometry,
-        {
-          style: {
-            fillColor: 'white',
-            fillOpacity: 0.2,
-            weight: 1.5,
+      var l = L.geoJSON(element.geometry, {
+        style: {
+          fillColor: 'white',
+          fillOpacity: 0.2,
+          weight: 1.5,
 
-            color: 'black'
-          },
-          onEachFeature: (f, l) => {
-            var out: string[] = [];
-            out.push("Name : " + element.Object_Nam + "<br>"
-            );
-            keys.push(element.Object_Key);
-            l.bindPopup("<span class='span2'> " + element.Object_Nam + " </span> ");
-          },
-        });
+          color: 'black'
+        },
+        onEachFeature: (f, l) => {
+          var out: string[] = [];
+          out.push("Name : " + element.Object_Nam + "<br>");
+          keys.push(element.Object_Key);
+          l.bindPopup("<span class='span2'> " + element.Object_Nam + " </span> ");
+        },
+      });
 
       l.on('mouseover', () => {
         l.bindPopup("<span class='span2'> " + element.Object_Nam + " </span> <br>").openPopup();
@@ -1721,6 +1810,15 @@ topicsLoaded: any = false;
 
 
 
+  }
+
+
+  public showReport(): void {
+    this.dialog.open(ReportModalComponent, {
+      width: '1200px',
+      height: '1200px',
+      data: {}
+    })
   }
 
 

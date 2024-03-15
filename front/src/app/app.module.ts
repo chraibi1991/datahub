@@ -66,6 +66,7 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { InfluenzaComponent } from './components/simulation-section/virusinfektion/influenza/influenza.component';
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 import { InfrastukturComponent } from './components/datahub2/infrastuktur/infrastuktur.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -130,7 +131,8 @@ import { InfrastukturComponent } from './components/datahub2/infrastuktur/infras
     BrowserAnimationsModule,
     MatTableModule,
     MatButtonToggleModule,
-    TypeaheadModule
+    TypeaheadModule,
+    MatDialogModule
   ],
   providers: [
     DatahubService, 
