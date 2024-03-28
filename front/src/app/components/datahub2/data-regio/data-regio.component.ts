@@ -1816,7 +1816,7 @@ export class DataRegioComponent {
   public showReport(): void {
     this.dialog.open(ReportModalComponent, {
       width: '1200px',
-      height: '1200px',
+      height: 'auto',
       data: {}
     })
   }

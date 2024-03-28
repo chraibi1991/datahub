@@ -1,3 +1,107 @@
 :host {
   display: block;
 }
+
+.reporting-template-preview-area {
+  position: relative;
+  height: 570px;
+  border: solid #a9a9a9 1px;
+  background-color: #d3d3d3;
+  overflow: auto;
+}
+
+.reporting-page {
+  background-color: #fff;
+  border: none;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 80%;
+  height: calc(830px / 1.4);
+}
+
+.reporting-header {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+
+.reporting-header-text {
+  width: 86%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.reporting-header-title {
+  height: 35px;
+  border: dashed gray 1px;
+}
+
+.reporting-header-title span {
+  position: relative;
+  top: 5px;
+}
+
+.reporting-header-date {
+  height: 35px;
+  border: dashed gray 1px;
+}
+
+.reporting-header-date span {
+  position: relative;
+  top: 5px;
+}
+
+.reporting-header-logo {
+  width: 13%;
+  border: dashed gray 1px;
+}
+
+.reporting-content {
+  height: calc(100% - 140px);
+  border: dashed gray 1px;
+}
+
+.reporting-footer {
+  border-top: solid gray 2px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.reporting-footer-date {
+  margin-top: 10px;
+  height: 30px;
+  border: dashed gray 1px;
+  width: 86%;
+}
+
+.reporting-footer-date span {
+  position: relative;
+  top: 5px;
+}
+
+.reporting-footer-page-number {
+  margin-top: 10px;
+  height: 30px;
+  border: dashed gray 1px;
+  width: 13%;
+  text-align: center;
+}
+
+.reporting-footer-page-number span {
+  position: relative;
+  top: 5px;
+  margin: auto;
+}
+
+

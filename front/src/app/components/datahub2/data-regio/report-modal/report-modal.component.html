@@ -1,7 +1,27 @@
 <h2 mat-dialog-title>Report</h2>
 <mat-dialog-content>
+  <div class="reporting-template-preview-area">
+    <div class="reporting-page" *ngFor="let p of pages;index as i">
+      <div class="reporting-header">
+        <div class="reporting-header-text">
+          <div class="reporting-header-title"><span>{{p.title}}</span></div>
+          <div class="reporting-header-date"><span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span></div>
+        </div>
+        <div class="reporting-header-logo"></div>
+      </div>
+      <div class="reporting-content">
+
+      </div>
+      <div class="reporting-footer">
+        <div class="reporting-footer-date"><span>{{getDateTime()}}</span></div>
+        <div class="reporting-footer-page-number">
+          <span>Seite {{i + 1}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </mat-dialog-content>
-<mat-dialog-actions>
+<mat-dialog-actions align="end">
     <button mat-raised-button mat-dialog-close>Annuler</button>
     <button mat-raised-button color="primary" [mat-dialog-close]="true">Ok</button>
-  </mat-dialog-actions>
+  </mat-dialog-actions> 
