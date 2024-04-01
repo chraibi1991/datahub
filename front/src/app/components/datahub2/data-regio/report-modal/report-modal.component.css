@@ -21,7 +21,7 @@
   flex-direction: column;
   justify-content: space-between;
   width: 80%;
-  height: calc(830px / 1.4);
+  height: calc(900px / 1.4);
 }
 
 .reporting-header {
@@ -42,7 +42,7 @@
 
 .reporting-header-title {
   height: 35px;
-  border: dashed gray 1px;
+  /* border: dashed gray 1px; */
 }
 
 .reporting-header-title span {
@@ -52,7 +52,7 @@
 
 .reporting-header-date {
   height: 35px;
-  border: dashed gray 1px;
+  /* border: dashed gray 1px; */
 }
 
 .reporting-header-date span {
@@ -62,12 +62,30 @@
 
 .reporting-header-logo {
   width: 13%;
-  border: dashed gray 1px;
+  /* border: dashed gray 1px; */
+  text-align: center;
 }
 
 .reporting-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   height: calc(100% - 140px);
-  border: dashed gray 1px;
+  /* border: dashed gray 1px; */
+}
+
+.reporting-content .chart-container {
+  width: 100%;
+  height: 80%;
+}
+
+.reporting-content .chart-comment {
+  height: 15%;
+  width: 80%;
+  margin: auto;
+  background-color: transparent;
+  border: none;
+  padding: 20px;
 }
 
 .reporting-footer {
@@ -81,7 +99,7 @@
 .reporting-footer-date {
   margin-top: 10px;
   height: 30px;
-  border: dashed gray 1px;
+  /* border: dashed gray 1px; */
   width: 86%;
 }
 
@@ -93,15 +111,16 @@
 .reporting-footer-page-number {
   margin-top: 10px;
   height: 30px;
-  border: dashed gray 1px;
+  /* border: dashed gray 1px; */
   width: 13%;
-  text-align: center;
+  text-align: right;
 }
 
 .reporting-footer-page-number span {
   position: relative;
   top: 5px;
-  margin: auto;
+  right: 0;
 }
+
 
 

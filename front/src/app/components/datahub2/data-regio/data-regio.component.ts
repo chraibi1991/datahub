@@ -1813,12 +1813,52 @@ export class DataRegioComponent {
   }
 
 
-  public showReport(): void {
+  public async showReport(): Promise<void> {
+    var requestBody = this.buildRequestObject()
+    var data = await this.regioService.getGeneralChartData(requestBody);
+
     this.dialog.open(ReportModalComponent, {
-      width: '1200px',
+      width: '1500px',
       height: 'auto',
-      data: {}
+      data: this.formatData(data)
     })
+  }
+
+  private formatData(data: any): any {
+    const chartMeta = data.chart.chartMeta;
+
+    const cities: any[] = chartMeta.regions.map((region: any) => {
+      const chartData = data.chart.chartData;
+      const cityData: any[] = chartData.labels.map((label: number, index: number) => {
+        const cityDataSet: any = chartData.datasets.find((ds: any) => ds.label === region.label);
+        return {
+          year: label.toString(),
+          value: cityDataSet.data[index]
+        }
+      });
+
+      return {
+        name: region.label,
+        color: region.backgroundColor,
+        data: cityData
+      };
+    });
+
+    return {
+      chart: {
+        name: this.selectedChartObject.Name,
+        unit: this.selectedChartObject.unit,
+        years: {
+          min: chartMeta.minChartYear,
+          max: chartMeta.maxChartYear,
+        },
+        values: {
+          min: chartMeta.minChartValue,
+          max: chartMeta.maxChartValue,
+        },
+        cities: cities
+      }
+    }
   }
 
 

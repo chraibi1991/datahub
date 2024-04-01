@@ -1,27 +1,57 @@
 <h2 mat-dialog-title>Report</h2>
 <mat-dialog-content>
-  <div class="reporting-template-preview-area">
-    <div class="reporting-page" *ngFor="let p of pages;index as i">
-      <div class="reporting-header">
+  <div id="reporting-template-preview-area" class="reporting-template-preview-area">
+    <div class="reporting-page">
+      <div id="reporting-header" class="reporting-header">
         <div class="reporting-header-text">
-          <div class="reporting-header-title"><span>{{p.title}}</span></div>
-          <div class="reporting-header-date"><span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span></div>
+          <div class="reporting-header-title"><span>{{chart.name}}</span></div>
+          <div class="reporting-header-date"><span>{{chart.years.min}} - {{chart.years.max}}</span></div>
         </div>
-        <div class="reporting-header-logo"></div>
+        <div class="reporting-header-logo">
+          <img src=".\assets\Wappen_Sachsen-Anhalt.png" alt="Wappen Sachsen-Anhalt" height="80px" />
+        </div>
       </div>
       <div class="reporting-content">
-
+        <div id="reporting-content-line-chart" class="chart-container" *ngIf="!chartLoading">
+          <ngx-charts-line-chart [scheme]="colorScheme" [legend]="true"  legendTitle="Städte"  [showXAxisLabel]="false" 
+            [showYAxisLabel]="true" [xAxis]="true" [yAxis]="true"
+            [yAxisLabel]="yAxisLabel" [results]="multi" [yScaleMin]="yScaleMin" [yScaleMax]="yScaleMax">
+          </ngx-charts-line-chart>
+        </div>
+        <div id="reporting-content-comment" class="chart-comment" contenteditable="true"></div>
       </div>
-      <div class="reporting-footer">
+      <div id="reporting-footer" class="reporting-footer">
         <div class="reporting-footer-date"><span>{{getDateTime()}}</span></div>
         <div class="reporting-footer-page-number">
-          <span>Seite {{i + 1}}</span>
+          <span>Seite 1</span>         
+        </div>
+      </div>
+    </div>
+    <div class="reporting-page">
+      <div id="reporting-header" class="reporting-header">
+        <div class="reporting-header-text">
+          <div class="reporting-header-title"><span>{{chart.name}}</span></div>
+          <div class="reporting-header-date"><span>{{chart.years.min}} - {{chart.years.max}}</span></div>
+        </div>
+        <div class="reporting-header-logo">
+          <img src=".\assets\Wappen_Sachsen-Anhalt.png" alt="Wappen Sachsen-Anhalt" height="80px" />
+        </div>
+      </div>
+      <div class="reporting-content">
+        <div id="reporting-content-line-chart" class="chart-container">
+        </div>
+        <div id="reporting-content-comment" class="chart-comment" contenteditable="true"></div>
+      </div>
+      <div id="reporting-footer" class="reporting-footer">
+        <div class="reporting-footer-date"><span>{{getDateTime()}}</span></div>
+        <div class="reporting-footer-page-number">
+          <span>Seite 2</span>         
         </div>
       </div>
     </div>
   </div>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-    <button mat-raised-button mat-dialog-close>Annuler</button>
-    <button mat-raised-button color="primary" [mat-dialog-close]="true">Ok</button>
-  </mat-dialog-actions> 
+  <button mat-raised-button mat-dialog-close>Annuler</button>
+  <button mat-raised-button color="primary" [mat-dialog-close]="true" (click)="generatePDF()">Download PDF</button>
+</mat-dialog-actions>
