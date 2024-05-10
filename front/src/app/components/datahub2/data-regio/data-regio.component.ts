@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
 import { Chart } from 'chart.js';
 import { MatDialog } from '@angular/material/dialog';
 import { ReportModalComponent } from './report-modal/report-modal.component';
+import * as htmlToImage from 'html-to-image';
+import { toPng, toJpeg, toBlob, toPixelData, toSvg } from 'html-to-image';
 
 @Component({
   selector: 'app-data-regio',
@@ -16,6 +18,8 @@ import { ReportModalComponent } from './report-modal/report-modal.component';
 })
 
 export class DataRegioComponent {
+  private apiChartData: any;
+
   async deselectAll(bool: any) {
     this.selectMode = bool;
 
@@ -73,17 +77,12 @@ export class DataRegioComponent {
     }
   }
   async showCompareChart() {
-
     var yAxisLabel = this.selectedChartObject.unit;
-    console.warn("BODY", this.buildRequestObject());
-    var requestBody = this.buildRequestObject()
 
+    await this.getApiChartData();
 
-    var testData = await this.regioService.getCompareChartData(requestBody);
-
-    console.warn("RESULTS", testData);
     //@ts-ignore
-    this.setMinMax(testData.chart.chartMeta);
+    this.setMinMax(this.apiChartData.chart.chartMeta);
 
     this.chartGeneral?.destroy();
 
@@ -111,9 +110,9 @@ export class DataRegioComponent {
       type: 'bar',
       data: {
         //@ts-ignore
-        labels: testData.chart.chartData.labels,
+        labels: this.apiChartData.chart.chartData.labels,
         //@ts-ignore
-        datasets: testData.chart.chartData.datasets
+        datasets: this.apiChartData.chart.chartData.datasets
       },
 
       options: {
@@ -123,7 +122,7 @@ export class DataRegioComponent {
               display: true,
               //this.selectedChartObject.Name 
               //@ts-ignore
-              text: "Durchschnitt " + testData.chart.chartMeta.minChartYear + " - " + testData.chart.chartMeta.maxChartYear
+              text: "Durchschnitt " + this.apiChartData.chart.chartMeta.minChartYear + " - " + this.apiChartData.chart.chartMeta.maxChartYear
             }
           }
         },
@@ -142,14 +141,14 @@ export class DataRegioComponent {
     }, 10);
 
     //@ts-ignore
-    this.chartLegend = testData.chart.chartMeta.regions;
+    this.chartLegend = this.apiChartData.chart.chartMeta.regions;
     //@ts-ignore
-    this.addShapelayers(testData.shapefiles.data);
+    this.addShapelayers(this.apiChartData.shapefiles.data);
 
 
 
     //@ts-ignore
-    this.addLegendNew(testData, 'Vergleich')
+    this.addLegendNew(this.apiChartData, 'Vergleich')
 
   }
 
@@ -162,9 +161,6 @@ export class DataRegioComponent {
   }
   info: any;
   showInfo(chart: any) {
-
-
-
 
     this.info = chart.Beschreibung
 
@@ -202,8 +198,6 @@ export class DataRegioComponent {
     if (type == 'valMax') {
       this.selectedMaxVal = value
     }
-
-
 
     switch (this.selectedChartIndex) {
       case 0:
@@ -864,22 +858,20 @@ export class DataRegioComponent {
   async showYearlyChangeChart() {
 
     var yAxisLabel = "%";
-    console.warn("BODY", this.buildRequestObject());
-    var requestBody = this.buildRequestObject()
-    var testData = await this.regioService.getYearlyChangeChartData(requestBody);
 
-    console.warn("RESULTS", testData);
+    await this.getApiChartData();
+
     //@ts-ignore
-    this.setMinMax(testData.chart.chartMeta);
+    this.setMinMax(this.apiChartData.chart.chartMeta);
 
     this.chartGeneral?.destroy();
     var chartDisplay = {
       type: 'bar',
       data: {
         //@ts-ignore
-        labels: testData.chart.chartData.labels,
+        labels: this.apiChartData.chart.chartData.labels,
         //@ts-ignore
-        datasets: testData.chart.chartData.datasets
+        datasets: this.apiChartData.chart.chartData.datasets
       },
       options: {
         scales: {
@@ -905,31 +897,29 @@ export class DataRegioComponent {
 
 
     //@ts-ignore
-    this.chartLegend = testData.chart.chartMeta.regions;
+    this.chartLegend = this.apiChartData.chart.chartMeta.regions;
     //@ts-ignore
-    this.addShapelayers(testData.shapefiles.data);
+    this.addShapelayers(this.apiChartData.shapefiles.data);
     //@ts-ignore
-    this.addLegendNew(testData, 'Jährliche Veränderungsrate ' + testData.chart.chartData.labels[testData.chart.chartData.labels.length - 1])
+    this.addLegendNew(this.apiChartData, 'Jährliche Veränderungsrate ' + this.apiChartData.chart.chartData.labels[this.apiChartData.chart.chartData.labels.length - 1])
   }
 
   async showGeneralChart() {
     var yAxisLabel = this.selectedChartObject.unit;
-    console.warn("BODY", this.buildRequestObject());
-    var requestBody = this.buildRequestObject()
-    var testData = await this.regioService.getGeneralChartData(requestBody);
 
-    console.warn("RESULTS", testData);
+    await this.getApiChartData();
+
     //@ts-ignore
-    this.setMinMax(testData.chart.chartMeta);
+    this.setMinMax(this.apiChartData.chart.chartMeta);
 
     this.chartGeneral?.destroy();
     var chartDisplay = {
       type: 'line',
       data: {
         //@ts-ignore
-        labels: testData.chart.chartData.labels,
+        labels: this.apiChartData.chart.chartData.labels,
         //@ts-ignore
-        datasets: testData.chart.chartData.datasets
+        datasets: this.apiChartData.chart.chartData.datasets
       },
       options: {
         scales: {
@@ -954,38 +944,35 @@ export class DataRegioComponent {
 
 
     //@ts-ignore
-    this.chartLegend = testData.chart.chartMeta.regions;
+    this.chartLegend = this.apiChartData.chart.chartMeta.regions;
     //@ts-ignore
-    this.addShapelayers(testData.shapefiles.data);
+    this.addShapelayers(this.apiChartData.shapefiles.data);
 
 
 
     //@ts-ignore
-    this.addLegendNew(testData, 'Allgemein ' + testData.chart.chartData.labels[testData.chart.chartData.labels.length - 1])
+    this.addLegendNew(this.apiChartData, 'Allgemein ' + this.apiChartData.chart.chartData.labels[this.apiChartData.chart.chartData.labels.length - 1])
   }
 
 
   async showChangeRateChart() {
-
-    console.warn("BODY", this.buildRequestObject());
-    var requestBody = this.buildRequestObject()
-    var testData = await this.regioService.getChangeRateChart(requestBody);
+    
+    await this.getApiChartData();
 
     //@ts-ignore
-    var yAxisLabel = testData.chart.chartData.labels[0] + "in %";
+    var yAxisLabel = this.apiChartData.chart.chartData.labels[0] + "in %";
 
-    console.warn("RESULTS", testData);
     //@ts-ignore
-    this.setMinMax(testData.chart.chartMeta);
+    this.setMinMax(this.apiChartData.chart.chartMeta);
 
     this.chartGeneral?.destroy();
     var chartDisplay = {
       type: 'bar',
       data: {
         //@ts-ignore
-        labels: testData.chart.chartData.labels,
+        labels: this.apiChartData.chart.chartData.labels,
         //@ts-ignore
-        datasets: testData.chart.chartData.datasets
+        datasets: this.apiChartData.chart.chartData.datasets
       },
       options: {
         scales: {
@@ -1018,11 +1005,11 @@ export class DataRegioComponent {
 
 
     //@ts-ignore
-    this.chartLegend = testData.chart.chartMeta.regions;
+    this.chartLegend = this.apiChartData.chart.chartMeta.regions;
     //@ts-ignore
-    this.addShapelayers(testData.shapefiles.data);
+    this.addShapelayers(this.apiChartData.shapefiles.data);
     //@ts-ignore
-    this.addLegendNew(testData, 'Veränderung zwischen ' + testData.chart.chartMeta.minChartYear + " - " + testData.chart.chartMeta.maxChartYear)
+    this.addLegendNew(this.apiChartData, 'Veränderung zwischen ' + this.apiChartData.chart.chartMeta.minChartYear + " - " + this.apiChartData.chart.chartMeta.maxChartYear)
   }
   addLegendNew(d: any, chartType: string) {
 
@@ -1812,55 +1799,97 @@ export class DataRegioComponent {
 
   }
 
+  private async getApiChartData(): Promise<void> {
+    const requestBody = this.buildRequestObject();
 
-  public async showReport(): Promise<void> {
-    var requestBody = this.buildRequestObject()
-    var data = await this.regioService.getGeneralChartData(requestBody);
-
-    this.dialog.open(ReportModalComponent, {
-      width: '1500px',
-      height: 'auto',
-      data: this.formatData(data)
-    })
-  }
-
-  private formatData(data: any): any {
-    const chartMeta = data.chart.chartMeta;
-
-    const cities: any[] = chartMeta.regions.map((region: any) => {
-      const chartData = data.chart.chartData;
-      const cityData: any[] = chartData.labels.map((label: number, index: number) => {
-        const cityDataSet: any = chartData.datasets.find((ds: any) => ds.label === region.label);
-        return {
-          year: label.toString(),
-          value: cityDataSet.data[index]
-        }
-      });
-
-      return {
-        name: region.label,
-        color: region.backgroundColor,
-        data: cityData
-      };
-    });
-
-    return {
-      chart: {
-        name: this.selectedChartObject.Name,
-        unit: this.selectedChartObject.unit,
-        years: {
-          min: chartMeta.minChartYear,
-          max: chartMeta.maxChartYear,
-        },
-        values: {
-          min: chartMeta.minChartValue,
-          max: chartMeta.maxChartValue,
-        },
-        cities: cities
-      }
+    switch (this.selectedChartIndex) {
+      case 1:
+        this.apiChartData = await this.regioService.getYearlyChangeChartData(requestBody);
+        break;
+      case 2:
+        this.apiChartData = await this.regioService.getChangeRateChart(requestBody);
+        break;
+      case 3:
+        this.apiChartData = await this.regioService.getCompareChartData(requestBody);
+        break;
+      default:
+        this.apiChartData = await this.regioService.getGeneralChartData(requestBody);
     }
   }
 
 
+  public async showReport(): Promise < void > {
+    const chartImg = await this.getChartImg();
+    const mapImg = await this.getMapImg();
 
-}
+    if (chartImg && mapImg) {
+
+      this.dialog.open(ReportModalComponent, {
+        width: '1500px',
+        height: 'auto',
+        data: {
+          name: this.selectedChartObject.Name,
+          filterName: this.getFilterName(),
+          minYear: this.selectedMinYear !== 0 ? this.selectedMinYear : this.minYear,
+          maxYear: this.selectedMaxYear !== 4000 ? this.selectedMaxYear : this.maxYear,
+          chartLegend: this.getActivateLegend(),
+          chartImg: chartImg,
+          mapImg: mapImg
+        }
+      });
+    }
+  }
+
+  private getChartImg(): Promise < string |undefined > {
+    return new Promise((resolve, reject) => {
+      const domChart = document.getElementById('chart');
+      if (domChart) {
+        htmlToImage.toPng(domChart)
+          .then(function (dataUrl) {
+            resolve(dataUrl);
+          })
+          .catch(function (error) {
+            console.error('Error:', error);
+            reject();
+          });
+      }
+    });
+
+  }
+
+  private getMapImg(): Promise < string |undefined > {
+    return new Promise((resolve, reject) => {
+      const domMap = document.getElementById('map');
+      if (domMap) {
+        htmlToImage.toPng(domMap)
+          .then(function (dataUrl) {
+            resolve(dataUrl);
+          })
+          .catch(function (error) {
+            console.error('Error:', error);
+            reject();
+          });
+      }
+    });
+
+  }
+
+  private getFilterName(): string {
+    switch (this.selectedChartIndex) {
+      case 1:
+        return "Jährliche Veränderungsrate";
+      case 2:
+        return "Änderungsrate zwischen Zeitpunkten";
+      case 3:
+        return "Vergleich";
+      default:
+        return "Allgemein";
+    }
+  }
+
+  public getActivateLegend(): any[] {
+    return this.chartLegend.filter((l: any) => !l.disabled);
+  }
+
+   
+  }

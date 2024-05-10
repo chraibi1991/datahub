@@ -1,51 +1,55 @@
 <h2 mat-dialog-title>Report</h2>
 <mat-dialog-content>
-  <div id="reporting-template-preview-area" class="reporting-template-preview-area">
+  <div class="reporting-template-preview-area">
     <div class="reporting-page">
-      <div id="reporting-header" class="reporting-header">
+      <div class="reporting-header">
         <div class="reporting-header-text">
-          <div class="reporting-header-title"><span>{{chart.name}}</span></div>
-          <div class="reporting-header-date"><span>{{chart.years.min}} - {{chart.years.max}}</span></div>
+          <h2>{{modalData.name}} - {{modalData.filterName}}</h2>
+          <span>{{ minMaxStr }}</span>
         </div>
         <div class="reporting-header-logo">
-          <img src=".\assets\Wappen_Sachsen-Anhalt.png" alt="Wappen Sachsen-Anhalt" height="80px" />
+          <img src=".\assets\Wappen_Sachsen-Anhalt.png" alt="Wappen Sachsen-Anhalt" />
         </div>
       </div>
       <div class="reporting-content">
-        <div id="reporting-content-line-chart" class="chart-container" *ngIf="!chartLoading">
-          <ngx-charts-line-chart [scheme]="colorScheme" [legend]="true"  legendTitle="Städte"  [showXAxisLabel]="false" 
-            [showYAxisLabel]="true" [xAxis]="true" [yAxis]="true"
-            [yAxisLabel]="yAxisLabel" [results]="multi" [yScaleMin]="yScaleMin" [yScaleMax]="yScaleMax">
-          </ngx-charts-line-chart>
-        </div>
-        <div id="reporting-content-comment" class="chart-comment" contenteditable="true"></div>
+          <div class="chart-legend">
+            <div class="legend-item" *ngFor="let l of modalData.chartLegend">
+              <div [style.background-color]="l.backgroundColor" class="item-color"></div>
+              <span> {{ l.label }} </span>
+            </div>
+          </div>
+          <div class="chart-img">
+            <img [src]="modalData.chartImg" alt="chart" />
+          </div>
+          <div class="chart-comment" contenteditable="true"></div>
       </div>
       <div id="reporting-footer" class="reporting-footer">
-        <div class="reporting-footer-date"><span>{{getDateTime()}}</span></div>
+        <div class="reporting-footer-date"><span>ersteelt am: {{getDateTime()}}</span></div>
         <div class="reporting-footer-page-number">
-          <span>Seite 1</span>         
+          <span>Seite 1</span>
         </div>
       </div>
     </div>
     <div class="reporting-page">
-      <div id="reporting-header" class="reporting-header">
+      <div class="reporting-header">
         <div class="reporting-header-text">
-          <div class="reporting-header-title"><span>{{chart.name}}</span></div>
-          <div class="reporting-header-date"><span>{{chart.years.min}} - {{chart.years.max}}</span></div>
+          <h2>{{modalData.name}}</h2>
+          <span>{{ modalData.maxYear }}</span>
         </div>
         <div class="reporting-header-logo">
-          <img src=".\assets\Wappen_Sachsen-Anhalt.png" alt="Wappen Sachsen-Anhalt" height="80px" />
+          <img src=".\assets\Wappen_Sachsen-Anhalt.png" alt="Wappen Sachsen-Anhalt" />
         </div>
       </div>
       <div class="reporting-content">
-        <div id="reporting-content-line-chart" class="chart-container">
+        <div class="map-img">
+          <img [src]="modalData.mapImg" alt="map" />
         </div>
-        <div id="reporting-content-comment" class="chart-comment" contenteditable="true"></div>
+        <div class="map-comment" contenteditable="true"></div>
       </div>
       <div id="reporting-footer" class="reporting-footer">
-        <div class="reporting-footer-date"><span>{{getDateTime()}}</span></div>
+        <div class="reporting-footer-date"><span>erstellt am: {{getDateTime()}}</span></div>
         <div class="reporting-footer-page-number">
-          <span>Seite 2</span>         
+          <span>Seite 2</span>
         </div>
       </div>
     </div>

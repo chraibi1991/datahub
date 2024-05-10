@@ -67,6 +67,7 @@ import { InfluenzaComponent } from './components/simulation-section/virusinfekti
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 import { InfrastukturComponent } from './components/datahub2/infrastuktur/infrastuktur.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { ReportModalComponent } from './components/datahub2/data-regio/report-modal/report-modal.component';
 
 @NgModule({
   declarations: [
@@ -103,7 +104,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     CovidComponent,
     EigenesSzenarioComponent,
     InfluenzaComponent,
-    InfrastukturComponent
+    InfrastukturComponent,
+    ReportModalComponent
+
   ],
   imports: [
     CommonModule,

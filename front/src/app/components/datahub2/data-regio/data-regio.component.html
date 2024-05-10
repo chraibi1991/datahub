@@ -9,7 +9,7 @@
       <div *ngIf="spinner">
         <mat-spinner></mat-spinner>
       </div>
-      <div class="map" leaflet [leafletOptions]="options" [leafletLayers]="layers"
+      <div id="map" class="map" leaflet [leafletOptions]="options" [leafletLayers]="layers"
         (leafletMapReady)="onMapReady($event)"></div>
     </div>
 
@@ -95,8 +95,8 @@
 
 
 
-          <div>
-            <canvas height='110vh' style="margin-top: 30px;" id="canvasGeneral">
+          <div id="chart">
+            <canvas height='110vh' id="canvasGeneral">
               {{ chartGeneral }}
             </canvas>
           </div>
@@ -171,7 +171,7 @@
       <button *ngIf="!selectedChartObject" (click)="showModal(0)" mat-raised-button color="primary">Indikatoren aus
         Datahub laden</button>
       <button mat-raised-button color="primary">Eigene Daten importieren</button>
-      <button *ngIf="selectedChartObject" mat-raised-button color="primary" (click)="showReport()">Report erstellen</button>
+      <button *ngIf="selectedChartObject" mat-raised-button color="primary" (click)="showReport()" [disabled]="getActivateLegend().length == 0">Report erstellen</button>
     </div>
 
   </div>
