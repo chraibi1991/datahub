@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import * as L from 'leaflet';
 import { latLng, tileLayer } from 'leaflet';
 import { RegioService } from '../../../service/regioservice/regioservice.component';
@@ -10,6 +10,9 @@ import { MatDialog } from '@angular/material/dialog';
 import { ReportModalComponent } from './report-modal/report-modal.component';
 import * as htmlToImage from 'html-to-image';
 import { toPng, toJpeg, toBlob, toPixelData, toSvg } from 'html-to-image';
+import { SelectIndikatorenModalComponent } from './select-indikatoren-modal/select-indikatoren-modal.component';
+import { Subscription } from 'rxjs';
+import { resolve } from 'path';
 
 @Component({
   selector: 'app-data-regio',
@@ -17,7 +20,9 @@ import { toPng, toJpeg, toBlob, toPixelData, toSvg } from 'html-to-image';
   styleUrls: ['./data-regio.component.css']
 })
 
-export class DataRegioComponent {
+export class DataRegioComponent implements OnDestroy {
+  public loading: boolean = false;
+  private subscriptions: Subscription = new Subscription();
   private apiChartData: any;
 
   async deselectAll(bool: any) {
@@ -743,8 +748,9 @@ export class DataRegioComponent {
 
   async changeChart(i: any) {
     this.selectedChartObject = i;
+    // this.selectedChartIndex = 0;
     await this.showGeneralChart();
-    return;
+    // await this.showChart();
   }
 
   async changeChartType(selectedIndex: number) {
@@ -1597,6 +1603,10 @@ export class DataRegioComponent {
 
   }
 
+  ngOnDestroy(): void {
+    this.subscriptions.unsubscribe();
+  }
+
 
   addLegendTitle(title: any) {
     if (this.legend instanceof L.Control) {
@@ -1817,30 +1827,99 @@ export class DataRegioComponent {
     }
   }
 
-
   public async showReport(): Promise < void > {
-    const chartImg = await this.getChartImg();
-    const mapImg = await this.getMapImg();
-
-    if (chartImg && mapImg) {
-
-      this.dialog.open(ReportModalComponent, {
+    const topic = this.regioMetaData.find((r: any) => r.checked);
+    if(topic) {
+      const dialogRef = this.dialog.open(SelectIndikatorenModalComponent, {
         width: '1500px',
         height: 'auto',
-        data: {
-          name: this.selectedChartObject.Name,
-          filterName: this.getFilterName(),
-          minYear: this.selectedMinYear !== 0 ? this.selectedMinYear : this.minYear,
-          maxYear: this.selectedMaxYear !== 4000 ? this.selectedMaxYear : this.maxYear,
-          chartLegend: this.getActivateLegend(),
-          chartImg: chartImg,
-          mapImg: mapImg
-        }
+        data: topic.data
       });
+  
+      this.subscriptions.add(dialogRef.componentInstance.confirm.subscribe((indikatoren: any[]) => {
+        this.showPDF(indikatoren);
+      }));
     }
   }
 
-  private getChartImg(): Promise < string |undefined > {
+  public async showPDF(indikatoren: any[]): Promise < void > {
+    const data: any[] = [];
+    const selectedChart = this.selectedChartObject;
+
+    this.loading = true;
+
+    for (var i = 0; i < indikatoren.length; i++) {
+      data.push(await this.getIndikatorReport(indikatoren[i]));
+      if (i === indikatoren.length - 1) {
+        const ReportDialogRef = this.dialog.open(ReportModalComponent, {
+          width: '1500px',
+          height: 'auto',
+          data: data
+        });
+
+        this.subscriptions.add(ReportDialogRef.afterOpened().subscribe(() => {
+          this.loading = false;
+        }));
+
+        this.subscriptions.add(ReportDialogRef.afterClosed().subscribe(async () => {
+          this.loading = true;
+          this.selectedChartObject = selectedChart;
+          await this.showChart();
+          this.loading = false;
+        }));
+      }
+    }
+  }
+
+  private async showChart(): Promise<void> {
+    switch (this.selectedChartIndex) {
+      case 0:
+        await this.showGeneralChart();
+        break;
+      case 1:
+        await this.showYearlyChangeChart();
+        break;
+      case 2:
+        await this.showChangeRateChart();
+        break;
+      case 3:
+        await this.showCompareChart();
+        break;
+      default:
+        await this.showGeneralChart();
+        break;
+    }
+  }
+
+  private async getIndikatorReport(indi: any): Promise<any> {
+    let mapImg: any = undefined;
+    let chartImg: any = undefined;
+
+    if(this.selectedChartObject !== indi) {
+      this.selectedChartObject = indi;
+      await this.showChart();
+    }
+
+    await new Promise((resolve) => {
+      setTimeout(resolve, 700);
+    });
+
+    if(indi.withMap) mapImg = await this.getMapImg();
+
+    if(indi.withChart) chartImg = await this.getChartImg();
+
+    return {
+      name: this.selectedChartObject.Name,
+      filterName: this.getFilterName(),
+      minYear: this.selectedMinYear !== 0 ? this.selectedMinYear : this.minYear,
+      maxYear: this.selectedMaxYear !== 4000 ? this.selectedMaxYear : this.maxYear,
+      chartLegend: this.getActivateLegend(),
+      chartImg: chartImg,
+      mapImg: mapImg
+    }
+  }
+
+  private getChartImg(): Promise < string | undefined > {
     return new Promise((resolve, reject) => {
       const domChart = document.getElementById('chart');
       if (domChart) {
@@ -1857,7 +1936,7 @@ export class DataRegioComponent {
 
   }
 
-  private getMapImg(): Promise < string |undefined > {
+  private getMapImg(): Promise < string | undefined > {
     return new Promise((resolve, reject) => {
       const domMap = document.getElementById('map');
       if (domMap) {

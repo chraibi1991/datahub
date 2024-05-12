@@ -1,58 +1,50 @@
 <h2 mat-dialog-title>Report</h2>
 <mat-dialog-content>
   <div class="reporting-template-preview-area">
-    <div class="reporting-page">
-      <div class="reporting-header">
-        <div class="reporting-header-text">
-          <h2>{{modalData.name}} - {{modalData.filterName}}</h2>
-          <span>{{ minMaxStr }}</span>
+    <ng-container *ngFor="let indikator of indakatoren; let i = index">
+      <div class="reporting-page">
+        <div class="reporting-header">
+          <div class="reporting-header-text">
+            <ng-container *ngIf="indikator.pageType === 'chart'">
+              <h2 *ngIf="indikator.pageType === 'chart'">{{indikator.name}} - {{indikator.filterName}}</h2>
+              <span>{{ getMinMax(indikator) }}</span>
+            </ng-container>
+            <ng-container *ngIf="indikator.pageType === 'map'">
+              <h2 *ngIf="indikator.pageType === 'map'">{{indikator.name}}</h2>
+              <span>{{ indikator.maxYear }}</span>
+            </ng-container>
+          </div>
+          <div class="reporting-header-logo">
+            <img src=".\assets\Wappen_Sachsen-Anhalt.png" alt="Wappen Sachsen-Anhalt" />
+          </div>
         </div>
-        <div class="reporting-header-logo">
-          <img src=".\assets\Wappen_Sachsen-Anhalt.png" alt="Wappen Sachsen-Anhalt" />
-        </div>
-      </div>
-      <div class="reporting-content">
-          <div class="chart-legend">
-            <div class="legend-item" *ngFor="let l of modalData.chartLegend">
-              <div [style.background-color]="l.backgroundColor" class="item-color"></div>
-              <span> {{ l.label }} </span>
+        <div class="reporting-content">
+          <ng-container *ngIf="indikator.pageType === 'chart'">
+            <div class="chart-legend">
+              <div class="legend-item" *ngFor="let l of indikator.chartLegend">
+                <div [style.background-color]="l.backgroundColor" class="item-color"></div>
+                <span> {{ l.label }} </span>
+              </div>
             </div>
+            <div class="chart-img">
+              <img [src]="indikator.chartImg" alt="chart" />
+            </div>
+          </ng-container>
+
+          <div class="map-img" *ngIf="indikator.pageType === 'map'">
+            <img [src]="indikator.mapImg" alt="map" />
           </div>
-          <div class="chart-img">
-            <img [src]="modalData.chartImg" alt="chart" />
+
+          <div [ngClass]="indikator.pageType === 'chart' ? 'chart-comment' : 'map-comment'" contenteditable="true"></div>
+        </div>
+        <div id="reporting-footer" class="reporting-footer">
+          <div class="reporting-footer-date"><span>erstellt am: {{getDateTime()}}</span></div>
+          <div class="reporting-footer-page-number">
+            <span>Seite {{ i + 1 }}</span>
           </div>
-          <div class="chart-comment" contenteditable="true"></div>
-      </div>
-      <div id="reporting-footer" class="reporting-footer">
-        <div class="reporting-footer-date"><span>ersteelt am: {{getDateTime()}}</span></div>
-        <div class="reporting-footer-page-number">
-          <span>Seite 1</span>
         </div>
       </div>
-    </div>
-    <div class="reporting-page">
-      <div class="reporting-header">
-        <div class="reporting-header-text">
-          <h2>{{modalData.name}}</h2>
-          <span>{{ modalData.maxYear }}</span>
-        </div>
-        <div class="reporting-header-logo">
-          <img src=".\assets\Wappen_Sachsen-Anhalt.png" alt="Wappen Sachsen-Anhalt" />
-        </div>
-      </div>
-      <div class="reporting-content">
-        <div class="map-img">
-          <img [src]="modalData.mapImg" alt="map" />
-        </div>
-        <div class="map-comment" contenteditable="true"></div>
-      </div>
-      <div id="reporting-footer" class="reporting-footer">
-        <div class="reporting-footer-date"><span>erstellt am: {{getDateTime()}}</span></div>
-        <div class="reporting-footer-page-number">
-          <span>Seite 2</span>
-        </div>
-      </div>
-    </div>
+    </ng-container>
   </div>
 </mat-dialog-content>
 <mat-dialog-actions align="end">

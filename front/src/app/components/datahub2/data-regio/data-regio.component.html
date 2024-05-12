@@ -1,6 +1,9 @@
+<div *ngIf="loading" class="loader-overlay">
+  <mat-spinner class="loader"></mat-spinner>
+  <span>Wird geladen ...</span>
+</div>
 <div style=" margin-left: 5%; margin-bottom: 0.5%;">
   <span class="span0"> Datahub. </span> <span class="span1"> Regionalindikatoren nach Gebietseinheiten. </span> <br>
-
 </div>
 <div>
   <div class="row1">
@@ -171,7 +174,8 @@
       <button *ngIf="!selectedChartObject" (click)="showModal(0)" mat-raised-button color="primary">Indikatoren aus
         Datahub laden</button>
       <button mat-raised-button color="primary">Eigene Daten importieren</button>
-      <button *ngIf="selectedChartObject" mat-raised-button color="primary" (click)="showReport()" [disabled]="getActivateLegend().length == 0">Report erstellen</button>
+      <button *ngIf="selectedChartObject" mat-raised-button color="primary" (click)="showReport()"
+        [disabled]="getActivateLegend().length == 0">Report erstellen</button>
     </div>
 
   </div>

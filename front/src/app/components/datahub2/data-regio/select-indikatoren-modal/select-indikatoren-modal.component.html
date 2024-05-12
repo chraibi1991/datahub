@@ -1,0 +1,37 @@
+<h2 mat-dialog-title> Indikatoren auswählen</h2>
+<mat-dialog-content>
+  <section>
+    <span>
+      <mat-checkbox [checked]="allIndikatoren" (change)="setAll($event.checked)">
+        All
+      </mat-checkbox>
+    </span>
+    <span>
+      <ul>
+        <li *ngFor="let indi of indikatoren">
+          <span>
+            <mat-checkbox [(ngModel)]="indi.checked" (ngModelChange)="updateAll(indi)">
+              {{indi.name}}
+            </mat-checkbox>
+          </span>
+          <span>
+            <ul>
+              <li>
+                <mat-checkbox [(ngModel)]="indi.withChart" (ngModelChange)="updateAll(indi)" [disabled]="!indi.checked">
+                 Chart
+                </mat-checkbox>
+                <mat-checkbox [(ngModel)]="indi.withMap" (ngModelChange)="updateAll(indi)" [disabled]="!indi.checked">
+                  Map
+                </mat-checkbox>
+              </li>
+            </ul>
+          </span>
+        </li>
+      </ul>
+    </span>
+  </section>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-raised-button mat-dialog-close>Stornieren</button>
+  <button mat-raised-button color="primary" [mat-dialog-close]="true" [disabled]="!hasIndikator" (click)="confirmIndikatoken()">bestätigen</button>
+</mat-dialog-actions>

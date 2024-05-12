@@ -68,6 +68,7 @@ import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 import { InfrastukturComponent } from './components/datahub2/infrastuktur/infrastuktur.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ReportModalComponent } from './components/datahub2/data-regio/report-modal/report-modal.component';
+import { SelectIndikatorenModalComponent } from './components/datahub2/data-regio/select-indikatoren-modal/select-indikatoren-modal.component';
 
 @NgModule({
   declarations: [
@@ -105,8 +106,8 @@ import { ReportModalComponent } from './components/datahub2/data-regio/report-mo
     EigenesSzenarioComponent,
     InfluenzaComponent,
     InfrastukturComponent,
-    ReportModalComponent
-
+    ReportModalComponent,
+    SelectIndikatorenModalComponent
   ],
   imports: [
     CommonModule,

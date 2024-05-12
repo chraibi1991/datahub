@@ -322,3 +322,26 @@ input[type="search"]:focus {
   gap: 20px;
   padding: 10px;
 }
+
+.loader-overlay {
+  position: fixed;
+  top: 10vh;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader-overlay span {
+  color: green;
+  padding-top: 10px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+

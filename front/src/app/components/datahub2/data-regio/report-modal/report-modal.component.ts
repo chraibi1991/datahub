@@ -12,9 +12,8 @@ import html2canvas from 'html2canvas';
   styleUrls: ['./report-modal.component.css']
 })
 export class ReportModalComponent implements OnInit {
-
-  public modalData: any;
   public minMaxStr: string = "";
+  public indakatoren: any[] = [];
 
   constructor(
     @Inject(MAT_DIALOG_DATA) private data: any
@@ -22,8 +21,10 @@ export class ReportModalComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.data) {
-      this.modalData = this.data;
-      this.minMaxStr = this.getMinMax();
+      this.data.forEach((d: any) => {
+        if(d.chartImg) this.indakatoren.push({...d, pageType: 'chart'});
+        if(d.mapImg) this.indakatoren.push({...d, pageType: 'map'});
+      });
     }
   }
 
@@ -64,10 +65,10 @@ export class ReportModalComponent implements OnInit {
     }
   }
 
-  public getMinMax(): string {
-    let minMaxStr = this.modalData.minYear;
-    if(this.modalData.minYear !== this.modalData.maxYear){
-      minMaxStr += ` - ${this.modalData.maxYear}`
+  public getMinMax(indikator: any): string {
+    let minMaxStr = indikator.minYear;
+    if(indikator.minYear !== indikator.maxYear){
+      minMaxStr += ` - ${indikator.maxYear}`
     }
     return minMaxStr;
   }
