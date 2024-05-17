@@ -29,11 +29,10 @@ export class ReportModalComponent implements OnInit {
   }
 
   public generatePDF() {
-    const pages = document.getElementsByClassName('reporting-page');
-
-    if (pages) {
+    const pages = Array.from(document.getElementsByClassName('reporting-page'));
+     if (pages) {
       const pagesContent: any = [];
-      Array.from(pages).forEach((p: any, index: number) => {
+      pages.forEach((p: any, index: number) => {
         
         html2canvas(p, {
           height: 1200,
@@ -42,13 +41,13 @@ export class ReportModalComponent implements OnInit {
           backgroundColor: null,
           logging: false
         }).then((canvas: any) => {
-          pagesContent.push({
+           pagesContent.push({
             image: canvas.toDataURL(),
             width: 810,
             height: 940
           });
-
-          if (index === 1) {
+           
+          if (index === pages.length-1) {
             pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
             // Prepare pdf structure
