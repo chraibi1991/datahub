@@ -1,6 +1,7 @@
 :host {
   display: block;
 }
+ /* Stil für den Vorschaubereich des Berichtstemplates */
 
 .reporting-template-preview-area {
   position: relative;
@@ -9,7 +10,7 @@
   background-color: #d3d3d3;
   overflow: auto;
 }
-
+/* Stil für eine einzelne Berichtsseite */
 .reporting-page {
   background-color: #fff;
   border: none;
@@ -23,7 +24,7 @@
   width: 80%;
   height: calc(950px / 1.4);
 }
-
+/* Stil für den Berichtskopf */
 .reporting-header {
   width: 100%;
   height: 80px;
@@ -31,7 +32,7 @@
   flex-direction: row;
   justify-content: space-between;
 }
-
+/* Stil für den Textbereich im Berichtskopf */
 .reporting-header-text {
   height: 40px;
   display: flex;
@@ -39,26 +40,26 @@
   justify-content: space-between;
   padding: 20px 0;
 }
-
+/* Stil für die Überschrift im Berichtskopf */
 .reporting-header-text h2 {
   margin: 0;
 }
-
+/* Stil für den Span-Text im Berichtskopf */
 .reporting-header-text span {
   font-size: 14px;
   font-weight: 500;
 }
-
+/* Stil für den Logobereich im Berichtskopf */
 .reporting-header-logo {
   margin: auto 0;
   padding: 5px;
 }
-
+/* Stil für das Logo-Bild */
 .reporting-header-logo img {
   width: 70px;
   height: 70px;
 }
-
+/* Stil für den Inhaltsbereich des Berichts */
 .reporting-content {
   width: calc(100% - 40px);
   height: calc(100% - 140px);
@@ -67,7 +68,7 @@
   flex-direction: column;
   justify-content: space-around;
 }
-
+/* Stil für den Diagrammbildbereich */
 .chart-img {
   margin-top: 30px;
   width: 650px;
@@ -76,36 +77,36 @@
   border-radius: 5px;
   padding: 10px;
 }
-
+/* Stil für das Diagrammbild */
 .chart-img img {
   width: 100%;
   height: 100%;
 }
-
+/* Stil für die Diagrammlegende */
 .chart-legend {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   flex-wrap: wrap;
 }
-
+/* Stil für ein einzelnes Legendenelement */
 .chart-legend .legend-item {
   display: flex;
   flex-direction: row;
   padding-right: 5px;
 }
-
+/* Stil für die Farbmarkierung in der Legende */
 .chart-legend .legend-item .item-color {
   width:15px; 
   height: 20px
 }
-
+/* Stil für den Text in der Legende */
 .chart-legend .legend-item span {
   padding-left: 2px;
   padding-right: 2px;
   font-size: 14px;
 }
-
+/* Stil für den Kommentarbereich des Diagramms */
 .chart-comment {
   height: 70px;
   width: 80%;
@@ -114,7 +115,7 @@
   border: none;
   padding: 20px;
 }
-
+/* Stil für den Kartenbildbereich */
 .map-img {
   width: 650px;
   margin: 0 auto;
@@ -122,12 +123,12 @@
   border-radius: 5px;
   padding: 10px;
 }
-
+/* Stil für das Kartenbild */
 .map-img img {
   width: 100%;
   height: 100%;
 }
-
+/* Stil für den Kommentarbereich der Karte */
 .map-comment {
   height: 70px;
   width: 80%;
@@ -136,7 +137,7 @@
   border: none;
   padding: 20px;
 }
-
+/* Stil für den Berichtsfuß */
 .reporting-footer {
   border-top: solid gray 2px;
   height: 40px;
@@ -146,11 +147,11 @@
   font-size: 16px;
   font-weight: 500;
 }
-
+/* Stil für das Datum im Berichtsfuß */
 .reporting-footer-date {
   margin-top: 15px;
 }
-
+/* Stil für die Seitennummer im Berichtsfuß */
 .reporting-footer-page-number {
   margin-top: 15px;
   width: 60px;

@@ -12,22 +12,24 @@ import html2canvas from 'html2canvas';
   styleUrls: ['./report-modal.component.css']
 })
 export class ReportModalComponent implements OnInit {
+  // Eigenschaften für den Bericht
   public minMaxStr: string = "";
   public indakatoren: any[] = [];
-
+  // Konstruktor mit Injektion der Dialogdaten
   constructor(
     @Inject(MAT_DIALOG_DATA) private data: any
   ) {}
-
+  // Initialisierungsmethode
   ngOnInit(): void {
     if (this.data) {
+  // Erstellen der Indikatoren-Objekte aus den übergebenen Daten
       this.data.forEach((d: any) => {
         if(d.chartImg) this.indakatoren.push({...d, pageType: 'chart'});
         if(d.mapImg) this.indakatoren.push({...d, pageType: 'map'});
       });
     }
   }
-
+  // Methode zur Generierung des PDFs
   public generatePDF() {
     const pages = Array.from(document.getElementsByClassName('reporting-page'));
      if (pages) {
@@ -63,7 +65,7 @@ export class ReportModalComponent implements OnInit {
       });
     }
   }
-
+  // Methode zum Abrufen des Min-Max-Strings
   public getMinMax(indikator: any): string {
     let minMaxStr = indikator.minYear;
     if(indikator.minYear !== indikator.maxYear){
@@ -71,7 +73,7 @@ export class ReportModalComponent implements OnInit {
     }
     return minMaxStr;
   }
-
+  // Methode zum Abrufen des aktuellen Datums und der Uhrzeit
   public getDateTime(): string {
     return dayjs().format('dddd, MMMM D, YYYY h:mm A');
   }

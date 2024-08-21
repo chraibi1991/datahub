@@ -8,8 +8,7 @@ import { Router } from '@angular/router';
 import { Chart } from 'chart.js';
 import { MatDialog } from '@angular/material/dialog';
 import { ReportModalComponent } from './report-modal/report-modal.component';
-import * as htmlToImage from 'html-to-image';
-import { toPng, toJpeg, toBlob, toPixelData, toSvg } from 'html-to-image';
+import { toPng } from 'html-to-image';
 import { SelectIndikatorenModalComponent } from './select-indikatoren-modal/select-indikatoren-modal.component';
 import { Subscription } from 'rxjs';
 import { resolve } from 'path';
@@ -1808,6 +1807,7 @@ export class DataRegioComponent implements OnDestroy {
 
 
   }
+  //Die folgende Methode dient dem Abruf von Diagrammdaten über eine API, wobei die Auswahl des zu verwendenden Diagrammtyps als Kriterium dient.
 
   private async getApiChartData(): Promise<void> {
     const requestBody = this.buildRequestObject();
@@ -1827,29 +1827,41 @@ export class DataRegioComponent implements OnDestroy {
     }
   }
 
-  public async showReport(): Promise < void > {
+  // Die Methode 'showReport' öffnet zunächst einen Dialog zur Auswahl von Indikatoren. Anschließend wird die Funktion "ShowPDF" aufgerufen, sofern Indikatoren ausgewählt wurden.
+
+  public showReport(): void {
+
+    // Die Daten der ausgewählten Region abrufen
     const topic = this.regioMetaData.find((r: any) => r.checked);
+  
     if(topic) {
+
+      // Ein Modal öffnen, um die gewünschten Indikatoren und deren Optionen (Karte und Diagramm) auszuwählen.  
       const dialogRef = this.dialog.open(SelectIndikatorenModalComponent, {
         width: '1500px',
         height: 'auto',
         data: topic.data
       });
-  
+
+      // Sich auf das Output-Event 'confirm' des Modals abonnieren.
       this.subscriptions.add(dialogRef.componentInstance.confirm.subscribe((indikatoren: any[]) => {
         this.showPDF(indikatoren);
       }));
     }
   }
 
+  // PDF anzeigen
   public async showPDF(indikatoren: any[]): Promise < void > {
     const data: any[] = [];
     const selectedChart = this.selectedChartObject;
 
     this.loading = true;
-
+  
+    // Der Bericht kann für alle ausgewählten Indikatoren abgerufen und angezeigt werden.
     for (var i = 0; i < indikatoren.length; i++) {
+    
       data.push(await this.getIndikatorReport(indikatoren[i]));
+  
       if (i === indikatoren.length - 1) {
         const ReportDialogRef = this.dialog.open(ReportModalComponent, {
           width: '1500px',
@@ -1861,6 +1873,7 @@ export class DataRegioComponent implements OnDestroy {
           this.loading = false;
         }));
 
+        // Nach dem Schließen des Modals besteht die Möglichkeit, ein Ereignis zu abonnieren, um den ursprünglichen Zustand neu zu laden.
         this.subscriptions.add(ReportDialogRef.afterClosed().subscribe(async () => {
           this.loading = true;
           this.selectedChartObject = selectedChart;
@@ -1870,6 +1883,8 @@ export class DataRegioComponent implements OnDestroy {
       }
     }
   }
+
+ // Diese Methode zeigt das ausgewählte Diagramm an.
 
   private async showChart(): Promise<void> {
     switch (this.selectedChartIndex) {
@@ -1891,6 +1906,8 @@ export class DataRegioComponent implements OnDestroy {
     }
   }
 
+  // Diese Methode generiert einen Bericht für einen einzelnen Indikator.
+ 
   private async getIndikatorReport(indi: any): Promise<any> {
     let mapImg: any = undefined;
     let chartImg: any = undefined;
@@ -1899,11 +1916,13 @@ export class DataRegioComponent implements OnDestroy {
       this.selectedChartObject = indi;
       await this.showChart();
     }
+// Es wird hier empfohlen, eine Wartezeit von 700 Millisekunden einzuhalten, um eine vollständige und einwandfreie Darstellung des Diagramms bzw. der Karte zu gewährleisten.
 
     await new Promise((resolve) => {
       setTimeout(resolve, 700);
     });
 
+    
     if(indi.withMap) mapImg = await this.getMapImg();
 
     if(indi.withChart) chartImg = await this.getChartImg();
@@ -1919,11 +1938,13 @@ export class DataRegioComponent implements OnDestroy {
     }
   }
 
+  // Diese Methode erstellt ein Screenshot des Diagramms.
+
   private getChartImg(): Promise < string | undefined > {
     return new Promise((resolve, reject) => {
       const domChart = document.getElementById('chart');
       if (domChart) {
-        htmlToImage.toPng(domChart)
+        toPng(domChart)
           .then(function (dataUrl) {
             resolve(dataUrl);
           })
@@ -1935,12 +1956,14 @@ export class DataRegioComponent implements OnDestroy {
     });
 
   }
+
+  // Diese Methode erstellt ein Screenshot der Karte.
 
   private getMapImg(): Promise < string | undefined > {
     return new Promise((resolve, reject) => {
       const domMap = document.getElementById('map');
       if (domMap) {
-        htmlToImage.toPng(domMap)
+        toPng(domMap)
           .then(function (dataUrl) {
             resolve(dataUrl);
           })
@@ -1952,6 +1975,7 @@ export class DataRegioComponent implements OnDestroy {
     });
 
   }
+ // Diese Methode gibt den Namen des ausgewählten Filters zurück.
 
   private getFilterName(): string {
     switch (this.selectedChartIndex) {
@@ -1965,6 +1989,8 @@ export class DataRegioComponent implements OnDestroy {
         return "Allgemein";
     }
   }
+  
+// Diese Methode gibt die aktive Legende zurück.
 
   public getActivateLegend(): any[] {
     return this.chartLegend.filter((l: any) => !l.disabled);

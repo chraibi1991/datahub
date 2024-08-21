@@ -1,11 +1,16 @@
 <h2 mat-dialog-title>Report</h2>
 <mat-dialog-content>
-  <div class="reporting-template-preview-area">
+    <!-- Berichtsvorschaubereich -->
+   <div class="reporting-template-preview-area">
+    <!-- Iteration über alle Indikatoren -->
     <ng-container *ngFor="let indikator of indakatoren; let i = index">
+    <!-- Einzelne Berichtsseite -->
       <div class="reporting-page">
+    <!-- Berichtskopf -->
         <div class="reporting-header">
           <div class="reporting-header-text">
             <ng-container *ngIf="indikator.pageType === 'chart'">
+    <!-- Unterschiedliche Anzeige für Diagramm und Karte -->
               <h2 *ngIf="indikator.pageType === 'chart'">{{indikator.name}} - {{indikator.filterName}}</h2>
               <span>{{ getMinMax(indikator) }}</span>
             </ng-container>
@@ -14,10 +19,12 @@
               <span>{{ indikator.maxYear }}</span>
             </ng-container>
           </div>
+    <!-- Logo im Berichtskopf -->
           <div class="reporting-header-logo">
             <img src=".\assets\Wappen_Sachsen-Anhalt.png" alt="Wappen Sachsen-Anhalt" />
           </div>
         </div>
+    <!-- Berichtsinhalt -->
         <div class="reporting-content">
           <ng-container *ngIf="indikator.pageType === 'chart'">
             <div class="chart-legend">
@@ -26,19 +33,23 @@
                 <span> {{ l.label }} </span>
               </div>
             </div>
+    <!-- Diagrammbild -->
             <div class="chart-img">
               <img [src]="indikator.chartImg" alt="chart" />
             </div>
           </ng-container>
-
+    <!-- Kartenbild -->
           <div class="map-img" *ngIf="indikator.pageType === 'map'">
             <img [src]="indikator.mapImg" alt="map" />
           </div>
-
+    <!-- Kommentarbereich (editierbar) -->
           <div [ngClass]="indikator.pageType === 'chart' ? 'chart-comment' : 'map-comment'" contenteditable="true"></div>
         </div>
+    <!-- Berichtsfuß -->
         <div id="reporting-footer" class="reporting-footer">
+    <!-- Erstellungsdatum -->
           <div class="reporting-footer-date"><span>erstellt am: {{getDateTime()}}</span></div>
+    <!-- Seitennummer -->     
           <div class="reporting-footer-page-number">
             <span>Seite {{ i + 1 }}</span>
           </div>
@@ -47,7 +58,10 @@
     </ng-container>
   </div>
 </mat-dialog-content>
+    <!-- Dialogaktionen -->
 <mat-dialog-actions align="end">
+    <!-- Abbrechen-Button -->
   <button mat-raised-button mat-dialog-close>Annuler</button>
+    <!-- PDF-Download-Button -->
   <button mat-raised-button color="primary" [mat-dialog-close]="true" (click)="generatePDF()">Download PDF</button>
 </mat-dialog-actions>
