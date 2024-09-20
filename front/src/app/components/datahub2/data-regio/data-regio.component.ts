@@ -1944,7 +1944,7 @@ export class DataRegioComponent implements OnDestroy {
     return new Promise((resolve, reject) => {
       const domChart = document.getElementById('chart');
       if (domChart) {
-        toPng(domChart)
+        toPng(domChart, { skipFonts: true })
           .then(function (dataUrl) {
             resolve(dataUrl);
           })
@@ -1963,7 +1963,7 @@ export class DataRegioComponent implements OnDestroy {
     return new Promise((resolve, reject) => {
       const domMap = document.getElementById('map');
       if (domMap) {
-        toPng(domMap)
+        toPng(domMap, { skipFonts: true })
           .then(function (dataUrl) {
             resolve(dataUrl);
           })
